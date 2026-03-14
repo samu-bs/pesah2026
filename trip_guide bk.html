@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך טיול משפחתי | קמבודיה - וייטנאם - תאילנד 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+  :root {
+    --primary: #1B5E7B; --primary-dark: #134a61; --secondary: #E67E22; --accent: #27AE60;
+    --vietnam: #DA251D; --cambodia: #032EA1; --thailand: #241D4F;
+    --bg: #f5f7fa; --card: #fff; --text: #2c3e50; --text-light: #7f8c8d;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08); --shadow-hover: 0 8px 30px rgba(0,0,0,0.15); --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Heebo',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; overflow-x:hidden; }
+
+  .hero { background:linear-gradient(135deg,var(--primary) 0%,#0d3d56 50%,var(--primary-dark) 100%); color:#fff; padding:80px 20px 60px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff10' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L0,320Z'/%3E%3C/svg%3E") no-repeat bottom/cover; opacity:.3; }
+  .hero h1 { font-size:3em; font-weight:900; margin-bottom:10px; position:relative; }
+  .hero .subtitle { font-size:1.4em; opacity:.9; font-weight:300; position:relative; }
+  .hero .dates { font-size:1.1em; margin-top:15px; opacity:.8; position:relative; }
+  .hero .flags { font-size:2.5em; margin-top:20px; position:relative; letter-spacing:10px; }
+  .route-bar { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:25px; position:relative; flex-wrap:wrap; padding:0 10px; }
+  .route-stop { background:rgba(255,255,255,.15); padding:6px 14px; border-radius:20px; font-size:.85em; backdrop-filter:blur(10px); white-space:nowrap; }
+  .route-arrow { opacity:.5; font-size:.8em; }
+
+  .nav { background:#fff; position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,.1); }
+  .nav-inner { max-width:1200px; margin:0 auto; display:flex; overflow-x:auto; scrollbar-width:none; }
+  .nav-inner::-webkit-scrollbar { display:none; }
+  .nav-btn { padding:14px 20px; border:none; background:none; font-family:'Heebo',sans-serif; font-size:.9em; font-weight:500; color:var(--text-light); cursor:pointer; white-space:nowrap; border-bottom:3px solid transparent; transition:.3s; }
+  .nav-btn:hover,.nav-btn.active { color:var(--primary); border-bottom-color:var(--primary); }
+
+  .container { max-width:1000px; margin:0 auto; padding:30px 20px; }
+  .section { margin-bottom:50px; scroll-margin-top:70px; }
+  .section-title { font-size:1.8em; font-weight:800; color:var(--primary); margin-bottom:25px; display:flex; align-items:center; gap:12px; }
+
+  .day-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:25px; overflow:hidden; transition:.3s; }
+  .day-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-2px); }
+  .day-header { padding:18px 25px; color:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer; user-select:none; }
+  .day-header.thailand { background:linear-gradient(135deg,var(--thailand),#3a2d7a); }
+  .day-header.cambodia { background:linear-gradient(135deg,var(--cambodia),#0548e0); }
+  .day-header.vietnam { background:linear-gradient(135deg,var(--vietnam),#ff4136); }
+  .day-header.transit { background:linear-gradient(135deg,#555,#888); }
+  .day-header h3 { font-size:1.2em; font-weight:700; }
+  .day-header .day-dates { font-size:.9em; opacity:.85; }
+  .day-toggle { font-size:1.5em; transition:transform .3s; }
+  .day-card.collapsed .day-toggle { transform:rotate(180deg); }
+  .day-card.collapsed .day-body { display:none; }
+  .day-body { padding:25px; }
+
+  .day-info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:20px; }
+  .info-chip { background:#f0f4f8; padding:10px 15px; border-radius:10px; font-size:.9em; display:flex; align-items:center; gap:8px; }
+  .info-chip .label { font-weight:600; color:var(--primary); }
+
+  /* Day tabs inside cards */
+  .day-tabs { display:flex; gap:0; border-bottom:2px solid #eee; margin-bottom:18px; overflow-x:auto; scrollbar-width:none; }
+  .day-tabs::-webkit-scrollbar { display:none; }
+  .day-tab { padding:10px 18px; border:none; background:none; font-family:'Heebo',sans-serif; font-size:.9em; font-weight:600; color:var(--text-light); cursor:pointer; border-bottom:3px solid transparent; transition:.2s; white-space:nowrap; }
+  .day-tab:hover { color:var(--primary); }
+  .day-tab.active { color:var(--primary); border-bottom-color:var(--primary); background:#f0f7fa; border-radius:8px 8px 0 0; }
+  .day-pane { display:none; }
+  .day-pane.active { display:block; }
+
+  .activities { list-style:none; }
+  .activity { padding:12px 0; border-bottom:1px solid #f0f0f0; display:flex; gap:12px; align-items:flex-start; }
+  .activity:last-child { border-bottom:none; }
+  .activity-icon { font-size:1.4em; flex-shrink:0; margin-top:2px; }
+  .activity-content { flex:1; }
+  .activity-title { font-weight:600; margin-bottom:2px; }
+  .activity-en { font-size:.8em; color:var(--text-light); font-weight:400; }
+  .activity-desc { font-size:.9em; color:var(--text-light); }
+  .activity-links { margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; }
+  .activity-links a { font-size:.8em; color:var(--primary); text-decoration:none; background:#e8f4f8; padding:3px 10px; border-radius:12px; transition:.2s; display:inline-flex; align-items:center; gap:4px; }
+  .activity-links a:hover { background:#d0e8f0; }
+
+  .tip { background:#fff8f0; border-right:4px solid var(--secondary); padding:15px 20px; border-radius:0 10px 10px 0; margin-top:15px; font-size:.9em; }
+  .tip strong { color:var(--secondary); }
+
+  .food-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+  .food-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; transition:.2s; }
+  .food-card:hover { transform:translateY(-3px); }
+  .food-card h4 { color:var(--primary); margin-bottom:8px; font-size:1.1em; }
+  .food-item { padding:6px 0; border-bottom:1px dashed #eee; display:flex; gap:8px; }
+  .food-item:last-child { border-bottom:none; }
+
+  .info-table { width:100%; border-collapse:collapse; background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+  .info-table th { background:var(--primary); color:#fff; padding:12px 16px; text-align:right; font-weight:600; }
+  .info-table td { padding:12px 16px; border-bottom:1px solid #f0f0f0; }
+  .info-table tr:nth-child(even) { background:#f8fafe; }
+  .info-table tr:last-child td { border-bottom:none; }
+  .info-table a { color:var(--primary); text-decoration:none; font-weight:600; }
+  .info-table a:hover { text-decoration:underline; }
+  .budget-total { background:#e8f5e9 !important; font-weight:700; }
+
+  .practical-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .practical-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:25px; }
+  .practical-card h3 { color:var(--primary); margin-bottom:15px; font-size:1.15em; display:flex; align-items:center; gap:8px; }
+  .practical-card ul { list-style:none; }
+  .practical-card li { padding:8px 0; border-bottom:1px solid #f5f5f5; display:flex; gap:8px; align-items:flex-start; }
+  .practical-card li:last-child { border-bottom:none; }
+  .practical-card a { color:var(--primary); text-decoration:none; }
+  .practical-card a:hover { text-decoration:underline; }
+
+  .extension-card { background:linear-gradient(135deg,#e8f5e9,#f1f8e9); border:2px dashed var(--accent); border-radius:var(--radius); padding:25px; }
+  .extension-card h3 { color:var(--accent); margin-bottom:15px; }
+
+  .map-container { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin:20px 0; }
+  .map-container iframe { width:100%; height:400px; border:none; }
+
+  .checklist { list-style:none; }
+  .checklist li { padding:8px 0; display:flex; gap:10px; align-items:center; cursor:pointer; }
+  .checklist input[type="checkbox"] { width:20px; height:20px; accent-color:var(--primary); cursor:pointer; }
+  .checklist li.checked .check-text { text-decoration:line-through; color:var(--text-light); }
+
+  .timeline-mini { display:flex; gap:0; margin:25px 0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); font-size:.75em; }
+  .tl-seg { padding:10px 6px; color:#fff; text-align:center; display:flex; flex-direction:column; justify-content:center; min-height:60px; font-weight:500; line-height:1.3; }
+  .tl-seg.th { background:var(--thailand); }
+  .tl-seg.kh { background:var(--cambodia); }
+  .tl-seg.vn { background:var(--vietnam); }
+  .tl-seg span { font-size:.85em; opacity:.75; }
+
+  footer { background:var(--primary-dark); color:#fff; text-align:center; padding:30px; margin-top:50px; font-size:.9em; opacity:.9; }
+
+  @media(max-width:600px) {
+    .hero h1 { font-size:2em; }
+    .day-header { flex-direction:column; gap:5px; }
+    .nav-btn { padding:12px 14px; font-size:.8em; }
+    .route-stop { font-size:.7em; padding:4px 8px; }
+    .timeline-mini { flex-direction:column; }
+    .tl-seg { flex-direction:row; gap:6px; justify-content:flex-start; padding:8px 14px; }
+    .day-tab { padding:8px 12px; font-size:.8em; }
+  }
+  @media print {
+    .nav,.map-container,.hero::before { display:none; }
+    .day-card.collapsed .day-body { display:block!important; }
+    .day-pane { display:block!important; }
+    .day-card { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>✈️ מדריך טיול משפחתי</h1>
+  <div class="subtitle">Cambodia &bull; Vietnam &bull; Thailand</div>
+  <div class="dates">23 במרץ - 13 באפריל 2026 &nbsp;|&nbsp; 22 ימים &nbsp;|&nbsp; 6 נפשות</div>
+  <div class="flags">🇰🇭 🇻🇳 🇹🇭</div>
+  <div class="route-bar">
+    <span class="route-stop">✈️ Bangkok 13:50</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇰🇭 Siem Reap</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇰🇭 Phnom Penh</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇻🇳 Ho Chi Minh</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇻🇳 Hoi An</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇻🇳 Hanoi</span><span class="route-arrow">→</span>
+    <span class="route-stop">🇹🇭 Bangkok</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="scrollTo('overview')">📋 סקירה</button>
+    <button class="nav-btn" onclick="scrollTo('itinerary')">🗓️ תוכנית יומית</button>
+    <button class="nav-btn" onclick="scrollTo('food')">🍜 אוכל</button>
+    <button class="nav-btn" onclick="scrollTo('flights')">✈️ טיסות</button>
+    <button class="nav-btn" onclick="scrollTo('budget')">💰 תקציב</button>
+    <button class="nav-btn" onclick="scrollTo('practical')">🎒 מידע מעשי</button>
+    <button class="nav-btn" onclick="scrollTo('checklist')">✅ צ'קליסט</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ═══ OVERVIEW ═══ -->
+<div class="section" id="overview">
+  <div class="section-title"><span class="icon">🗺️</span> מפת המסלול</div>
+  <div class="timeline-mini">
+    <div class="tl-seg kh" style="flex:5">🇰🇭 Siem Reap<span>23-27/3 · 5 לילות</span></div>
+    <div class="tl-seg kh" style="flex:2;opacity:.8">🇰🇭 Phnom Penh<span>28-29/3</span></div>
+    <div class="tl-seg vn" style="flex:3">🇻🇳 HCMC<span>30/3-1/4</span></div>
+    <div class="tl-seg vn" style="flex:4;opacity:.85">🇻🇳 Hoi An<span>2-5/4</span></div>
+    <div class="tl-seg vn" style="flex:3;opacity:.7">🇻🇳 Hanoi<span>6-8/4</span></div>
+    <div class="tl-seg th" style="flex:4">🇹🇭 Bangkok<span>9-12/4 · 4 לילות</span></div>
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d8000000!2d105!3d14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x3110169a8c91a879%3A0xa940aaf93ee5bbfa!2sSiem+Reap%2C+Cambodia!3m2!1d13.3632533!2d103.8602553!4m5!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom+Penh%2C+Cambodia!3m2!1d11.5563738!2d104.9282099!4m5!1s0x317529292e8d3931%3A0xf15f5aad773c112b!2sHo+Chi+Minh+City%2C+Vietnam!3m2!1d10.8230989!2d106.6296638!4m5!1s0x31420dd4e1353a0b%3A0xb8ed56da1e5d24e7!2sHoi+An%2C+Vietnam!3m2!1d15.8800584!2d108.3380469!4m5!1s0x3135ab9bd9861ca1%3A0xe7acba1609b94dce!2sHanoi%2C+Vietnam!3m2!1d21.0277644!2d105.8341598!4m5!1s0x311d6032280d61f3%3A0x10100b25de24820!2sBangkok%2C+Thailand!3m2!1d13.7563309!2d100.5017651!5e0!3m2!1siw!2sil" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div style="overflow-x:auto;margin-top:20px">
+    <table class="info-table">
+      <thead><tr><th>תאריכים</th><th>יעד</th><th>לילות</th><th>דגשים</th></tr></thead>
+      <tbody>
+        <tr><td>23/3 ערב</td><td>✈️ Bangkok → Siem Reap</td><td>טרנזיט</td><td>נחיתה 13:50, טיסת חיבור ערב</td></tr>
+        <tr><td>23-27/3</td><td>🇰🇭 Siem Reap - סיים ריפ</td><td>5</td><td>Angkor Wat, Bayon, Tonle Sap</td></tr>
+        <tr><td>28-29/3</td><td>🇰🇭 Phnom Penh - פנום פן</td><td>2</td><td>Royal Palace, Russian Market</td></tr>
+        <tr><td>30/3-1/4</td><td>🇻🇳 Ho Chi Minh City</td><td>3</td><td>Cu Chi Tunnels, Mekong Delta</td></tr>
+        <tr><td>2-5/4</td><td>🇻🇳 Hoi An / Da Nang</td><td>4</td><td>Ancient Town, An Bang Beach, Golden Bridge</td></tr>
+        <tr><td>6-8/4</td><td>🇻🇳 Hanoi + Ha Long Bay</td><td>3</td><td>Bay Cruise, Old Quarter</td></tr>
+        <tr><td>9-12/4</td><td>🇹🇭 Bangkok - בנקוק</td><td>4</td><td>Temples, Shopping, Songkran!</td></tr>
+        <tr><td>13/4</td><td>✈️ טיסת חזרה</td><td>-</td><td>-</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ DAILY ITINERARY ═══ -->
+<div class="section" id="itinerary">
+  <div class="section-title"><span class="icon">🗓️</span> תוכנית מפורטת לפי ימים</div>
+
+  <!-- ──── TRANSIT DAY ──── -->
+  <div class="day-card">
+    <div class="day-header transit" onclick="toggleCard(this)">
+      <div><h3>✈️ יום 1: טרנזיט Bangkok → Siem Reap</h3>
+      <div class="day-dates">23 במרץ (שני) | נחיתה 13:50 → טיסת ערב לקמבודיה</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🛬 נחיתה:</span> Bangkok (BKK) 13:50</div>
+        <div class="info-chip"><span class="label">✈️ המשך:</span> טיסה ~19:00 ל-Siem Reap</div>
+        <div class="info-chip"><span class="label">⏱️ חיבור:</span> כ-5 שעות - בנוח</div>
+      </div>
+      <ul class="activities">
+        <li class="activity"><span class="activity-icon">🛂</span><div class="activity-content">
+          <div class="activity-title">13:50 - נחיתה ב-Suvarnabhumi Airport <span class="activity-en">(BKK)</span></div>
+          <div class="activity-desc">ביקורת דרכונים, איסוף מזוודות. צפו בכשעה. בסביבות 15:00 אתם חופשיים.</div>
+        </div></li>
+        <li class="activity"><span class="activity-icon">🍜</span><div class="activity-content">
+          <div class="activity-title">15:00-16:30 - ארוחה + מנוחה בשדה התעופה</div>
+          <div class="activity-desc">ב-Suvarnabhumi יש מסעדות מצוינות, ספא מהיר, ואזור ילדים. נצלו את הזמן לנוח.</div>
+        </div></li>
+        <li class="activity"><span class="activity-icon">✈️</span><div class="activity-content">
+          <div class="activity-title">~19:00 - טיסה ל-Siem Reap <span class="activity-en">(Bangkok Airways, 1h15m)</span></div>
+          <div class="activity-desc">נחיתה ~20:15. Grab או טאקסי למלון (~7$). תאילנד וקמבודיה באותו אזור זמן.</div>
+          <div class="activity-links">
+            <a href="https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+23+2026+evening" target="_blank">🔍 חפש טיסה</a>
+            <a href="https://www.bangkokair.com" target="_blank">✈️ Bangkok Airways</a>
+          </div>
+        </div></li>
+      </ul>
+      <div class="tip"><strong>💡 חשוב:</strong> הטיסה ל-Siem Reap היא <strong>כרטיס נפרד</strong> - אתם צריכים לאסוף מזוודות, לצאת ולעשות צ'ק-אין מחדש. 5 שעות ביניים זה בנוח. ויזת קמבודיה - Visa on Arrival בנחיתה.</div>
+    </div>
+  </div>
+
+  <!-- ──── SIEM REAP 5 NIGHTS ──── -->
+  <div class="day-card">
+    <div class="day-header cambodia" onclick="toggleCard(this)">
+      <div><h3>🇰🇭 ימים 2-6: Siem Reap - סיים ריפ, קמבודיה</h3>
+      <div class="day-dates">23-27 במרץ | 5 לילות | Angkor Wat והסביבה</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> ליד Pub Street / Old Market</div>
+        <div class="info-chip"><span class="label">🌡️ מזג אוויר:</span> 30-38°C, חם מאוד</div>
+        <div class="info-chip"><span class="label">🎫 Angkor Pass:</span> 3 ימים ~62$/אדם</div>
+        <div class="info-chip"><span class="label">💰 מטבע:</span> USD דולר אמריקאי (!)</div>
+      </div>
+
+      <div class="day-tabs" data-group="sr">
+        <button class="day-tab active" onclick="showPane(this,'sr','sr1')">יום 2 · 24/3</button>
+        <button class="day-tab" onclick="showPane(this,'sr','sr2')">יום 3 · 25/3</button>
+        <button class="day-tab" onclick="showPane(this,'sr','sr3')">יום 4 · 26/3</button>
+        <button class="day-tab" onclick="showPane(this,'sr','sr4')">יום 5 · 27/3</button>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-pane active" id="sr1">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🌅 יום 2 (24/3) — Angkor Wat זריחה + Angkor Thom</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🌅</span><div class="activity-content">
+            <div class="activity-title">04:30 - זריחה ב-Angkor Wat <span class="activity-en">អង្គរវត្ត</span></div>
+            <div class="activity-desc">המקדש הגדול בעולם. הגיעו ב-04:30 לזריחה מעל המגדלים. הקדישו כל הבוקר לחקור. קנו כרטיס 3 ימים (Angkor Pass) בכניסה.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Angkor+Wat" target="_blank">📍 Angkor Wat</a><a href="https://www.angkorenterprise.gov.kh" target="_blank">🎫 Angkor Pass</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🗿</span><div class="activity-content">
+            <div class="activity-title">Bayon Temple - באיון <span class="activity-en">ប្រាសាទបាយ័ន</span></div>
+            <div class="activity-desc">216 פנים חייכניות מגולפות באבן. חלק ממתחם Angkor Thom. מרשים ומיסטי.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Bayon+Temple" target="_blank">📍 Bayon</a><a href="https://www.google.com/maps/place/Angkor+Thom" target="_blank">📍 Angkor Thom</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏊</span><div class="activity-content">
+            <div class="activity-title">צהריים - מנוחה בבריכת המלון</div>
+            <div class="activity-desc">החום עולה ל-38°! חזרו למלון, בריכה, מנוחה. צאו שוב רק אחרי 15:30.</div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🍛</span><div class="activity-content">
+            <div class="activity-title">ערב - Pub Street + Night Market <span class="activity-en">ផ្សាររាត្រី</span></div>
+            <div class="activity-desc">אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Pub+Street,+Siem+Reap" target="_blank">📍 Pub Street</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-pane" id="sr2">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🌳 יום 3 (25/3) — Ta Prohm + Banteay Srei</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🌳</span><div class="activity-content">
+            <div class="activity-title">בוקר - Ta Prohm <span class="activity-en">ប្រាសាទតាព្រហ្ម - Tomb Raider Temple</span></div>
+            <div class="activity-desc">עצים ענקיים "בולעים" את המקדש. מוכר מהסרט Tomb Raider. הילדים יאהבו! צאו מוקדם (06:00) לפני ההמונים.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Ta+Prohm" target="_blank">📍 Ta Prohm</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Banteay Srei - באנטיי סריי <span class="activity-en">"Citadel of Women"</span></div>
+            <div class="activity-desc">מקדש קטן עם הגילופים הכי עדינים ומפורטים. 30 דק' נסיעה צפונה. שווה את הנסיעה!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Banteay+Srei" target="_blank">📍 Banteay Srei</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏊</span><div class="activity-content">
+            <div class="activity-title">אחה"צ - מנוחה + עיסוי קמבודי</div>
+            <div class="activity-desc">עיסוי מעולה וזול (~12-15$/שעה). שווקים קטנים ליד המלון.</div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🎪</span><div class="activity-content">
+            <div class="activity-title">20:00 - Phare, The Cambodian Circus <span class="activity-en">ភារៈ សៀក កម្ពុជា</span></div>
+            <div class="activity-desc">מופע אקרובטיקה מדהים. סיפורים קמבודיים דרך מחול ואומנות. כל הגילאים. הזמינו מראש!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Phare,+The+Cambodian+Circus" target="_blank">📍 Phare Circus</a><a href="https://pharecircus.org" target="_blank">🎫 Tickets</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-pane" id="sr3">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🚤 יום 4 (26/3) — Tonle Sap Lake כפרים צפים</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🚤</span><div class="activity-content">
+            <div class="activity-title">בוקר - Tonle Sap Lake - טונלה סאפ <span class="activity-en">បឹងទន្លេសាប</span></div>
+            <div class="activity-desc">האגם המתוק הגדול בדרום מזרח אסיה. כפרים שלמים צפים על המים! מומלץ Kompong Khleang (פחות תיירותי).</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Tonle+Sap+Lake" target="_blank">📍 Tonle Sap</a><a href="https://www.google.com/maps/place/Kampong+Khleang" target="_blank">📍 Kompong Khleang</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">אחה"צ - Terrace of the Elephants + Terrace of the Leper King</div>
+            <div class="activity-desc">מרפסות מלכותיות ענקיות במתחם Angkor Thom. גילופי פילים ולוחמים. פחות עמוס מהמקדשים הגדולים.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Terrace+of+the+Elephants" target="_blank">📍 Elephant Terrace</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🌅</span><div class="activity-content">
+            <div class="activity-title">שקיעה מ-Phnom Bakheng <span class="activity-en">"Bakheng Hill"</span></div>
+            <div class="activity-desc">עלו על הגבעה לצפייה בשקיעה מעל Angkor Wat. מוגבל ב-300 איש - הגיעו ב-16:30!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Phnom+Bakheng" target="_blank">📍 Phnom Bakheng</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="day-pane" id="sr4">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🏊 יום 5 (27/3) — מנוחה + מעבר ל-Phnom Penh</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏊</span><div class="activity-content">
+            <div class="activity-title">בוקר - בריכה + Artisans Angkor <span class="activity-en">(Workshop Visit)</span></div>
+            <div class="activity-desc">סדנת אמנות קמבודית - רואים אומנים מגלפים, סדנת משי, ציורים. חינם! אחרי זה בריכה ומנוחה.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Artisans+Angkor" target="_blank">📍 Artisans Angkor</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🛍️</span><div class="activity-content">
+            <div class="activity-title">Old Market (Psar Chas) <span class="activity-en">ផ្សារចាស់</span></div>
+            <div class="activity-desc">קניות אחרונות בסיים ריפ. מזכרות, תבלינים, בגדים. מתמקחים על הכל!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Old+Market+Siem+Reap" target="_blank">📍 Old Market</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🚌</span><div class="activity-content">
+            <div class="activity-title">אחה"צ/ערב - Giant Ibis Bus → Phnom Penh <span class="activity-en">(6 hours)</span></div>
+            <div class="activity-desc">אוטובוס מצוין - מושבים נוחים, WiFi, שקע, שירותים. 18$/אדם. אפשר גם טיסה (45 דק').</div>
+            <div class="activity-links"><a href="https://www.giantibis.com" target="_blank">🚌 Giant Ibis</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="tip"><strong>💡 טיפ:</strong> שכרו טוק-טוק (Tuk-Tuk) עם נהג ליום שלם (~15-20$) - הוא ייקח אתכם בין המקדשים, יחכה ויחזיר. צאו ב-05:00 בבוקר ומנוחה ארוכה בצהריים!</div>
+    </div>
+  </div>
+
+  <!-- ──── PHNOM PENH ──── -->
+  <div class="day-card">
+    <div class="day-header cambodia" onclick="toggleCard(this)">
+      <div><h3>🇰🇭 ימים 7-8: Phnom Penh - פנום פן</h3>
+      <div class="day-dates">28-29 במרץ | בירת קמבודיה</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> Riverside area</div>
+        <div class="info-chip"><span class="label">🚌 הגעה:</span> Giant Ibis bus / טיסה מ-Siem Reap</div>
+      </div>
+
+      <div class="day-tabs" data-group="pp">
+        <button class="day-tab active" onclick="showPane(this,'pp','pp1')">יום 7 · 28/3</button>
+        <button class="day-tab" onclick="showPane(this,'pp','pp2')">יום 8 · 29/3</button>
+      </div>
+
+      <div class="day-pane active" id="pp1">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🏛️ יום 7 (28/3) — Royal Palace + Wat Phnom</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Royal Palace + Silver Pagoda <span class="activity-en">ព្រះបរមរាជាវាំង</span></div>
+            <div class="activity-desc">מתחם מלכותי מרהיב על גדת המקונג. Silver Pagoda מרוצפת ב-5,000 אריחי כסף! פתוח 08:00-17:00.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Royal+Palace+Phnom+Penh" target="_blank">📍 Royal Palace</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">⛩️</span><div class="activity-content">
+            <div class="activity-title">Wat Phnom - וואט פנום <span class="activity-en">"Temple of the Hill"</span></div>
+            <div class="activity-desc">המקדש שנתן לעיר את שמה. גבעה ירוקה עם מקדש בודהיסטי יפהפה.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Wat+Phnom" target="_blank">📍 Wat Phnom</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🌅</span><div class="activity-content">
+            <div class="activity-title">ערב - Sisowath Quay <span class="activity-en">(Riverside Promenade)</span></div>
+            <div class="activity-desc">טיילת נהר Mekong - מקום מקסים לשקיעה. מסעדות, בתי קפה, אופניים. שייט קצר מומלץ.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Sisowath+Quay,+Phnom+Penh" target="_blank">📍 Sisowath Quay</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="pp2">
+        <h4 style="color:var(--cambodia);margin-bottom:12px">🛍️ יום 8 (29/3) — שווקים + מעבר ל-Vietnam</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🛍️</span><div class="activity-content">
+            <div class="activity-title">Russian Market <span class="activity-en">(Toul Tom Poung Market / Psar Tuol Tom Pong)</span></div>
+            <div class="activity-desc">מזכרות, בגדים, אוכל מקומי אותנטי. מתמקחים על הכל! מחירים זולים.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Russian+Market+Phnom+Penh" target="_blank">📍 Russian Market</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">National Museum of Cambodia <span class="activity-en">សារមន្ទីរជាតិ</span></div>
+            <div class="activity-desc">אוסף מרהיב של פסלים ואמנות חמרית. בניין אדום מרשים. 10$/מבוגר.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/National+Museum+of+Cambodia" target="_blank">📍 National Museum</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">✈️</span><div class="activity-content">
+            <div class="activity-title">ערב - טיסה ל-Ho Chi Minh City <span class="activity-en">(Vietnam Airlines, ~1h)</span></div>
+            <div class="activity-desc">שלום קמבודיה! טיסה קצרה. ה-e-Visa לוייטנאם צריך להיות מוכן מראש.</div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="tip"><strong>💡 טיפ:</strong> Killing Fields (Choeung Ek) ו-Tuol Sleng (S-21 Prison) - מתאימים לבני 16 ו-14 המתעניינים בהיסטוריה, פחות מומלץ לקטנים. שיקול הורי.</div>
+    </div>
+  </div>
+
+  <!-- ──── HO CHI MINH CITY ──── -->
+  <div class="day-card">
+    <div class="day-header vietnam" onclick="toggleCard(this)">
+      <div><h3>🇻🇳 ימים 9-11: Ho Chi Minh City (Saigon)</h3>
+      <div class="day-dates">30/3 - 1/4 | Mekong Delta + עיר תוססת</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> District 1 (מרכז)</div>
+        <div class="info-chip"><span class="label">✈️ טיסה:</span> Phnom Penh → HCMC (~1h)</div>
+        <div class="info-chip"><span class="label">🌡️ מזג אוויר:</span> 27-34°C, לח</div>
+      </div>
+
+      <div class="day-tabs" data-group="hcmc">
+        <button class="day-tab active" onclick="showPane(this,'hcmc','hc1')">יום 9 · 30/3</button>
+        <button class="day-tab" onclick="showPane(this,'hcmc','hc2')">יום 10 · 31/3</button>
+        <button class="day-tab" onclick="showPane(this,'hcmc','hc3')">יום 11 · 1/4</button>
+      </div>
+
+      <div class="day-pane active" id="hc1">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🕳️ יום 9 (30/3) — Cu Chi Tunnels + סיור עירוני</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🕳️</span><div class="activity-content">
+            <div class="activity-title">Cu Chi Tunnels - מנהרות קו צ'י <span class="activity-en">Địa đạo Củ Chi</span></div>
+            <div class="activity-desc">רשת מנהרות תת-קרקעיות מתקופת המלחמה. אפשר להיכנס למנהרות מורחבות. חוויה מרתקת לילדים. חצי יום (בוקר).</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Cu+Chi+Tunnels" target="_blank">📍 Cu Chi Tunnels</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Independence Palace <span class="activity-en">(Reunification Palace / Dinh Độc Lập)</span></div>
+            <div class="activity-desc">ארמון מתקופת המלחמה עם מנהרות ומרתפים. ממש מרכז District 1.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Independence+Palace" target="_blank">📍 Independence Palace</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Saigon Central Post Office + Notre Dame Cathedral <span class="activity-en">Bưu điện Trung tâm Sài Gòn</span></div>
+            <div class="activity-desc">בית הדואר תוכנן ע"י Gustave Eiffel - יפהפה מבפנים. הקתדרלה ממול.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Saigon+Central+Post+Office" target="_blank">📍 Post Office</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="hc2">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🛶 יום 10 (31/3) — Mekong Delta יום שלם</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🛶</span><div class="activity-content">
+            <div class="activity-title">Mekong Delta Day Trip <span class="activity-en">Đồng bằng sông Cửu Long</span></div>
+            <div class="activity-desc">שייט בתעלות, שווקים צפים (Cai Be / Ben Tre), טעימת פירות טרופיים ישר מהעץ, סדנת ממתקים מקוקוס. יום שלם מושלם! יוצאים 07:00 וחוזרים 17:00.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Mekong+Delta" target="_blank">📍 Mekong Delta</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🍜</span><div class="activity-content">
+            <div class="activity-title">ערב - סיור אוכל רחוב ב-District 1</div>
+            <div class="activity-desc">Pho (פו), Banh Mi (באן מי), Egg Coffee, Ca Phe Sua Da. אפשר סיור מאורגן או לשוטט.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/search/street+food+district+1+ho+chi+minh" target="_blank">📍 Street Food D1</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="hc3">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🛍️ יום 11 (1/4) — שווקים + טיסה ל-Da Nang</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🛍️</span><div class="activity-content">
+            <div class="activity-title">Ben Thanh Market <span class="activity-en">Chợ Bến Thành</span></div>
+            <div class="activity-desc">השוק הכי מפורסם של Saigon. מזכרות, אוכל, בגדים. חובה להתמקח!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Ben+Thanh+Market" target="_blank">📍 Ben Thanh</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">War Remnants Museum <span class="activity-en">Bảo tàng Chứng tích Chiến tranh</span></div>
+            <div class="activity-desc">מוזיאון מלחמת וייטנאם. מרגש ומלמד. מתאים לילדים הגדולים.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/War+Remnants+Museum" target="_blank">📍 War Museum</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">✈️</span><div class="activity-content">
+            <div class="activity-title">אחה"צ - טיסה ל-Da Nang <span class="activity-en">(VietJet / Vietnam Airlines, 1h20m)</span></div>
+            <div class="activity-desc">טיסה → Grab ל-Hoi An (30 דק'). עצרו בדרך ב-Marble Mountains!</div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="tip"><strong>💡 טיפ:</strong> חובה לטעום: Banh Mi Huynh Hoa - הבאן מי הכי טוב בעיר. קפה ביצה ב-Cafe Giang (סניף HCMC). <a href="https://www.google.com/maps/search/Banh+Mi+Huynh+Hoa" target="_blank">📍 Map</a></div>
+    </div>
+  </div>
+
+  <!-- ──── HOI AN / DA NANG ──── -->
+  <div class="day-card">
+    <div class="day-header vietnam" onclick="toggleCard(this)">
+      <div><h3>🇻🇳 ימים 12-15: Hoi An / Da Nang</h3>
+      <div class="day-dates">2-5 באפריל | חוף + Ancient Town + בישול</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> ליד An Bang Beach (בריכה!)</div>
+        <div class="info-chip"><span class="label">🚕 Da Nang → Hoi An:</span> 30 דק' Grab</div>
+        <div class="info-chip"><span class="label">🏖️ חוף:</span> An Bang Beach</div>
+      </div>
+
+      <div class="day-tabs" data-group="ha">
+        <button class="day-tab active" onclick="showPane(this,'ha','ha1')">יום 12 · 2/4</button>
+        <button class="day-tab" onclick="showPane(this,'ha','ha2')">יום 13 · 3/4</button>
+        <button class="day-tab" onclick="showPane(this,'ha','ha3')">יום 14 · 4/4</button>
+        <button class="day-tab" onclick="showPane(this,'ha','ha4')">יום 15 · 5/4</button>
+      </div>
+
+      <div class="day-pane active" id="ha1">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🏔️ יום 12 (2/4) — Marble Mountains + Ancient Town ערב</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏔️</span><div class="activity-content">
+            <div class="activity-title">Marble Mountains <span class="activity-en">Ngũ Hành Sơn - הרי השיש</span></div>
+            <div class="activity-desc">5 הרי שיש עם מערות, מקדשים ותצפיות פנורמיות. עצרו בדרך מ-Da Nang ל-Hoi An! יש מעלית.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Marble+Mountains" target="_blank">📍 Marble Mountains</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏮</span><div class="activity-content">
+            <div class="activity-title">ערב - Hoi An Ancient Town <span class="activity-en">Phố cổ Hội An - UNESCO</span></div>
+            <div class="activity-desc">אלפי פנסים צבעוניים! Japanese Covered Bridge, Assembly Halls, מקדשים עתיקים. הכי קסום בערב.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Hoi+An+Ancient+Town" target="_blank">📍 Ancient Town</a><a href="https://www.google.com/maps/place/Japanese+Covered+Bridge" target="_blank">📍 Japanese Bridge</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="ha2">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🏖️ יום 13 (3/4) — חוף + סדנת בישול</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏖️</span><div class="activity-content">
+            <div class="activity-title">בוקר - An Bang Beach <span class="activity-en">Bãi biển An Bàng</span></div>
+            <div class="activity-desc">חוף רחב עם חול רך, מסעדות על החוף, מטריות. יום בטן-גב מושלם!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/An+Bang+Beach" target="_blank">📍 An Bang Beach</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">👨‍🍳</span><div class="activity-content">
+            <div class="activity-title">אחה"צ - Vietnamese Cooking Class <span class="activity-en">סדנת בישול</span></div>
+            <div class="activity-desc">מתחילים בשוק לקנות מרכיבים, לומדים Spring Rolls, Pho, ועוד. Red Bridge / Thuan Tinh Island.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/search/cooking+class+hoi+an" target="_blank">📍 Cooking Classes</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="ha3">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🌉 יום 14 (4/4) — Ba Na Hills + Golden Bridge</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🌉</span><div class="activity-content">
+            <div class="activity-title">Ba Na Hills + Golden Bridge <span class="activity-en">Cầu Vàng - הגשר הזהב</span></div>
+            <div class="activity-desc">ידיים ענקיות מחזיקות גשר באוויר - אייקוני! כולל Fantasy Park (לונה פארק), רכבל 5.8 ק"מ, תצפיות. יום שלם.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Golden+Bridge+Ba+Na+Hills" target="_blank">📍 Golden Bridge</a><a href="https://banahills.sunworld.vn/en" target="_blank">🎫 Ba Na Hills Tickets</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="ha4">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🚲 יום 15 (5/4) — אופניים + Basket Boats + חייט</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🚲</span><div class="activity-content">
+            <div class="activity-title">בוקר - Tra Que Vegetable Village <span class="activity-en">Làng rau Trà Quế</span></div>
+            <div class="activity-desc">רכיבת אופניים בין שדות אורז ירוקים. כפר חקלאי אותנטי. אפשר לנסות חקלאות!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Tra+Que+Vegetable+Village" target="_blank">📍 Tra Que Village</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🛶</span><div class="activity-content">
+            <div class="activity-title">Basket Boats <span class="activity-en">(Thuyền thúng - Coconut Boats)</span></div>
+            <div class="activity-desc">שייט בסירות עגולות מבמבוק! הדייגים מסובבים אתכם - הילדים ישתגעו! Cam Thanh village.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/search/basket+boat+cam+thanh+hoi+an" target="_blank">📍 Basket Boats</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">👔</span><div class="activity-content">
+            <div class="activity-title">Tailor-Made Clothing <span class="activity-en">חייט בהתאמה אישית</span></div>
+            <div class="activity-desc">Hoi An מפורסמת בחייטים! שמלות, חולצות, חליפות - מוכנים תוך 24 שעות. 20-60$/פריט.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/search/tailor+hoi+an" target="_blank">📍 Tailors</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="tip"><strong>💡 טיפ:</strong> חובה לטעום ב-Hoi An: Cao Lau (אטריות מקומיות - רק פה!), White Rose Dumplings, Banh Mi Phuong (הבאן מי של Anthony Bourdain).</div>
+    </div>
+  </div>
+
+  <!-- ──── HANOI + HA LONG BAY ──── -->
+  <div class="day-card">
+    <div class="day-header vietnam" onclick="toggleCard(this)">
+      <div><h3>🇻🇳 ימים 16-18: Hanoi + Ha Long Bay</h3>
+      <div class="day-dates">6-8 באפריל | שייט במפרץ + Old Quarter</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> Old Quarter + לילה על ספינה</div>
+        <div class="info-chip"><span class="label">✈️ טיסה:</span> Da Nang → Hanoi (~1h20m)</div>
+        <div class="info-chip"><span class="label">🌡️ מזג אוויר:</span> 22-28°C, נעים!</div>
+      </div>
+
+      <div class="day-tabs" data-group="hn">
+        <button class="day-tab active" onclick="showPane(this,'hn','hn1')">יום 16 · 6/4</button>
+        <button class="day-tab" onclick="showPane(this,'hn','hn2')">יום 17 · 7/4</button>
+        <button class="day-tab" onclick="showPane(this,'hn','hn3')">יום 18 · 8/4</button>
+      </div>
+
+      <div class="day-pane active" id="hn1">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🏘️ יום 16 (6/4) — Hanoi Old Quarter + Water Puppets</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏘️</span><div class="activity-content">
+            <div class="activity-title">Hanoi Old Quarter <span class="activity-en">Khu phố cổ Hà Nội - 36 Streets</span></div>
+            <div class="activity-desc">רחובות צרים, אלפי אופנועים, דוכני אוכל. כל רחוב מתמחה במוצר אחר. סוחף!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Old+Quarter,+Hanoi" target="_blank">📍 Old Quarter</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Temple of Literature <span class="activity-en">Văn Miếu - Quốc Tử Giám</span></div>
+            <div class="activity-desc">האוניברסיטה הראשונה של וייטנאם (1070). גנים יפהפיים, ארכיטקטורה וייטנאמית קלאסית.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Temple+of+Literature" target="_blank">📍 Temple of Literature</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🌅</span><div class="activity-content">
+            <div class="activity-title">Hoan Kiem Lake <span class="activity-en">Hồ Hoàn Kiếm - אגם החרב המוחזרת</span></div>
+            <div class="activity-desc">אגם במרכז העיר עם Red Bridge (גשר אדום) מואר. יפה במיוחד בערב.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Hoan+Kiem+Lake" target="_blank">📍 Hoan Kiem Lake</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🎭</span><div class="activity-content">
+            <div class="activity-title">20:00 - Thang Long Water Puppet Theatre <span class="activity-en">Nhà hát Múa rối Thăng Long</span></div>
+            <div class="activity-desc">הופעת בובות על מים - ייחודי לוייטנאם! ~45 דקות. מקסים לילדים.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Thang+Long+Water+Puppet+Theatre" target="_blank">📍 Water Puppets</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="hn2">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🌊 יום 17-18 (7-8/4) — Ha Long Bay Overnight Cruise</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🚐</span><div class="activity-content">
+            <div class="activity-title">07:00 - Transfer to Ha Long Bay <span class="activity-en">Vịnh Hạ Long - UNESCO</span></div>
+            <div class="activity-desc">נסיעה ~3.5 שעות מ-Hanoi (או שאטל של הספינה). עלייה לספינה ~12:00.</div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🌊</span><div class="activity-content">
+            <div class="activity-title">Ha Long Bay / Lan Ha Bay - שייט 2 ימים <span class="activity-en">פלא טבע!</span></div>
+            <div class="activity-desc">אלפי צוקי אבן גיר מהמים! לינה על ספינה, קיאקים בין הצוקים, מערות (Sung Sot Cave), שחייה, דיג שקיעה. שיא הטיול!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Ha+Long+Bay" target="_blank">📍 Ha Long Bay</a><a href="https://www.google.com/maps/place/Lan+Ha+Bay" target="_blank">📍 Lan Ha Bay</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🍳</span><div class="activity-content">
+            <div class="activity-title">על הספינה: Cooking Class + Tai Chi בזריחה</div>
+            <div class="activity-desc">סדנת בישול על הסיפון, טאי צ'י בזריחה, שייט בסירות במבוק לכפר דייגים צף.</div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="hn3">
+        <h4 style="color:var(--vietnam);margin-bottom:12px">🍜 יום 18 (8/4) — חזרה מ-Ha Long + אוכל רחוב</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🚐</span><div class="activity-content">
+            <div class="activity-title">בוקר - חזרה מ-Ha Long Bay ל-Hanoi</div>
+            <div class="activity-desc">ארוחת בוקר על הספינה, ירידה ~11:00, חזרה ל-Hanoi ~14:30.</div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🍜</span><div class="activity-content">
+            <div class="activity-title">אוכל רחוב אחרון - Bun Cha + Egg Coffee <span class="activity-en">Bún chả & Cà phê trứng</span></div>
+            <div class="activity-desc">Bun Cha Huong Lien ("Obama Restaurant"). Egg Coffee ב-Cafe Giang (מקורי מ-1946!).</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Bun+Cha+Huong+Lien" target="_blank">📍 Obama Bun Cha</a><a href="https://www.google.com/maps/place/Cafe+Giang" target="_blank">📍 Cafe Giang</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="tip"><strong>💡 טיפ:</strong> Ha Long Bay = שיא הטיול! הזמינו ספינה משפחתית עם קיאקים (Ambassador Cruise, Stellar of the Seas). Lan Ha Bay פחות תיירותי ויפה לא פחות.</div>
+    </div>
+  </div>
+
+  <!-- ──── BANGKOK FINAL ──── -->
+  <div class="day-card">
+    <div class="day-header thailand" onclick="toggleCard(this)">
+      <div><h3>🇹🇭 ימים 19-22: Bangkok - בנקוק</h3>
+      <div class="day-dates">9-13 באפריל | מקדשים, קניות, מנוחה + Songkran! 🎉</div></div>
+      <span class="day-toggle">▲</span>
+    </div>
+    <div class="day-body">
+      <div class="day-info-grid">
+        <div class="info-chip"><span class="label">🏨 לינה:</span> מלון עם בריכה! (Sukhumvit / Silom)</div>
+        <div class="info-chip"><span class="label">✈️ טיסה:</span> Hanoi → Bangkok (~3h30m)</div>
+        <div class="info-chip"><span class="label">🎉 Songkran:</span> 12-13/4 מלחמת מים!</div>
+      </div>
+
+      <div class="day-tabs" data-group="bk">
+        <button class="day-tab active" onclick="showPane(this,'bk','bk1')">יום 19 · 9/4</button>
+        <button class="day-tab" onclick="showPane(this,'bk','bk2')">יום 20 · 10/4</button>
+        <button class="day-tab" onclick="showPane(this,'bk','bk3')">יום 21 · 11/4</button>
+        <button class="day-tab" onclick="showPane(this,'bk','bk4')">יום 22 · 12-13/4</button>
+      </div>
+
+      <div class="day-pane active" id="bk1">
+        <h4 style="color:var(--thailand);margin-bottom:12px">✈️ יום 19 (9/4) — הגעה + מנוחה</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">✈️</span><div class="activity-content">
+            <div class="activity-title">טיסה Hanoi → Bangkok <span class="activity-en">(AirAsia / VietJet, ~3h30m)</span></div>
+            <div class="activity-desc">צ'ק-אין במלון עם בריכה. מגיע לכם לנוח!</div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏊</span><div class="activity-content">
+            <div class="activity-title">אחה"צ - בריכה + Thai Massage</div>
+            <div class="activity-desc">עיסוי תאילנדי לכל המשפחה. Health Land או Wat Pho Thai Massage School (~10-15$/שעה).</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/search/thai+massage+near+sukhumvit" target="_blank">📍 Thai Massage</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="bk2">
+        <h4 style="color:var(--thailand);margin-bottom:12px">🏛️ יום 20 (10/4) — Grand Palace + Temples</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Grand Palace + Wat Phra Kaew <span class="activity-en">พระบรมมหาราชวัง - The Emerald Buddha</span></div>
+            <div class="activity-desc">הארמון המלכותי ומקדש הבודהה האזמרגדי. הגיעו 08:30. לבוש צנוע!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Grand+Palace,+Bangkok" target="_blank">📍 Grand Palace</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🏛️</span><div class="activity-content">
+            <div class="activity-title">Wat Pho <span class="activity-en">วัดโพธิ์ - Reclining Buddha</span></div>
+            <div class="activity-desc">הבודהה השכובה (46 מטר!). אחד המקדשים העתיקים ביותר. גם בית ספר לעיסוי!</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Wat+Pho" target="_blank">📍 Wat Pho</a></div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🛶</span><div class="activity-content">
+            <div class="activity-title">Wat Arun <span class="activity-en">วัดอรุณ - Temple of Dawn</span> + שייט Khlongs</div>
+            <div class="activity-desc">מקדש השחר - אייקוני. חצו בסירה (4 באט) וטפסו למעלה. שלבו עם שייט בתעלות (Khlongs).</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/Wat+Arun" target="_blank">📍 Wat Arun</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="bk3">
+        <h4 style="color:var(--thailand);margin-bottom:12px">🛍️ יום 21 (11/4) — קניות + SkyWalk</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🛍️</span><div class="activity-content">
+            <div class="activity-title">ICONSIAM / Terminal 21 / MBK Center <span class="activity-en">קניונים</span></div>
+            <div class="activity-desc">ICONSIAM - קניון מפואר ליד Chao Phraya River. Terminal 21 - כל קומה כעיר אחרת. MBK - מציאות.</div>
+            <div class="activity-links">
+              <a href="https://www.google.com/maps/place/ICONSIAM" target="_blank">📍 ICONSIAM</a>
+              <a href="https://www.google.com/maps/place/Terminal+21" target="_blank">📍 Terminal 21</a>
+              <a href="https://www.google.com/maps/place/MBK+Center" target="_blank">📍 MBK</a>
+            </div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">🌆</span><div class="activity-content">
+            <div class="activity-title">Mahanakhon SkyWalk <span class="activity-en">מקומה 78 - רצפת זכוכית!</span></div>
+            <div class="activity-desc">רצפת זכוכית בגובה 314 מטר! שקיעה מכאן = קסם. 12$ מבוגר, 10$ ילד.</div>
+            <div class="activity-links"><a href="https://www.google.com/maps/place/King+Power+Mahanakhon" target="_blank">📍 Mahanakhon SkyWalk</a></div>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="day-pane" id="bk4">
+        <h4 style="color:var(--thailand);margin-bottom:12px">🎉 ימים 22 (12-13/4) — SONGKRAN + טיסת חזרה</h4>
+        <ul class="activities">
+          <li class="activity"><span class="activity-icon">🎉</span><div class="activity-content">
+            <div class="activity-title">12/4 - Songkran Festival <span class="activity-en">สงกรานต์ - Thai New Year Water Festival!</span></div>
+            <div class="activity-desc">מלחמת מים ברחובות! כל העיר = מסיבת מים ענקית. חוויה מטורפת ובלתי נשכחת! Silom Road ו-Khao San Road הכי שמחים.</div>
+            <div class="activity-links">
+              <a href="https://www.google.com/maps/place/Silom+Road,+Bangkok" target="_blank">📍 Silom Road</a>
+              <a href="https://www.google.com/maps/place/Khao+San+Road" target="_blank">📍 Khao San Road</a>
+            </div>
+          </div></li>
+          <li class="activity"><span class="activity-icon">✈️</span><div class="activity-content">
+            <div class="activity-title">13/4 - טיסת חזרה מ-Suvarnabhumi Airport (BKK)</div>
+            <div class="activity-desc">שלום דרום מזרח אסיה! הגיעו 3 שעות לפני. King Power Duty Free לקניות אחרונות.</div>
+          </div></li>
+        </ul>
+        <div class="tip"><strong>💡 Songkran!</strong> 🔫💦 קנו אקדחי מים, שימו טלפונים בשקיות ניילון, לבשו בגדים שלא אכפת אם נרטבים. הילדים ישתגעו! חוויה אחת בחיים.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOD ═══ -->
+<div class="section" id="food">
+  <div class="section-title"><span class="icon">🍜</span> מדריך אוכל - חובה לטעום!</div>
+  <div class="food-grid">
+    <div class="food-card">
+      <h4>🇰🇭 Cambodia</h4>
+      <div class="food-item"><span>🍛</span><div><strong>Fish Amok</strong> (អាម៉ុក) - קארי דגים בעלי בננה</div></div>
+      <div class="food-item"><span>🥩</span><div><strong>Lok Lak</strong> (ឡុកឡាក់) - בקר מוקפץ + פלפל ולימון</div></div>
+      <div class="food-item"><span>🍜</span><div><strong>Kuy Teav</strong> (គុយទាវ) - מרק אטריות קמבודי</div></div>
+      <div class="food-item"><span>🥞</span><div><strong>Nom Krok</strong> (នំគ្រក) - פנקייק אורז+קוקוס (בוקר!)</div></div>
+      <div class="food-item"><span>🧃</span><div><strong>Sugar Cane Juice</strong> - מיץ קנה סוכר טרי</div></div>
+    </div>
+    <div class="food-card">
+      <h4>🇻🇳 Vietnam</h4>
+      <div class="food-item"><span>🍜</span><div><strong>Pho</strong> (Phở) - מרק אטריות אגדי (ארוחת בוקר!)</div></div>
+      <div class="food-item"><span>🥖</span><div><strong>Banh Mi</strong> (Bánh mì) - סנדוויץ' באגט מושלם</div></div>
+      <div class="food-item"><span>🥟</span><div><strong>Goi Cuon</strong> (Gỏi cuốn) - Fresh Spring Rolls</div></div>
+      <div class="food-item"><span>🍖</span><div><strong>Bun Cha</strong> (Bún chả) - אטריות + בשר צלוי (Hanoi!)</div></div>
+      <div class="food-item"><span>☕</span><div><strong>Egg Coffee</strong> (Cà phê trứng) - כמו טירמיסו חם</div></div>
+      <div class="food-item"><span>🥘</span><div><strong>Cao Lau</strong> (Cao lầu) - אטריות Hoi An בלבד!</div></div>
+    </div>
+    <div class="food-card">
+      <h4>🇹🇭 Thailand</h4>
+      <div class="food-item"><span>🥘</span><div><strong>Pad Thai</strong> (ผัดไทย) - אטריות מוקפצות+בוטנים</div></div>
+      <div class="food-item"><span>🍛</span><div><strong>Green/Red Curry</strong> (แกงเขียวหวาน) - חלב קוקוס</div></div>
+      <div class="food-item"><span>🥭</span><div><strong>Mango Sticky Rice</strong> (ข้าวเหนียวมะม่วง) - קינוח! 🤤</div></div>
+      <div class="food-item"><span>🍗</span><div><strong>Som Tam</strong> (ส้มตำ) - סלט פפאיה חריף</div></div>
+      <div class="food-item"><span>🍢</span><div><strong>Satay</strong> (สะเต๊ะ) - שיפודים + רוטב בוטנים</div></div>
+    </div>
+  </div>
+  <div class="tip" style="margin-top:20px"><strong>💡 עם ילדים:</strong> אמרו "Mai Pet" (לא חריף) / "Không cay" בוייטנאם. שייקים בכל פינה ב-1-2$. Mango Sticky Rice ו-Pad Thai = הימור בטוח!</div>
+</div>
+
+<!-- ═══ FLIGHTS ═══ -->
+<div class="section" id="flights">
+  <div class="section-title"><span class="icon">✈️</span> טיסות פנימיות להזמנה</div>
+  <table class="info-table">
+    <thead><tr><th>תאריך</th><th>מסלול</th><th>חברה</th><th>משך</th><th>~$/אדם</th><th>חיפוש</th></tr></thead>
+    <tbody>
+      <tr><td>23/3</td><td>Bangkok → Siem Reap</td><td>Bangkok Airways</td><td>1h15</td><td>80-120</td><td><a href="https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+23+2026" target="_blank">🔍</a></td></tr>
+      <tr><td>27/3</td><td>Siem Reap → Phnom Penh</td><td>Giant Ibis (bus)</td><td>6h</td><td>15-18</td><td><a href="https://www.giantibis.com" target="_blank">🔍</a></td></tr>
+      <tr><td>29/3</td><td>Phnom Penh → HCMC</td><td>Vietnam Airlines</td><td>1h</td><td>60-100</td><td><a href="https://www.google.com/travel/flights?q=Phnom+Penh+to+Ho+Chi+Minh+March+29+2026" target="_blank">🔍</a></td></tr>
+      <tr><td>2/4</td><td>HCMC → Da Nang</td><td>VietJet / VN Air</td><td>1h20</td><td>40-80</td><td><a href="https://www.google.com/travel/flights?q=Ho+Chi+Minh+to+Da+Nang+April+2+2026" target="_blank">🔍</a></td></tr>
+      <tr><td>6/4</td><td>Da Nang → Hanoi</td><td>VietJet / VN Air</td><td>1h20</td><td>40-70</td><td><a href="https://www.google.com/travel/flights?q=Da+Nang+to+Hanoi+April+6+2026" target="_blank">🔍</a></td></tr>
+      <tr><td>9/4</td><td>Hanoi → Bangkok</td><td>AirAsia / VietJet</td><td>3h30</td><td>80-150</td><td><a href="https://www.google.com/travel/flights?q=Hanoi+to+Bangkok+April+9+2026" target="_blank">🔍</a></td></tr>
+    </tbody>
+  </table>
+  <div style="background:#e8f5e9;border-radius:12px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+    <div><strong>💵 סה"כ טיסות פנימיות (6 נפשות):</strong></div>
+    <div style="font-size:1.3em;font-weight:800;color:#2e7d32">~1,900$ - 3,200$</div>
+  </div>
+  <div class="tip" style="margin-top:15px"><strong>💡 חיסכון:</strong> הזמינו מוקדם ב-<a href="https://www.skyscanner.com" target="_blank">Skyscanner</a> / <a href="https://www.google.com/travel/flights" target="_blank">Google Flights</a>. VietJet זולים אבל מזוודות בתשלום נפרד. Vietnam Airlines כוללים מזוודה.</div>
+</div>
+
+<!-- ═══ BUDGET ═══ -->
+<div class="section" id="budget">
+  <div class="section-title"><span class="icon">💰</span> תקציב משוער</div>
+  <table class="info-table">
+    <thead><tr><th>קטגוריה</th><th>🇰🇭 Cambodia (7 לילות)</th><th>🇻🇳 Vietnam (10 לילות)</th><th>🇹🇭 Thailand (4 לילות)</th></tr></thead>
+    <tbody>
+      <tr><td>🏨 לינה (2 חדרים) / לילה</td><td>60-150$</td><td>60-150$</td><td>100-200$</td></tr>
+      <tr><td>🍽️ אוכל (6 נפשות) / יום</td><td>30-60$</td><td>30-60$</td><td>60-100$</td></tr>
+      <tr><td>🎫 אטרקציות / יום</td><td>20-50$</td><td>20-50$</td><td>30-60$</td></tr>
+      <tr><td>🚕 תחבורה / יום</td><td>10-20$</td><td>10-20$</td><td>20-40$</td></tr>
+      <tr class="budget-total"><td><strong>סה"כ / יום</strong></td><td><strong>120-280$</strong></td><td><strong>120-280$</strong></td><td><strong>210-400$</strong></td></tr>
+    </tbody>
+  </table>
+  <div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:16px;padding:25px;margin-top:20px;text-align:center">
+    <div style="font-size:1.2em;font-weight:700;color:#2e7d32">💵 סיכום עלויות משוער (ללא טיסה ראשית)</div>
+    <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:15px 0">
+      <div><div style="font-size:.85em;color:#555">לינה</div><div style="font-weight:800;font-size:1.2em">1,500-3,200$</div></div>
+      <div><div style="font-size:.85em;color:#555">אוכל</div><div style="font-weight:800;font-size:1.2em">700-1,500$</div></div>
+      <div><div style="font-size:.85em;color:#555">אטרקציות</div><div style="font-weight:800;font-size:1.2em">400-1,000$</div></div>
+      <div><div style="font-size:.85em;color:#555">טיסות פנימיות</div><div style="font-weight:800;font-size:1.2em">1,900-3,200$</div></div>
+    </div>
+    <div style="font-size:2.2em;font-weight:900;color:#1b5e20;margin:10px 0;border-top:2px solid #a5d6a7;padding-top:15px">4,500$ - 8,900$</div>
+    <div style="color:#555;font-size:.85em">סה"כ: לינה, אוכל, אטרקציות, תחבורה, טיסות פנימיות | 22 ימים, 6 נפשות</div>
+  </div>
+</div>
+
+<!-- ═══ PRACTICAL ═══ -->
+<div class="section" id="practical">
+  <div class="section-title"><span class="icon">🎒</span> מידע מעשי</div>
+  <div class="practical-grid">
+    <div class="practical-card"><h3>🛂 Visas - ויזות</h3><ul>
+      <li>🇹🇭 <div><strong>Thailand:</strong> ישראלים פטורים ל-30 יום</div></li>
+      <li>🇰🇭 <div><strong>Cambodia:</strong> Visa on Arrival ב-Siem Reap ~30$/אדם. תמונת פספורט + USD מזומן</div></li>
+      <li>🇻🇳 <div><strong>Vietnam:</strong> <a href="https://evisa.gov.vn" target="_blank">e-Visa</a> ~25$/אדם. <strong>הגישו עכשיו!</strong> 3-7 ימי עבודה</div></li>
+    </ul></div>
+    <div class="practical-card"><h3>💊 Health - בריאות</h3><ul>
+      <li>💉 <div>בדקו: Hepatitis A, Typhoid, Tetanus</div></li>
+      <li>🏥 <div><strong>Travel Insurance with medical coverage - חובה!</strong></div></li>
+      <li>💧 <div>Bottled water only! קרח - רק במסעדות מוכרות</div></li>
+      <li>🧴 <div>Sunscreen SPF50 + Insect Repellent (DEET)</div></li>
+    </ul></div>
+    <div class="practical-card"><h3>📱 Essential Apps</h3><ul>
+      <li>🚗 <div><a href="https://www.grab.com" target="_blank"><strong>Grab</strong></a> - Rides, Food, Deliveries (Asia's Uber)</div></li>
+      <li>🗣️ <div><strong>Google Translate</strong> - הורידו שפות offline!</div></li>
+      <li>🗺️ <div><strong>Google Maps</strong> + <a href="https://maps.me" target="_blank">Maps.me</a> (offline maps)</div></li>
+      <li>💱 <div><strong>XE Currency</strong> - המרת מטבעות real-time</div></li>
+    </ul></div>
+    <div class="practical-card"><h3>💵 Currency - מטבעות</h3><ul>
+      <li>🇰🇭 <div><strong>Cambodia:</strong> USD (!) + Riel לעודף</div></li>
+      <li>🇻🇳 <div><strong>Vietnam:</strong> Dong (VND). 1$ ≈ 25,000₫</div></li>
+      <li>🇹🇭 <div><strong>Thailand:</strong> Baht (THB). 1₪ ≈ 10 ฿</div></li>
+      <li>💳 <div>Credit cards בערים, cash לשווקים</div></li>
+    </ul></div>
+    <div class="practical-card"><h3>📶 Internet & SIM</h3><ul>
+      <li>📱 <div><strong>Regional eSIM:</strong> <a href="https://www.airalo.com" target="_blank">Airalo</a> / <a href="https://www.holafly.com" target="_blank">Holafly</a> - SIM אחד ל-3 מדינות</div></li>
+      <li>📡 <div>Local SIM בכל airport (~5-10$ ל-7 ימים unlimited)</div></li>
+      <li>📶 <div>Free WiFi כמעט בכל מלון, מסעדה וקפה</div></li>
+    </ul></div>
+    <div class="practical-card"><h3>👕 Packing List</h3><ul>
+      <li>👕 <div>בגדים קלים, moisture-wicking, כובע רחב</div></li>
+      <li>👗 <div>בגדים צנועים למקדשים (shoulders+knees covered)</div></li>
+      <li>👟 <div>Walking shoes + Sandals</div></li>
+      <li>🔌 <div>Universal adapter + Power bank</div></li>
+      <li>🧴 <div>Sunscreen SPF50 + Bug spray</div></li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══ EXTENSION ═══ -->
+<div class="section">
+  <div class="extension-card">
+    <h3>🏝️ אופציה להארכה (+7 ימים עד 20 באפריל)</h3>
+    <p style="margin-bottom:15px">3 אפשרויות מצוינות מ-Bangkok:</p>
+    <ul class="activities">
+      <li class="activity"><span class="activity-icon">🏝️</span><div class="activity-content">
+        <div class="activity-title">Koh Samui / Koh Phangan <span class="activity-en">(3-4 ימים)</span></div>
+        <div class="activity-desc">איים מושלמים. חופים, snorkeling, jungle. טיסה שעה מ-Bangkok.</div>
+        <div class="activity-links"><a href="https://www.google.com/maps/place/Koh+Samui" target="_blank">📍 Koh Samui</a><a href="https://www.google.com/maps/place/Koh+Phangan" target="_blank">📍 Koh Phangan</a></div>
+      </div></li>
+      <li class="activity"><span class="activity-icon">🏔️</span><div class="activity-content">
+        <div class="activity-title">Chiang Mai - צפון תאילנד <span class="activity-en">(3-4 ימים)</span></div>
+        <div class="activity-desc">הרים, מקדשים, Elephant sanctuaries, Night Markets. אוויר קריר!</div>
+        <div class="activity-links"><a href="https://www.google.com/maps/place/Chiang+Mai" target="_blank">📍 Chiang Mai</a></div>
+      </div></li>
+      <li class="activity"><span class="activity-icon">🏖️</span><div class="activity-content">
+        <div class="activity-title">Krabi / Railay Beach <span class="activity-en">(3-4 ימים)</span></div>
+        <div class="activity-desc">Limestone cliffs, חופים מדהימים, island hopping. פחות תיירותי מ-Phuket.</div>
+        <div class="activity-links"><a href="https://www.google.com/maps/place/Krabi" target="_blank">📍 Krabi</a><a href="https://www.google.com/maps/place/Railay+Beach" target="_blank">📍 Railay</a></div>
+      </div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ CHECKLIST ═══ -->
+<div class="section" id="checklist">
+  <div class="section-title"><span class="icon">✅</span> צ'קליסט לפני הטיול</div>
+  <div style="background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:25px">
+    <h3 style="color:var(--primary);margin-bottom:15px">🔴 דחוף - עכשיו!</h3>
+    <ul class="checklist" id="cl">
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🔴 הגשת e-Visa לוייטנאם ב-evisa.gov.vn (ל-6 נפשות!)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🔴 הזמנת טיסת ערב Bangkok → Siem Reap ל-23/3</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🔴 הזמנת שאר הטיסות הפנימיות (5 קטעים)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🔴 הזמנת Ha Long Bay Overnight Cruise (7-8/4)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟡 הזמנת מלונות / Airbnb ב-6 יעדים</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟡 Travel Insurance עם כיסוי רפואי</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟡 בדיקת חיסונים (Hepatitis A, Typhoid)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟡 הזמנת Phare Circus Tickets ב-Siem Reap</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 6 תמונות פספורט + USD מזומן ל-Cambodia VOA (~30$ x 6)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 רכישת eSIM (Airalo / Holafly)</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 הורדת Grab + Google Maps offline + Google Translate</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 הזמנת USD מזומן לשווקים</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 צילום פספורטים → Google Drive / iCloud</span></li>
+      <li onclick="tgl(this)"><input type="checkbox"><span class="check-text">🟢 אריזה: בגדים קלים, sunscreen, bug spray, adapter</span></li>
+    </ul>
+    <div style="margin-top:15px;font-size:.8em;color:var(--text-light)">🔴 דחוף &nbsp; 🟡 שבוע לפני &nbsp; 🟢 לפני יציאה</div>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div>✈️ Family Trip: Cambodia → Vietnam → Thailand | 23/3 - 13/4/2026</div>
+  <div style="margin-top:8px;opacity:.7">הוכן עם ❤️ | כל המחירים הם הערכות | מרץ 2026</div>
+</footer>
+
+<script>
+function toggleCard(h){h.closest('.day-card').classList.toggle('collapsed')}
+function showPane(btn,grp,id){
+  btn.closest('.day-body').querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  btn.closest('.day-body').querySelectorAll('.day-pane').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function tgl(li){
+  const cb=li.querySelector('input');cb.checked=!cb.checked;
+  li.classList.toggle('checked',cb.checked);
+  try{const s=Array.from(document.querySelectorAll('#cl input')).map(c=>c.checked);localStorage.setItem('tc3',JSON.stringify(s))}catch(e){}
+}
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+try{const s=JSON.parse(localStorage.getItem('tc3')||'[]');document.querySelectorAll('#cl li').forEach((li,i)=>{if(s[i]){li.querySelector('input').checked=true;li.classList.add('checked')}})}catch(e){}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;document.querySelectorAll('.nav-btn').forEach(b=>{b.classList.toggle('active',b.getAttribute('onclick')?.includes(id))})}})},{threshold:.2});
+document.querySelectorAll('.section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

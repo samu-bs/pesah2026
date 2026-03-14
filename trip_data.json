@@ -1,0 +1,1036 @@
+{
+  "trip_info": {
+    "title": "מדריך טיול משפחתי",
+    "subtitle": "Cambodia • Vietnam • Thailand",
+    "dates": "24 במרץ - 13 באפריל 2026",
+    "duration_days": 21,
+    "people": 6,
+    "people_desc": "2 הורים + בת 16, בן 14, בן 13, בת 8",
+    "budget_range": "300-500$/יום",
+    "main_flight": {
+      "departure": "TLV → Bangkok (BKK)",
+      "departure_date": "23/3/2026",
+      "departure_time": "21:30",
+      "arrival_date": "24/3/2026",
+      "arrival_time": "13:50"
+    },
+    "return_flight": {
+      "route": "Bangkok (BKK) → TLV",
+      "date": "13/4/2026"
+    },
+    "route": [
+      {"flag": "✈️", "name": "Bangkok 13:50"},
+      {"flag": "🇰🇭", "name": "Siem Reap"},
+      {"flag": "🇰🇭", "name": "Phnom Penh"},
+      {"flag": "🇻🇳", "name": "Ho Chi Minh"},
+      {"flag": "🇻🇳", "name": "Hoi An"},
+      {"flag": "🇻🇳", "name": "Hanoi"},
+      {"flag": "🇹🇭", "name": "Bangkok"}
+    ]
+  },
+  "map_pois": [
+    {"num": 1, "name": "Bangkok (BKK)", "name_he": "נחיתה בנקוק", "lat": 13.6900, "lng": 100.7501, "color": "#241D4F", "type": "transit"},
+    {"num": 2, "name": "Siem Reap", "name_he": "סיים ריפ", "lat": 13.3633, "lng": 103.8603, "color": "#032EA1", "type": "dest"},
+    {"num": 3, "name": "Phnom Penh", "name_he": "פנום פן", "lat": 11.5564, "lng": 104.9282, "color": "#032EA1", "type": "dest"},
+    {"num": 4, "name": "Ho Chi Minh City", "name_he": "הו צ'י מין", "lat": 10.8231, "lng": 106.6297, "color": "#DA251D", "type": "dest"},
+    {"num": 5, "name": "Hoi An / Da Nang", "name_he": "הוי אן / דה נאנג", "lat": 15.8801, "lng": 108.3380, "color": "#DA251D", "type": "dest"},
+    {"num": 6, "name": "Hanoi", "name_he": "האנוי", "lat": 21.0278, "lng": 105.8342, "color": "#DA251D", "type": "dest"},
+    {"num": 7, "name": "Ha Long Bay", "name_he": "מפרץ הא לונג", "lat": 20.9101, "lng": 107.1839, "color": "#DA251D", "type": "highlight"},
+    {"num": 8, "name": "Bangkok", "name_he": "בנקוק (סיום)", "lat": 13.7563, "lng": 100.5018, "color": "#241D4F", "type": "dest"}
+  ],
+  "timeline": [
+    {"country": "kh", "flag": "🇰🇭", "name": "Siem Reap", "dates": "24-28/3", "flex": 5},
+    {"country": "kh", "flag": "🇰🇭", "name": "Phnom Penh", "dates": "29-30/3", "flex": 2},
+    {"country": "vn", "flag": "🇻🇳", "name": "HCMC", "dates": "31/3-2/4", "flex": 3},
+    {"country": "vn", "flag": "🇻🇳", "name": "Hoi An", "dates": "3-7/4", "flex": 5},
+    {"country": "vn", "flag": "🇻🇳", "name": "Hanoi", "dates": "8-10/4", "flex": 3},
+    {"country": "th", "flag": "🇹🇭", "name": "Bangkok", "dates": "11-12/4", "flex": 2}
+  ],
+  "overview_table": [
+    {"dates": "24/3 ערב", "dest": "✈️ Bangkok → Siem Reap", "nights": "טרנזיט", "highlights": "נחיתה 13:50, טיסת חיבור ערב"},
+    {"dates": "24-28/3", "dest": "🇰🇭 Siem Reap - សៀមរាប", "nights": "4", "highlights": "Angkor Wat, Bayon, Tonle Sap"},
+    {"dates": "29-30/3", "dest": "🇰🇭 Phnom Penh - ភ្នំពេញ", "nights": "2", "highlights": "Royal Palace, Russian Market"},
+    {"dates": "31/3-2/4", "dest": "🇻🇳 Ho Chi Minh City", "nights": "3", "highlights": "Cu Chi Tunnels, Mekong Delta"},
+    {"dates": "3-7/4", "dest": "🇻🇳 Hoi An / Da Nang", "nights": "5", "highlights": "Ancient Town, An Bang Beach, Golden Bridge, Cua Dai"},
+    {"dates": "8-10/4", "dest": "🇻🇳 Hanoi + Ha Long Bay", "nights": "3", "highlights": "Bay Cruise, Old Quarter"},
+    {"dates": "11-12/4", "dest": "🇹🇭 Bangkok - กรุงเทพ", "nights": "2", "highlights": "Temples, Shopping, Songkran!"},
+    {"dates": "13/4", "dest": "✈️ טיסת חזרה", "nights": "-", "highlights": "-"}
+  ],
+  "destinations": [
+    {
+      "id": "transit",
+      "title": "✈️ יום 1: טרנזיט Bangkok → Siem Reap",
+      "dates_label": "24 במרץ (שלישי) | נחיתה 13:50 → טיסת ערב לקמבודיה",
+      "header_class": "transit",
+      "day_range": "ימים 1",
+      "info_chips": [
+        {"label": "🛬 נחיתה", "value": "Bangkok (BKK) 13:50"},
+        {"label": "✈️ המשך", "value": "טיסה ~19:30 ל-Siem Reap"},
+        {"label": "⏱️ חיבור", "value": "כ-3.5 שעות"}
+      ],
+      "day_tabs": null,
+      "activities": [
+        {
+          "icon": "🛂", "title": "13:50 - נחיתה ב-Suvarnabhumi Airport",
+          "title_en": "BKK - Suvarnabhumi",
+          "desc": "ביקורת דרכונים, איסוף מזוודות. צפו בכשעה. בסביבות 17:00 אתם חופשיים.",
+          "links": {
+            "map": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok",
+            "info": "https://en.wikipedia.org/wiki/Suvarnabhumi_Airport"
+          }
+        },
+        {
+          "icon": "🍜", "title": "17:00-18:00 - ארוחה מהירה בשדה התעופה",
+          "title_en": "",
+          "desc": "ב-Suvarnabhumi יש מסעדות מצוינות. נצלו את הזמן הקצר לנשנש ולהתרענן.",
+          "links": {}
+        },
+        {
+          "icon": "✈️", "title": "~19:30 - טיסה ל-Siem Reap",
+          "title_en": "Bangkok Airways, ~1h15m",
+          "desc": "נחיתה ~20:45. Grab או טאקסי למלון (~7$). תאילנד וקמבודיה באותו אזור זמן.",
+          "links": {
+            "search": ["https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+24+2026+evening", "🔍 חפש טיסה"],
+            "site": ["https://www.bangkokair.com", "✈️ Bangkok Airways"]
+          }
+        }
+      ],
+      "tip": "💡 <strong>חשוב:</strong> הטיסה ל-Siem Reap היא <strong>כרטיס נפרד</strong> - אתם צריכים לאסוף מזוודות, לצאת ולעשות צ'ק-אין מחדש. 3.5 שעות ביניים זה צפוף למשפחה עם ילדים - שקלו גם לינת לילה אחד בבנקוק או טיסה מוקדם למחרת. ויזת קמבודיה - Visa on Arrival בנחיתה."
+    },
+    {
+      "id": "siemreap",
+      "title": "🇰🇭 ימים 2-5: Siem Reap - សៀមរាប, קמבודיה",
+      "dates_label": "25-28 במרץ | 4 לילות | Angkor Wat והסביבה",
+      "header_class": "cambodia",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "ליד Pub Street / Old Market"},
+        {"label": "🌡️ מזג אוויר", "value": "30-38°C, חם מאוד"},
+        {"label": "🎫 Angkor Pass", "value": "3 ימים ~62$/אדם"},
+        {"label": "💰 מטבע", "value": "USD דולר אמריקאי (!)"}
+      ],
+      "day_tabs": [
+        {"id": "sr1", "label": "יום 2 · 25/3"},
+        {"id": "sr2", "label": "יום 3 · 26/3"},
+        {"id": "sr3", "label": "יום 4 · 27/3"},
+        {"id": "sr4", "label": "יום 5 · 28/3"}
+      ],
+      "day_panes": {
+        "sr1": {
+          "heading": "🌅 יום 2 (25/3) — Angkor Wat זריחה + Angkor Thom",
+          "activities": [
+            {
+              "icon": "🌅", "title": "04:30 - זריחה ב-Angkor Wat", "title_en": "អង្គរវត្ត",
+              "desc": "המקדש הגדול בעולם. הגיעו ב-04:30 לזריחה מעל המגדלים. הקדישו כל הבוקר לחקור. קנו כרטיס 3 ימים בכניסה.",
+              "links": {
+                "map": "https://maps.google.com/?q=Angkor+Wat,+Siem+Reap",
+                "info": "https://en.wikipedia.org/wiki/Angkor_Wat",
+                "photos": "https://www.google.com/search?q=Angkor+Wat+photos&tbm=isch",
+                "tickets": ["https://www.angkorenterprise.gov.kh", "🎫 Angkor Pass"]
+              }
+            },
+            {
+              "icon": "🗿", "title": "Bayon Temple - באיון", "title_en": "ប្រាសាទបាយ័ន",
+              "desc": "216 פנים חייכניות מגולפות באבן. חלק ממתחם Angkor Thom. מרשים ומיסטי.",
+              "links": {
+                "map": "https://maps.google.com/?q=Bayon+Temple,+Angkor+Thom",
+                "info": "https://en.wikipedia.org/wiki/Bayon",
+                "photos": "https://www.google.com/search?q=Bayon+Temple+faces&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏊", "title": "צהריים - מנוחה בבריכת המלון", "title_en": "",
+              "desc": "החום עולה ל-38°! חזרו למלון, בריכה, מנוחה. צאו שוב רק אחרי 15:30.",
+              "links": {}
+            },
+            {
+              "icon": "🍛", "title": "ערב - Pub Street + Night Market", "title_en": "ផ្សាររាត្រី",
+              "desc": "אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$.",
+              "links": {
+                "map": "https://maps.google.com/?q=Pub+Street,+Siem+Reap",
+                "info": "https://en.wikipedia.org/wiki/Pub_Street",
+                "photos": "https://www.google.com/search?q=Pub+Street+Siem+Reap+night&tbm=isch"
+              }
+            }
+          ]
+        },
+        "sr2": {
+          "heading": "🌳 יום 3 (26/3) — Ta Prohm + Banteay Srei",
+          "activities": [
+            {
+              "icon": "🌳", "title": "בוקר - Ta Prohm", "title_en": "ប្រាសាទតាព្រហ្ម - Tomb Raider Temple",
+              "desc": "עצים ענקיים 'בולעים' את המקדש. מוכר מהסרט Tomb Raider. הילדים יאהבו! צאו מוקדם (06:00) לפני ההמונים.",
+              "links": {
+                "map": "https://maps.google.com/?q=Ta+Prohm,+Angkor",
+                "info": "https://en.wikipedia.org/wiki/Ta_Prohm",
+                "photos": "https://www.google.com/search?q=Ta+Prohm+temple+trees&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏛️", "title": "Banteay Srei - באנטיי סריי", "title_en": "Citadel of Women",
+              "desc": "מקדש קטן עם הגילופים הכי עדינים ומפורטים. 30 דק' נסיעה צפונה. שווה את הנסיעה!",
+              "links": {
+                "map": "https://maps.google.com/?q=Banteay+Srei,+Siem+Reap",
+                "info": "https://en.wikipedia.org/wiki/Banteay_Srei",
+                "photos": "https://www.google.com/search?q=Banteay+Srei+carvings&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏊", "title": "אחה\"צ - מנוחה + עיסוי קמבודי", "title_en": "",
+              "desc": "עיסוי מעולה וזול (~12-15$/שעה). שווקים קטנים ליד המלון.",
+              "links": {}
+            },
+            {
+              "icon": "🎪", "title": "20:00 - Phare, The Cambodian Circus", "title_en": "ភារៈ សៀក កម្ពុជា",
+              "desc": "מופע אקרובטיקה מדהים. סיפורים קמבודיים דרך מחול ואומנות. כל הגילאים. הזמינו מראש!",
+              "links": {
+                "map": "https://maps.google.com/?q=Phare+The+Cambodian+Circus,+Siem+Reap",
+                "info": "https://pharecircus.org",
+                "photos": "https://www.google.com/search?q=Phare+Cambodian+Circus&tbm=isch",
+                "tickets": ["https://pharecircus.org/tickets", "🎫 כרטיסים"]
+              }
+            }
+          ]
+        },
+        "sr3": {
+          "heading": "🚤 יום 4 (27/3) — Tonle Sap Lake כפרים צפים",
+          "activities": [
+            {
+              "icon": "🚤", "title": "בוקר - Tonle Sap Lake - טונלה סאפ", "title_en": "បឹងទន្លេសាប",
+              "desc": "האגם המתוק הגדול בדרום מזרח אסיה. כפרים שלמים צפים על המים! מומלץ Kompong Khleang (פחות תיירותי).",
+              "links": {
+                "map": "https://maps.google.com/?q=Tonle+Sap+Lake,+Cambodia",
+                "map2": ["https://maps.google.com/?q=Kampong+Khleang,+Cambodia", "📍 Kompong Khleang"],
+                "info": "https://en.wikipedia.org/wiki/Tonle_Sap",
+                "photos": "https://www.google.com/search?q=Tonle+Sap+floating+village&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏛️", "title": "אחה\"צ - Terrace of the Elephants", "title_en": "Terrace of the Leper King",
+              "desc": "מרפסות מלכותיות ענקיות במתחם Angkor Thom. גילופי פילים ולוחמים. פחות עמוס מהמקדשים הגדולים.",
+              "links": {
+                "map": "https://maps.google.com/?q=Terrace+of+the+Elephants,+Angkor+Thom",
+                "info": "https://en.wikipedia.org/wiki/Terrace_of_the_Elephants",
+                "photos": "https://www.google.com/search?q=Terrace+of+Elephants+Angkor&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌅", "title": "שקיעה מ-Phnom Bakheng", "title_en": "Bakheng Hill",
+              "desc": "עלו על הגבעה לצפייה בשקיעה מעל Angkor Wat. מוגבל ב-300 איש - הגיעו ב-16:30!",
+              "links": {
+                "map": "https://maps.google.com/?q=Phnom+Bakheng,+Angkor",
+                "info": "https://en.wikipedia.org/wiki/Phnom_Bakheng",
+                "photos": "https://www.google.com/search?q=Phnom+Bakheng+sunset+Angkor+Wat&tbm=isch"
+              }
+            }
+          ]
+        },
+        "sr4": {
+          "heading": "🏊 יום 5 (28/3) — מנוחה + מעבר ל-Phnom Penh",
+          "activities": [
+            {
+              "icon": "🏊", "title": "בוקר - בריכה + Artisans Angkor", "title_en": "Workshop Visit",
+              "desc": "סדנת אמנות קמבודית - רואים אומנים מגלפים, סדנת משי, ציורים. חינם! אחרי זה בריכה ומנוחה.",
+              "links": {
+                "map": "https://maps.google.com/?q=Artisans+Angkor,+Siem+Reap",
+                "info": "https://www.artisansdangkor.com",
+                "photos": "https://www.google.com/search?q=Artisans+Angkor+workshop&tbm=isch"
+              }
+            },
+            {
+              "icon": "🛍️", "title": "Old Market (Psar Chas)", "title_en": "ផ្សារចាស់",
+              "desc": "קניות אחרונות בסיים ריפ. מזכרות, תבלינים, בגדים. מתמקחים על הכל!",
+              "links": {
+                "map": "https://maps.google.com/?q=Old+Market+Siem+Reap",
+                "photos": "https://www.google.com/search?q=Old+Market+Psar+Chas+Siem+Reap&tbm=isch"
+              }
+            },
+            {
+              "icon": "✈️", "title": "אחה\"צ - טיסה → Phnom Penh", "title_en": "45 min",
+              "desc": "טיסה קצרה (~45 דק') עם Cambodia Angkor Air או Lanmei Airlines. ~60-100$/אדם. ממליצים להזמין מראש.",
+              "links": {
+                "site": ["https://www.google.com/travel/flights?q=Siem+Reap+to+Phnom+Penh+March+28+2026", "✈️ חפש טיסות"]
+              }
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> שכרו טוק-טוק (Tuk-Tuk) עם נהג ליום שלם (~15-20$) - הוא ייקח אתכם בין המקדשים, יחכה ויחזיר. צאו ב-05:00 בבוקר ומנוחה ארוכה בצהריים!"
+    },
+    {
+      "id": "phnompenh",
+      "title": "🇰🇭 ימים 6-7: Phnom Penh - ភ្នំពេញ",
+      "dates_label": "29-30 במרץ | בירת קמבודיה",
+      "header_class": "cambodia",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "Riverside area"},
+        {"label": "✈️ הגעה", "value": "טיסה מ-Siem Reap (~45 דק')"}
+      ],
+      "day_tabs": [
+        {"id": "pp1", "label": "יום 6 · 29/3"},
+        {"id": "pp2", "label": "יום 7 · 30/3"}
+      ],
+      "day_panes": {
+        "pp1": {
+          "heading": "🏛️ יום 6 (29/3) — Royal Palace + טיילת המקונג",
+          "activities": [
+            {
+              "icon": "🏛️", "title": "בוקר - Royal Palace + Silver Pagoda", "title_en": "ព្រះបរមរាជាវាំង",
+              "desc": "מתחם מלכותי מרהיב על גדת המקונג. Silver Pagoda מרוצפת ב-5,000 אריחי כסף! פתוח 08:00-17:00.",
+              "links": {
+                "map": "https://maps.google.com/?q=Royal+Palace+Phnom+Penh",
+                "info": "https://en.wikipedia.org/wiki/Royal_Palace,_Phnom_Penh",
+                "photos": "https://www.google.com/search?q=Royal+Palace+Phnom+Penh+Silver+Pagoda&tbm=isch"
+              }
+            },
+            {
+              "icon": "🍜", "title": "צהריים - Central Market (Phsar Thmei)", "title_en": "ផ្សារថ្មី",
+              "desc": "בניין Art Deco מרשים מ-1937. שוק מקורה ענק - אוכל מקומי, תבלינים, מזכרות. מקום מצוין לאוכל צהריים אותנטי.",
+              "links": {
+                "map": "https://maps.google.com/?q=Central+Market+Phnom+Penh",
+                "info": "https://en.wikipedia.org/wiki/Phsar_Thmei",
+                "photos": "https://www.google.com/search?q=Central+Market+Phsar+Thmei+Phnom+Penh&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌅", "title": "ערב - Sisowath Quay", "title_en": "Riverside Promenade",
+              "desc": "טיילת נהר Mekong - מקום מקסים לשקיעה. מסעדות, בתי קפה, אופניים. שייט קצר מומלץ.",
+              "links": {
+                "map": "https://maps.google.com/?q=Sisowath+Quay,+Phnom+Penh",
+                "photos": "https://www.google.com/search?q=Sisowath+Quay+sunset+Phnom+Penh&tbm=isch"
+              }
+            }
+          ]
+        },
+        "pp2": {
+          "heading": "🛍️ יום 7 (30/3) — שווקים + מעבר ל-Vietnam",
+          "activities": [
+            {
+              "icon": "🛍️", "title": "בוקר - Russian Market", "title_en": "Toul Tom Poung Market / Psar Tuol Tom Pong",
+              "desc": "מזכרות, בגדים, אוכל מקומי אותנטי. מתמקחים על הכל! מחירים זולים.",
+              "links": {
+                "map": "https://maps.google.com/?q=Russian+Market+Phnom+Penh",
+                "info": "https://en.wikipedia.org/wiki/Toul_Tom_Poung_Market",
+                "photos": "https://www.google.com/search?q=Russian+Market+Phnom+Penh&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏖️", "title": "צהריים - מנוחה חופשית", "title_en": "Free time",
+              "desc": "זמן חופשי - מנוחה במלון, בריכה, או סיבוב רגוע ברחובות. הכנה לטיסה.",
+              "links": {}
+            },
+            {
+              "icon": "✈️", "title": "ערב - טיסה ל-Ho Chi Minh City", "title_en": "Vietnam Airlines, ~1h",
+              "desc": "שלום קמבודיה! טיסה קצרה. ה-e-Visa לוייטנאם צריך להיות מוכן מראש.",
+              "links": {}
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> Killing Fields (Choeung Ek) ו-Tuol Sleng (S-21 Prison) - מתאימים לבני 16 ו-14 המתעניינים בהיסטוריה, פחות מומלץ לקטנים. שיקול הורי."
+    },
+    {
+      "id": "hcmc",
+      "title": "🇻🇳 ימים 8-10: Ho Chi Minh City (Saigon)",
+      "dates_label": "31/3 - 2/4 | Mekong Delta + עיר תוססת",
+      "header_class": "vietnam",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "District 1 (מרכז)"},
+        {"label": "✈️ טיסה", "value": "Phnom Penh → HCMC (~1h)"},
+        {"label": "🌡️ מזג אוויר", "value": "27-34°C, לח"}
+      ],
+      "day_tabs": [
+        {"id": "hc1", "label": "יום 8 · 31/3"},
+        {"id": "hc2", "label": "יום 9 · 1/4"},
+        {"id": "hc3", "label": "יום 10 · 2/4"}
+      ],
+      "day_panes": {
+        "hc1": {
+          "heading": "🕳️ יום 8 (31/3) — Cu Chi Tunnels + סיור עירוני",
+          "activities": [
+            {
+              "icon": "🕳️", "title": "Cu Chi Tunnels - מנהרות קו צ'י", "title_en": "Địa đạo Củ Chi",
+              "desc": "רשת מנהרות תת-קרקעיות מתקופת המלחמה. אפשר להיכנס למנהרות מורחבות. חוויה מרתקת לילדים. חצי יום (בוקר).",
+              "links": {
+                "map": "https://maps.google.com/?q=Cu+Chi+Tunnels,+Ho+Chi+Minh",
+                "info": "https://en.wikipedia.org/wiki/C%E1%BB%A7_Chi_tunnels",
+                "photos": "https://www.google.com/search?q=Cu+Chi+Tunnels+Vietnam&tbm=isch"
+              }
+            },
+            {
+              "icon": "🛍️", "title": "Ben Thanh Market + Street Food Tour", "title_en": "Chợ Bến Thành",
+              "desc": "השוק האייקוני של סייגון! מזכרות, בגדים, תבלינים ואוכל רחוב מדהים. בערב השוק הופך לשוק לילה עם דוכני אוכל ברחוב.",
+              "links": {
+                "map": "https://maps.google.com/?q=Ben+Thanh+Market+Ho+Chi+Minh",
+                "info": "https://en.wikipedia.org/wiki/B%E1%BA%BFn_Th%C3%A0nh_Market",
+                "photos": "https://www.google.com/search?q=Ben+Thanh+Market+Saigon+street+food&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏛️", "title": "Saigon Central Post Office + Notre Dame Cathedral", "title_en": "Bưu điện Trung tâm Sài Gòn",
+              "desc": "בית הדואר תוכנן ע\"י Gustave Eiffel - יפהפה מבפנים. הקתדרלה ממול.",
+              "links": {
+                "map": "https://maps.google.com/?q=Saigon+Central+Post+Office",
+                "info": "https://en.wikipedia.org/wiki/Saigon_Central_Post_Office",
+                "photos": "https://www.google.com/search?q=Saigon+Post+Office+inside&tbm=isch"
+              }
+            }
+          ]
+        },
+        "hc2": {
+          "heading": "🛶 יום 9 (1/4) — Mekong Delta יום שלם",
+          "activities": [
+            {
+              "icon": "🛶", "title": "Mekong Delta Day Trip", "title_en": "Đồng bằng sông Cửu Long",
+              "desc": "שייט בתעלות, שווקים צפים (Cai Be / Ben Tre), טעימת פירות טרופיים ישר מהעץ, סדנת ממתקים מקוקוס. יום שלם! יוצאים 07:00 וחוזרים 17:00.",
+              "links": {
+                "map": "https://maps.google.com/?q=Mekong+Delta,+Vietnam",
+                "info": "https://en.wikipedia.org/wiki/Mekong_Delta",
+                "photos": "https://www.google.com/search?q=Mekong+Delta+floating+market+Vietnam&tbm=isch"
+              }
+            },
+            {
+              "icon": "🍜", "title": "ערב - סיור אוכל רחוב ב-District 1", "title_en": "",
+              "desc": "Pho (פו), Banh Mi (באן מי), Egg Coffee, Ca Phe Sua Da. אפשר סיור מאורגן או לשוטט.",
+              "links": {
+                "map": "https://maps.google.com/?q=Ben+Thanh+Street+Food+Market"
+              }
+            }
+          ]
+        },
+        "hc3": {
+          "heading": "🛍️ יום 10 (2/4) — שווקים + טיסה ל-Da Nang",
+          "activities": [
+            {
+              "icon": "🛍️", "title": "Ben Thanh Market", "title_en": "Chợ Bến Thành",
+              "desc": "השוק הכי מפורסם של Saigon. מזכרות, אוכל, בגדים. חובה להתמקח!",
+              "links": {
+                "map": "https://maps.google.com/?q=Ben+Thanh+Market,+Ho+Chi+Minh",
+                "info": "https://en.wikipedia.org/wiki/B%E1%BA%BFn_Th%C3%A0nh_Market",
+                "photos": "https://www.google.com/search?q=Ben+Thanh+Market+Saigon&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏖️", "title": "צהריים - מנוחה חופשית", "title_en": "Free time",
+              "desc": "זמן חופשי - הכנת מזוודות לקראת הטיסה, או סיבוב אחרון ב-District 1.",
+              "links": {}
+            },
+            {
+              "icon": "✈️", "title": "אחה\"צ - טיסה ל-Da Nang", "title_en": "VietJet / Vietnam Airlines, 1h20m",
+              "desc": "טיסה מ-Tan Son Nhat (SGN) ל-Da Nang (DAD), כ-1:20 שעה. נחיתה בדה נאנג → הזמינו Grab (אפליקציה כמו Uber, ~150,000 VND / 6$) ל-Hoi An, כ-30 דק' דרומה. המלון באזור An Bang Beach. טיפ: אם נוחתים מוקדם, אפשר לעצור בדרך ב-Marble Mountains (5 הרי שיש עם מערות ותצפיות, ~שעה-שעתיים ביקור).",
+              "links": {
+                "map": "https://maps.google.com/?q=Da+Nang+International+Airport",
+                "map2": ["https://maps.google.com/?q=Marble+Mountains,+Da+Nang", "📍 Marble Mountains בדרך"]
+              }
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> חובה לטעום: Banh Mi Huynh Hoa - הבאן מי הכי טוב בעיר. קפה ביצה ב-Cafe Giang (סניף HCMC)."
+    },
+    {
+      "id": "hoian",
+      "title": "🇻🇳 ימים 11-14: Hoi An / Da Nang",
+      "dates_label": "3-6 באפריל | חוף + Ancient Town + בישול",
+      "header_class": "vietnam",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "ליד An Bang Beach (בריכה!)"},
+        {"label": "🚕 Da Nang → Hoi An", "value": "30 דק' Grab"},
+        {"label": "🏖️ חוף", "value": "An Bang Beach"}
+      ],
+      "day_tabs": [
+        {"id": "ha1", "label": "יום 11 · 3/4"},
+        {"id": "ha2", "label": "יום 12 · 4/4"},
+        {"id": "ha3", "label": "יום 13 · 5/4"},
+        {"id": "ha4", "label": "יום 14 · 6/4"}
+      ],
+      "day_panes": {
+        "ha1": {
+          "heading": "🏖️ יום 11 (3/4) — הגעה + חוף My Khe + Ancient Town ערב",
+          "activities": [
+            {
+              "icon": "🏖️", "title": "בוקר/צהריים - My Khe Beach (Da Nang)", "title_en": "Bãi biển Mỹ Khê",
+              "desc": "אחד מ-6 החופים היפים בעולם (Forbes)! חול לבן, גלים מושלמים, מצילים. נחיתה → ישר לחוף! מסעדות פירות ים על החוף.",
+              "links": {
+                "map": "https://maps.google.com/?q=My+Khe+Beach,+Da+Nang",
+                "info": "https://en.wikipedia.org/wiki/My_Khe_Beach",
+                "photos": "https://www.google.com/search?q=My+Khe+Beach+Da+Nang&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏮", "title": "ערב - Hoi An Ancient Town", "title_en": "Phố cổ Hội An - UNESCO",
+              "desc": "אלפי פנסים צבעוניים! Japanese Covered Bridge, Assembly Halls, מקדשים עתיקים. הכי קסום בערב.",
+              "links": {
+                "map": "https://maps.google.com/?q=Hoi+An+Ancient+Town",
+                "info": "https://en.wikipedia.org/wiki/Hoi_An",
+                "photos": "https://www.google.com/search?q=Hoi+An+lanterns+night&tbm=isch",
+                "map2": ["https://maps.google.com/?q=Japanese+Covered+Bridge+Hoi+An", "📍 Japanese Bridge"]
+              }
+            }
+          ]
+        },
+        "ha2": {
+          "heading": "🏖️ יום 12 (4/4) — חוף + סדנת בישול",
+          "activities": [
+            {
+              "icon": "🏖️", "title": "בוקר - An Bang Beach", "title_en": "Bãi biển An Bàng",
+              "desc": "חוף רחב עם חול רך, מסעדות על החוף, מטריות. יום בטן-גב מושלם!",
+              "links": {
+                "map": "https://maps.google.com/?q=An+Bang+Beach,+Hoi+An",
+                "photos": "https://www.google.com/search?q=An+Bang+Beach+Hoi+An&tbm=isch"
+              }
+            },
+            {
+              "icon": "👨‍🍳", "title": "אחה\"צ - Vietnamese Cooking Class", "title_en": "סדנת בישול",
+              "desc": "מתחילים בשוק לקנות מרכיבים, לומדים Spring Rolls, Pho, ועוד. Red Bridge / Thuan Tinh Island.",
+              "links": {
+                "map": "https://maps.google.com/?q=cooking+class+hoi+an",
+                "photos": "https://www.google.com/search?q=Hoi+An+cooking+class&tbm=isch"
+              }
+            }
+          ]
+        },
+        "ha3": {
+          "heading": "🌉 יום 13 (5/4) — Ba Na Hills + Golden Bridge",
+          "activities": [
+            {
+              "icon": "🌉", "title": "Ba Na Hills + Golden Bridge", "title_en": "Cầu Vàng - הגשר הזהב",
+              "desc": "ידיים ענקיות מחזיקות גשר באוויר - אייקוני! כולל Fantasy Park (לונה פארק), רכבל 5.8 ק\"מ, תצפיות. יום שלם.",
+              "links": {
+                "map": "https://maps.google.com/?q=Golden+Bridge+Ba+Na+Hills",
+                "info": "https://en.wikipedia.org/wiki/Golden_Bridge_(Vietnam)",
+                "photos": "https://www.google.com/search?q=Golden+Bridge+Ba+Na+Hills+hands&tbm=isch",
+                "tickets": ["https://banahills.sunworld.vn/en", "🎫 Ba Na Hills"]
+              }
+            }
+          ]
+        },
+        "ha4": {
+          "heading": "🏖️ יום 14 (6/4) — חוף An Bang + Basket Boats + חייט",
+          "activities": [
+            {
+              "icon": "🏖️", "title": "בוקר - An Bang Beach יום שני בחוף!", "title_en": "Bãi biển An Bàng",
+              "desc": "עוד בוקר מושלם על החוף. שכירת כסאות נוח, שחייה, ומשחקים על החול. ארוחת צהריים בפירות ים במסעדה על החוף.",
+              "links": {
+                "map": "https://maps.google.com/?q=An+Bang+Beach,+Hoi+An",
+                "photos": "https://www.google.com/search?q=An+Bang+Beach+Hoi+An+family&tbm=isch"
+              }
+            },
+            {
+              "icon": "🛶", "title": "אחה\"צ - Basket Boats", "title_en": "Thuyền thúng - Coconut Boats",
+              "desc": "שייט בסירות עגולות מבמבוק! הדייגים מסובבים אתכם - הילדים ישתגעו! Cam Thanh village.",
+              "links": {
+                "map": "https://maps.google.com/?q=Basket+Boat+Cam+Thanh+Hoi+An",
+                "photos": "https://www.google.com/search?q=basket+boats+Hoi+An+coconut&tbm=isch"
+              }
+            },
+            {
+              "icon": "👔", "title": "ערב - Tailor-Made Clothing", "title_en": "חייט בהתאמה אישית",
+              "desc": "Hoi An מפורסמת בחייטים! שמלות, חולצות, חליפות - מוכנים תוך 24 שעות. 20-60$/פריט. איסוף אחרון לפני הטיסה מחר.",
+              "links": {
+                "map": "https://maps.google.com/?q=tailor+shop+hoi+an"
+              }
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> חובה לטעום ב-Hoi An: Cao Lau (אטריות מקומיות - רק פה!), White Rose Dumplings, Banh Mi Phuong (הבאן מי של Anthony Bourdain)."
+    },
+    {
+      "id": "cuadai_beach",
+      "title": "🏖️ יום 15: Cua Dai Beach - יום חוף מלא",
+      "dates_label": "7 באפריל | יום בטן-גב על החוף",
+      "header_class": "vietnam",
+      "info_chips": [
+        {"label": "🏖️ חוף", "value": "Cua Dai / An Bang Beach"},
+        {"label": "🌊 ים", "value": "מים חמים וצלולים"},
+        {"label": "✈️ מחר", "value": "טיסה ל-Hanoi"}
+      ],
+      "day_tabs": null,
+      "day_panes": {
+        "default": {
+          "heading": "🏖️ יום 15 (7/4) — יום חוף מלא + Cham Islands אופציונלי",
+          "activities": [
+            {
+              "icon": "🏖️", "title": "בוקר - Cua Dai Beach", "title_en": "Bãi biển Cửa Đại",
+              "desc": "חוף רחב עם חול לבן ומים צלולים. פחות תיירותי מ-An Bang. מטריות, כסאות נוח, מסעדות פירות ים ישר על החוף.",
+              "links": {
+                "map": "https://maps.google.com/?q=Cua+Dai+Beach,+Hoi+An",
+                "photos": "https://www.google.com/search?q=Cua+Dai+Beach+Hoi+An&tbm=isch"
+              }
+            },
+            {
+              "icon": "🤿", "title": "אופציה: Cham Islands Day Trip", "title_en": "Cù Lao Chàm - שמורת טבע ימית",
+              "desc": "30 דק' speedboat - שנורקלינג במים צלולים, חופים בתוליים, אלמוגים. שמורת ביוספרה של UNESCO! ~25$/אדם כולל הכל.",
+              "links": {
+                "map": "https://maps.google.com/?q=Cham+Islands,+Vietnam",
+                "info": "https://en.wikipedia.org/wiki/C%C3%B9_Lao_Ch%C3%A0m",
+                "photos": "https://www.google.com/search?q=Cham+Islands+snorkeling+Hoi+An&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌅", "title": "ערב - שקיעה על החוף + ארוחה אחרונה ב-Hoi An", "title_en": "",
+              "desc": "שקיעה על החוף עם קוקטיילים. ארוחת ערב אחרונה בעיר העתיקה - Cao Lau, White Rose, ו-Banh Mi אחרון!",
+              "links": {
+                "map": "https://maps.google.com/?q=An+Bang+Beach+sunset",
+                "photos": "https://www.google.com/search?q=Hoi+An+beach+sunset&tbm=isch"
+              }
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> Cham Islands מומלץ מאוד למשפחות שאוהבות ים! הצוללנות מדהימה והאי שקט ויפה. הזמינו סירה מ-Cua Dai Port."
+    },
+    {
+      "id": "hanoi",
+      "title": "🇻🇳 ימים 16-18: Hanoi + Ha Long Bay",
+      "dates_label": "8-10 באפריל | שייט במפרץ + Old Quarter",
+      "header_class": "vietnam",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "Old Quarter + לילה על ספינה"},
+        {"label": "✈️ טיסה", "value": "Da Nang → Hanoi (~1h20m)"},
+        {"label": "🌡️ מזג אוויר", "value": "22-28°C, נעים!"}
+      ],
+      "day_tabs": [
+        {"id": "hn1", "label": "יום 16 · 8/4"},
+        {"id": "hn2", "label": "יום 17 · 9/4"},
+        {"id": "hn3", "label": "יום 18 · 10/4"}
+      ],
+      "day_panes": {
+        "hn1": {
+          "heading": "🏘️ יום 16 (8/4) — Hanoi Old Quarter + Water Puppets",
+          "activities": [
+            {
+              "icon": "🏘️", "title": "Hanoi Old Quarter", "title_en": "Khu phố cổ Hà Nội - 36 Streets",
+              "desc": "רחובות צרים, אלפי אופנועים, דוכני אוכל. כל רחוב מתמחה במוצר אחר. סוחף!",
+              "links": {
+                "map": "https://maps.google.com/?q=Old+Quarter,+Hanoi",
+                "info": "https://en.wikipedia.org/wiki/Hanoi_Old_Quarter",
+                "photos": "https://www.google.com/search?q=Hanoi+Old+Quarter+streets&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏛️", "title": "Temple of Literature", "title_en": "Văn Miếu - Quốc Tử Giám",
+              "desc": "האוניברסיטה הראשונה של וייטנאם (1070). גנים יפהפיים, ארכיטקטורה וייטנאמית קלאסית.",
+              "links": {
+                "map": "https://maps.google.com/?q=Temple+of+Literature+Hanoi",
+                "info": "https://en.wikipedia.org/wiki/Temple_of_Literature,_Hanoi",
+                "photos": "https://www.google.com/search?q=Temple+of+Literature+Hanoi&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌅", "title": "Hoan Kiem Lake", "title_en": "Hồ Hoàn Kiếm - אגם החרב המוחזרת",
+              "desc": "אגם במרכז העיר עם Red Bridge (גשר אדום) מואר. יפה במיוחד בערב.",
+              "links": {
+                "map": "https://maps.google.com/?q=Hoan+Kiem+Lake,+Hanoi",
+                "info": "https://en.wikipedia.org/wiki/Hoan_Kiem_Lake",
+                "photos": "https://www.google.com/search?q=Hoan+Kiem+Lake+night+Hanoi&tbm=isch"
+              }
+            },
+            {
+              "icon": "🎭", "title": "20:00 - Thang Long Water Puppet Theatre", "title_en": "Nhà hát Múa rối Thăng Long",
+              "desc": "הופעת בובות על מים - ייחודי לוייטנאם! ~45 דקות. מקסים לילדים.",
+              "links": {
+                "map": "https://maps.google.com/?q=Thang+Long+Water+Puppet+Theatre+Hanoi",
+                "info": "https://en.wikipedia.org/wiki/Water_puppetry",
+                "photos": "https://www.google.com/search?q=Thang+Long+Water+Puppet+Theatre&tbm=isch"
+              }
+            }
+          ]
+        },
+        "hn2": {
+          "heading": "🌊 יום 17-18 (9-10/4) — Ha Long Bay Overnight Cruise",
+          "activities": [
+            {
+              "icon": "🚐", "title": "07:00 - Transfer to Ha Long Bay", "title_en": "Vịnh Hạ Long - UNESCO",
+              "desc": "נסיעה ~3.5 שעות מ-Hanoi (או שאטל של הספינה). עלייה לספינה ~12:00.",
+              "links": {
+                "map": "https://maps.google.com/?q=Ha+Long+Bay,+Vietnam",
+                "info": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay",
+                "photos": "https://www.google.com/search?q=Ha+Long+Bay+cruise+Vietnam&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌊", "title": "Ha Long Bay / Lan Ha Bay - שייט 2 ימים", "title_en": "פלא טבע!",
+              "desc": "אלפי צוקי אבן גיר מהמים! לינה על ספינה, קיאקים בין הצוקים, מערות (Sung Sot Cave), שחייה, דיג שקיעה. שיא הטיול!",
+              "links": {
+                "map": "https://maps.google.com/?q=Lan+Ha+Bay,+Vietnam",
+                "info": "https://en.wikipedia.org/wiki/Lan_Ha_Bay",
+                "photos": "https://www.google.com/search?q=Ha+Long+Bay+kayak+limestone&tbm=isch"
+              }
+            },
+            {
+              "icon": "🍳", "title": "על הספינה: Cooking Class + Tai Chi בזריחה", "title_en": "",
+              "desc": "סדנת בישול על הסיפון, טאי צ'י בזריחה, שייט בסירות במבוק לכפר דייגים צף.",
+              "links": {}
+            }
+          ]
+        },
+        "hn3": {
+          "heading": "🍜 יום 18 (10/4) — חזרה מ-Ha Long + אוכל רחוב",
+          "activities": [
+            {
+              "icon": "🚐", "title": "בוקר - חזרה מ-Ha Long Bay ל-Hanoi", "title_en": "",
+              "desc": "ארוחת בוקר על הספינה, ירידה ~11:00, חזרה ל-Hanoi ~14:30.",
+              "links": {}
+            },
+            {
+              "icon": "🍜", "title": "אוכל רחוב אחרון - Bun Cha + Egg Coffee", "title_en": "Bún chả & Cà phê trứng",
+              "desc": "Bun Cha Huong Lien ('Obama Restaurant'). Egg Coffee ב-Cafe Giang (מקורי מ-1946!).",
+              "links": {
+                "map": "https://maps.google.com/?q=Bun+Cha+Huong+Lien+Hanoi",
+                "map2": ["https://maps.google.com/?q=Cafe+Giang+Hanoi", "📍 Cafe Giang"],
+                "photos": "https://www.google.com/search?q=Bun+Cha+Hanoi+egg+coffee&tbm=isch"
+              }
+            }
+          ]
+        }
+      },
+      "tip": "💡 <strong>טיפ:</strong> Ha Long Bay = שיא הטיול! הזמינו ספינה משפחתית עם קיאקים (Ambassador Cruise, Stellar of the Seas). Lan Ha Bay פחות תיירותי ויפה לא פחות."
+    },
+    {
+      "id": "bangkok",
+      "title": "🇹🇭 ימים 19-20: Bangkok - กรุงเทพ",
+      "dates_label": "11-12 באפריל | מקדשים, קניות + Songkran! 🎉",
+      "header_class": "thailand",
+      "info_chips": [
+        {"label": "🏨 לינה", "value": "מלון עם בריכה! (Sukhumvit / Silom)"},
+        {"label": "✈️ טיסה", "value": "Hanoi → Bangkok (~3h30m)"},
+        {"label": "🎉 Songkran", "value": "12-13/4 מלחמת מים!"}
+      ],
+      "day_tabs": [
+        {"id": "bk2", "label": "יום 19 · 11/4"},
+        {"id": "bk3", "label": "יום 20 · 12-13/4"}
+      ],
+      "day_panes": {
+        "bk2": {
+          "heading": "🏛️ יום 19 (11/4) — הגעה + Grand Palace + Temples + קניות",
+          "activities": [
+            {
+              "icon": "✈️", "title": "בוקר - טיסה Hanoi → Bangkok", "title_en": "AirAsia / VietJet, ~3h30m",
+              "desc": "הגעה לבנקוק, צ'ק-אין במלון. יאללה לסיבוב אחרון!",
+              "links": {}
+            },
+            {
+              "icon": "🏛️", "title": "Grand Palace + Wat Phra Kaew", "title_en": "พระบรมมหาราชวัง - The Emerald Buddha",
+              "desc": "הארמון המלכותי ומקדש הבודהה האזמרגדי. לבוש צנוע!",
+              "links": {
+                "map": "https://maps.google.com/?q=Grand+Palace,+Bangkok",
+                "info": "https://en.wikipedia.org/wiki/Grand_Palace",
+                "photos": "https://www.google.com/search?q=Grand+Palace+Bangkok&tbm=isch"
+              }
+            },
+            {
+              "icon": "🏛️", "title": "Wat Pho", "title_en": "วัดโพธิ์ - Reclining Buddha",
+              "desc": "הבודהה השכובה (46 מטר!). אחד המקדשים העתיקים ביותר. גם בית ספר לעיסוי!",
+              "links": {
+                "map": "https://maps.google.com/?q=Wat+Pho,+Bangkok",
+                "info": "https://en.wikipedia.org/wiki/Wat_Pho",
+                "photos": "https://www.google.com/search?q=Wat+Pho+Reclining+Buddha&tbm=isch"
+              }
+            },
+            {
+              "icon": "🛶", "title": "Wat Arun + שייט Khlongs", "title_en": "วัดอรุณ - Temple of Dawn",
+              "desc": "מקדש השחר - אייקוני. חצו בסירה (4 באט) וטפסו למעלה. שלבו עם שייט בתעלות (Khlongs).",
+              "links": {
+                "map": "https://maps.google.com/?q=Wat+Arun,+Bangkok",
+                "info": "https://en.wikipedia.org/wiki/Wat_Arun",
+                "photos": "https://www.google.com/search?q=Wat+Arun+Bangkok+sunset&tbm=isch"
+              }
+            },
+            {
+              "icon": "🛍️", "title": "ICONSIAM / Terminal 21 / MBK Center", "title_en": "קניונים",
+              "desc": "ICONSIAM - קניון מפואר ליד Chao Phraya River. Terminal 21 - כל קומה כעיר אחרת. MBK - מציאות.",
+              "links": {
+                "map": "https://maps.google.com/?q=ICONSIAM+Bangkok",
+                "map2": ["https://maps.google.com/?q=Terminal+21+Bangkok", "📍 Terminal 21"],
+                "photos": "https://www.google.com/search?q=ICONSIAM+Bangkok+inside&tbm=isch"
+              }
+            },
+            {
+              "icon": "🌆", "title": "Mahanakhon SkyWalk", "title_en": "קומה 78 - רצפת זכוכית!",
+              "desc": "רצפת זכוכית בגובה 314 מטר! שקיעה מכאן = קסם. 12$ מבוגר, 10$ ילד.",
+              "links": {
+                "map": "https://maps.google.com/?q=King+Power+Mahanakhon+Bangkok",
+                "info": "https://en.wikipedia.org/wiki/MahaNakhon",
+                "photos": "https://www.google.com/search?q=Mahanakhon+SkyWalk+glass+floor&tbm=isch"
+              }
+            }
+          ]
+        },
+        "bk3": {
+          "heading": "🎉 ימים 20 (12-13/4) — SONGKRAN + טיסת חזרה",
+          "activities": [
+            {
+              "icon": "🎉", "title": "12/4 - Songkran Festival", "title_en": "สงกรานต์ - Thai New Year Water Festival!",
+              "desc": "מלחמת מים ברחובות! כל העיר = מסיבת מים ענקית. חוויה מטורפת ובלתי נשכחת! Silom Road ו-Khao San Road הכי שמחים.",
+              "links": {
+                "map": "https://maps.google.com/?q=Silom+Road,+Bangkok",
+                "map2": ["https://maps.google.com/?q=Khao+San+Road,+Bangkok", "📍 Khao San Road"],
+                "info": "https://en.wikipedia.org/wiki/Songkran_(Thailand)",
+                "photos": "https://www.google.com/search?q=Songkran+Bangkok+water+festival&tbm=isch"
+              }
+            },
+            {
+              "icon": "✈️", "title": "13/4 - טיסת חזרה מ-Suvarnabhumi Airport (BKK)", "title_en": "",
+              "desc": "שלום דרום מזרח אסיה! הגיעו 3 שעות לפני. King Power Duty Free לקניות אחרונות.",
+              "links": {}
+            }
+          ],
+          "pane_tip": "💡 <strong>Songkran!</strong> 🔫💦 קנו אקדחי מים, שימו טלפונים בשקיות ניילון, לבשו בגדים שלא אכפת אם נרטבים. הילדים ישתגעו!"
+        }
+      },
+      "tip": null
+    }
+  ],
+  "food_guide": {
+    "cambodia": {
+      "flag": "🇰🇭", "name": "Cambodia",
+      "items": [
+        {"emoji": "🍛", "name": "Fish Amok", "local": "អាម៉ុក", "desc": "קארי דגים בעלי בננה"},
+        {"emoji": "🥩", "name": "Lok Lak", "local": "ឡុកឡាក់", "desc": "בקר מוקפץ + פלפל ולימון"},
+        {"emoji": "🍜", "name": "Kuy Teav", "local": "គុយទាវ", "desc": "מרק אטריות קמבודי"},
+        {"emoji": "🥞", "name": "Nom Krok", "local": "នំគ្រក", "desc": "פנקייק אורז+קוקוס (בוקר!)"},
+        {"emoji": "🧃", "name": "Sugar Cane Juice", "local": "", "desc": "מיץ קנה סוכר טרי"}
+      ]
+    },
+    "vietnam": {
+      "flag": "🇻🇳", "name": "Vietnam",
+      "items": [
+        {"emoji": "🍜", "name": "Pho", "local": "Phở", "desc": "מרק אטריות אגדי (ארוחת בוקר!)"},
+        {"emoji": "🥖", "name": "Banh Mi", "local": "Bánh mì", "desc": "סנדוויץ' באגט מושלם"},
+        {"emoji": "🥟", "name": "Goi Cuon", "local": "Gỏi cuốn", "desc": "Fresh Spring Rolls"},
+        {"emoji": "🍖", "name": "Bun Cha", "local": "Bún chả", "desc": "אטריות + בשר צלוי (Hanoi!)"},
+        {"emoji": "☕", "name": "Egg Coffee", "local": "Cà phê trứng", "desc": "כמו טירמיסו חם"},
+        {"emoji": "🥘", "name": "Cao Lau", "local": "Cao lầu", "desc": "אטריות Hoi An בלבד!"}
+      ]
+    },
+    "thailand": {
+      "flag": "🇹🇭", "name": "Thailand",
+      "items": [
+        {"emoji": "🥘", "name": "Pad Thai", "local": "ผัดไทย", "desc": "אטריות מוקפצות+בוטנים"},
+        {"emoji": "🍛", "name": "Green/Red Curry", "local": "แกงเขียวหวาน", "desc": "חלב קוקוס"},
+        {"emoji": "🥭", "name": "Mango Sticky Rice", "local": "ข้าวเหนียวมะม่วง", "desc": "קינוח!"},
+        {"emoji": "🍗", "name": "Som Tam", "local": "ส้มตำ", "desc": "סלט פפאיה חריף"},
+        {"emoji": "🍢", "name": "Satay", "local": "สะเต๊ะ", "desc": "שיפודים + רוטב בוטנים"}
+      ]
+    },
+    "tip": "💡 <strong>עם ילדים:</strong> אמרו \"Mai Pet\" (לא חריף) / \"Không cay\" בוייטנאם. שייקים בכל פינה ב-1-2$. Mango Sticky Rice ו-Pad Thai = הימור בטוח!"
+  },
+  "hotels": [
+    {
+      "num": 1,
+      "city": "Siem Reap",
+      "city_he": "סיים ריפ",
+      "country_flag": "🇰🇭",
+      "area": "ליד Pub Street / Old Market",
+      "area_en": "Pub Street / Old Market area",
+      "checkin": "24/3",
+      "checkout": "28/3",
+      "nights": 4,
+      "rooms": 2,
+      "notes": "בריכה חובה! קרוב למסעדות ולשוק הלילה",
+      "search": "https://www.google.com/travel/hotels/Siem+Reap?q=hotels+siem+reap+with+pool&dates=2026-03-24,2026-03-28&guests=6"
+    },
+    {
+      "num": 2,
+      "city": "Phnom Penh",
+      "city_he": "פנום פן",
+      "country_flag": "🇰🇭",
+      "area": "Riverside / Sisowath Quay",
+      "area_en": "Riverside area",
+      "checkin": "28/3",
+      "checkout": "30/3",
+      "nights": 2,
+      "rooms": 2,
+      "notes": "ליד הטיילת וה-Royal Palace",
+      "search": "https://www.google.com/travel/hotels/Phnom+Penh?q=hotels+phnom+penh+riverside&dates=2026-03-28,2026-03-30&guests=6"
+    },
+    {
+      "num": 3,
+      "city": "Ho Chi Minh City",
+      "city_he": "הו צ'י מין",
+      "country_flag": "🇻🇳",
+      "area": "District 1 (מרכז)",
+      "area_en": "District 1 center",
+      "checkin": "30/3",
+      "checkout": "2/4",
+      "nights": 3,
+      "rooms": 2,
+      "notes": "District 1 = הכי נוח. קרוב לאטרקציות ואוכל רחוב",
+      "search": "https://www.google.com/travel/hotels/Ho+Chi+Minh+City?q=hotels+district+1+saigon+family&dates=2026-03-30,2026-04-02&guests=6"
+    },
+    {
+      "num": 4,
+      "city": "Hoi An",
+      "city_he": "הוי אן",
+      "country_flag": "🇻🇳",
+      "area": "ליד An Bang Beach",
+      "area_en": "An Bang Beach area",
+      "checkin": "2/4",
+      "checkout": "7/4",
+      "nights": 5,
+      "rooms": 2,
+      "notes": "בריכה + קרוב לחוף! Villa / Resort מומלץ. Grab ל-Ancient Town",
+      "search": "https://www.google.com/travel/hotels/Hoi+An?q=hotels+hoi+an+an+bang+beach+pool&dates=2026-04-02,2026-04-07&guests=6"
+    },
+    {
+      "num": 5,
+      "city": "Hanoi",
+      "city_he": "האנוי",
+      "country_flag": "🇻🇳",
+      "area": "Old Quarter",
+      "area_en": "Old Quarter / Hoan Kiem",
+      "checkin": "7/4",
+      "checkout": "9/4",
+      "nights": 2,
+      "rooms": 2,
+      "notes": "לילה אחד במלון + לילה אחד על ספינה ב-Ha Long Bay",
+      "search": "https://www.google.com/travel/hotels/Hanoi?q=hotels+hanoi+old+quarter+family&dates=2026-04-07,2026-04-09&guests=6"
+    },
+    {
+      "num": 6,
+      "city": "Ha Long Bay",
+      "city_he": "מפרץ הא לונג",
+      "country_flag": "🇻🇳",
+      "area": "Overnight Cruise",
+      "area_en": "Cruise ship",
+      "checkin": "9/4",
+      "checkout": "10/4",
+      "nights": 1,
+      "rooms": 2,
+      "notes": "ספינת שייט עם קאבינות משפחתיות. הזמינו מוקדם! Ambassador / Stellar of the Seas",
+      "search": "https://www.google.com/search?q=Ha+Long+Bay+family+overnight+cruise+2+cabins"
+    },
+    {
+      "num": 7,
+      "city": "Bangkok",
+      "city_he": "בנקוק",
+      "country_flag": "🇹🇭",
+      "area": "Sukhumvit / Silom",
+      "area_en": "Sukhumvit or Silom area",
+      "checkin": "11/4",
+      "checkout": "13/4",
+      "nights": 2,
+      "rooms": 2,
+      "notes": "בריכה חובה! ליד BTS (רכבת עילית). Songkran 12-13/4!",
+      "search": "https://www.google.com/travel/hotels/Bangkok?q=hotels+bangkok+sukhumvit+pool+family&dates=2026-04-11,2026-04-13&guests=6"
+    }
+  ],
+  "flights": {
+    "internal": [
+      {"date": "24/3", "route": "Bangkok → Siem Reap", "airline": "Bangkok Airways", "time": "18:00-19:15", "duration": "1h15", "price": "80-120", "search": "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+24+2026"},
+      {"date": "28/3", "route": "Siem Reap → Phnom Penh", "airline": "Cambodia Angkor Air / Lanmei", "time": "14:00-14:45", "duration": "45m", "price": "60-100", "search": "https://www.google.com/travel/flights?q=Siem+Reap+to+Phnom+Penh+March+28+2026"},
+      {"date": "30/3", "route": "Phnom Penh → HCMC", "airline": "Vietnam Airlines", "time": "18:00-19:00", "duration": "1h", "price": "60-100", "search": "https://www.google.com/travel/flights?q=Phnom+Penh+to+Ho+Chi+Minh+March+30+2026"},
+      {"date": "3/4", "route": "HCMC → Da Nang", "airline": "VietJet / VN Air", "time": "10:00-11:20", "duration": "1h20", "price": "40-80", "search": "https://www.google.com/travel/flights?q=Ho+Chi+Minh+to+Da+Nang+April+3+2026"},
+      {"date": "8/4", "route": "Da Nang → Hanoi", "airline": "VietJet / VN Air", "time": "12:00-13:20", "duration": "1h20", "price": "40-70", "search": "https://www.google.com/travel/flights?q=Da+Nang+to+Hanoi+April+8+2026"},
+      {"date": "11/4", "route": "Hanoi → Bangkok", "airline": "AirAsia / VietJet", "time": "09:00-12:30", "duration": "3h30", "price": "80-150", "search": "https://www.google.com/travel/flights?q=Hanoi+to+Bangkok+April+11+2026"}
+    ],
+    "total_estimate": "~1,900$ - 3,200$",
+    "tip": "💡 <strong>חיסכון:</strong> הזמינו מוקדם ב-Skyscanner / Google Flights. VietJet זולים אבל מזוודות בתשלום נפרד. Vietnam Airlines כוללים מזוודה."
+  },
+  "budget": {
+    "table": [
+      {"category": "🏨 לינה (2 חדרים) / לילה", "cambodia": "60-150$", "vietnam": "60-150$", "thailand": "100-200$"},
+      {"category": "🍽️ אוכל (6 נפשות) / יום", "cambodia": "30-60$", "vietnam": "30-60$", "thailand": "60-100$"},
+      {"category": "🎫 אטרקציות / יום", "cambodia": "20-50$", "vietnam": "20-50$", "thailand": "30-60$"},
+      {"category": "🚕 תחבורה / יום", "cambodia": "10-20$", "vietnam": "10-20$", "thailand": "20-40$"},
+      {"category": "סה\"כ / יום", "cambodia": "120-280$", "vietnam": "120-280$", "thailand": "210-400$", "is_total": true}
+    ],
+    "summary": {
+      "accommodation": "1,300-2,800$",
+      "food": "650-1,350$",
+      "attractions": "350-900$",
+      "internal_flights": "1,900-3,200$",
+      "grand_total": "4,200-8,250$",
+      "note": "סה\"כ: לינה, אוכל, אטרקציות, תחבורה, טיסות פנימיות | 21 ימים, 6 נפשות"
+    }
+  },
+  "practical": [
+    {
+      "title": "🛂 Visas - ויזות",
+      "items": [
+        "🇹🇭 <strong>Thailand:</strong> ישראלים פטורים ל-30 יום",
+        "🇰🇭 <strong>Cambodia:</strong> Visa on Arrival ב-Siem Reap ~30$/אדם. תמונת פספורט + USD מזומן",
+        "🇻🇳 <strong>Vietnam:</strong> <a href='https://evisa.gov.vn' target='_blank'>e-Visa</a> ~25$/אדם. <strong>הגישו עכשיו!</strong> 3-7 ימי עבודה"
+      ]
+    },
+    {
+      "title": "💊 Health - בריאות",
+      "items": [
+        "💉 בדקו: Hepatitis A, Typhoid, Tetanus",
+        "🏥 <strong>Travel Insurance with medical coverage - חובה!</strong>",
+        "💧 Bottled water only! קרח - רק במסעדות מוכרות",
+        "🧴 Sunscreen SPF50 + Insect Repellent (DEET)"
+      ]
+    },
+    {
+      "title": "📱 Essential Apps",
+      "items": [
+        "🚗 <a href='https://www.grab.com' target='_blank'><strong>Grab</strong></a> - Rides, Food, Deliveries (Asia's Uber)",
+        "🗣️ <strong>Google Translate</strong> - הורידו שפות offline!",
+        "🗺️ <strong>Google Maps</strong> + <a href='https://maps.me' target='_blank'>Maps.me</a> (offline maps)",
+        "💱 <strong>XE Currency</strong> - המרת מטבעות real-time"
+      ]
+    },
+    {
+      "title": "💵 Currency - מטבעות",
+      "items": [
+        "🇰🇭 <strong>Cambodia:</strong> USD (!) + Riel לעודף",
+        "🇻🇳 <strong>Vietnam:</strong> Dong (VND). 1$ ≈ 25,000₫",
+        "🇹🇭 <strong>Thailand:</strong> Baht (THB). 1₪ ≈ 10 ฿",
+        "💳 Credit cards בערים, cash לשווקים"
+      ]
+    },
+    {
+      "title": "📶 Internet & SIM",
+      "items": [
+        "📱 <strong>Regional eSIM:</strong> <a href='https://www.airalo.com' target='_blank'>Airalo</a> / <a href='https://www.holafly.com' target='_blank'>Holafly</a> - SIM אחד ל-3 מדינות",
+        "📡 Local SIM בכל airport (~5-10$ ל-7 ימים unlimited)",
+        "📶 Free WiFi כמעט בכל מלון, מסעדה וקפה"
+      ]
+    },
+    {
+      "title": "👕 Packing List",
+      "items": [
+        "👕 בגדים קלים, moisture-wicking, כובע רחב",
+        "👗 בגדים צנועים למקדשים (shoulders+knees covered)",
+        "👟 Walking shoes + Sandals",
+        "🔌 Universal adapter + Power bank",
+        "🧴 Sunscreen SPF50 + Bug spray"
+      ]
+    }
+  ],
+  "extensions": [
+    {
+      "icon": "🏝️", "title": "Koh Samui / Koh Phangan", "title_en": "3-4 ימים",
+      "desc": "איים מושלמים. חופים, snorkeling, jungle. טיסה שעה מ-Bangkok.",
+      "links": {"map": "https://maps.google.com/?q=Koh+Samui,+Thailand", "map2": ["https://maps.google.com/?q=Koh+Phangan,+Thailand", "📍 Koh Phangan"], "photos": "https://www.google.com/search?q=Koh+Samui+beach&tbm=isch"}
+    },
+    {
+      "icon": "🏔️", "title": "Chiang Mai - צפון תאילנד", "title_en": "3-4 ימים",
+      "desc": "הרים, מקדשים, Elephant sanctuaries, Night Markets. אוויר קריר!",
+      "links": {"map": "https://maps.google.com/?q=Chiang+Mai,+Thailand", "info": "https://en.wikipedia.org/wiki/Chiang_Mai", "photos": "https://www.google.com/search?q=Chiang+Mai+temples&tbm=isch"}
+    },
+    {
+      "icon": "🏖️", "title": "Krabi / Railay Beach", "title_en": "3-4 ימים",
+      "desc": "Limestone cliffs, חופים מדהימים, island hopping. פחות תיירותי מ-Phuket.",
+      "links": {"map": "https://maps.google.com/?q=Railay+Beach,+Krabi", "photos": "https://www.google.com/search?q=Railay+Beach+Krabi+limestone&tbm=isch"}
+    }
+  ],
+  "checklist": [
+    {"text": "🔴 הגשת e-Visa לוייטנאם ב-evisa.gov.vn (ל-6 נפשות!)", "priority": "urgent"},
+    {"text": "🔴 הזמנת טיסת ערב Bangkok → Siem Reap ל-24/3", "priority": "urgent"},
+    {"text": "🔴 הזמנת שאר הטיסות הפנימיות (5 קטעים)", "priority": "urgent"},
+    {"text": "🔴 הזמנת Ha Long Bay Overnight Cruise (8-9/4)", "priority": "urgent"},
+    {"text": "🟡 הזמנת מלונות / Airbnb ב-6 יעדים", "priority": "week_before"},
+    {"text": "🟡 Travel Insurance עם כיסוי רפואי", "priority": "week_before"},
+    {"text": "🟡 בדיקת חיסונים (Hepatitis A, Typhoid)", "priority": "week_before"},
+    {"text": "🟡 הזמנת Phare Circus Tickets ב-Siem Reap", "priority": "week_before"},
+    {"text": "🟢 6 תמונות פספורט + USD מזומן ל-Cambodia VOA (~30$ x 6)", "priority": "before_departure"},
+    {"text": "🟢 רכישת eSIM (Airalo / Holafly)", "priority": "before_departure"},
+    {"text": "🟢 הורדת Grab + Google Maps offline + Google Translate", "priority": "before_departure"},
+    {"text": "🟢 הזמנת USD מזומן לשווקים", "priority": "before_departure"},
+    {"text": "🟢 צילום פספורטים → Google Drive / iCloud", "priority": "before_departure"},
+    {"text": "🟢 אריזה: בגדים קלים, sunscreen, bug spray, adapter", "priority": "before_departure"}
+  ]
+}
