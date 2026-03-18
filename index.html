@@ -83,6 +83,17 @@
   .info-table tr:last-child td { border-bottom:none; }
   .info-table a { color:var(--primary); text-decoration:none; font-weight:600; }
   .info-table a:hover { text-decoration:underline; }
+  .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .hotel-cards { display:none; }
+  .hotel-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:14px; overflow:hidden; }
+  .hotel-card-header { padding:14px 16px; color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); display:flex; justify-content:space-between; align-items:center; }
+  .hotel-card-header h4 { font-size:1.05em; font-weight:700; }
+  .hotel-card-header .hotel-num { background:rgba(255,255,255,.2); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9em; flex-shrink:0; }
+  .hotel-card-body { padding:14px 16px; }
+  .hotel-card-row { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f0f0f0; font-size:.9em; }
+  .hotel-card-row:last-child { border-bottom:none; }
+  .hotel-card-row .hc-label { color:var(--text-light); font-weight:500; flex-shrink:0; }
+  .hotel-card-row .hc-value { font-weight:600; text-align:left; }
   .budget-total { background:#e8f5e9 !important; font-weight:700; }
   .pkg-btn { background:linear-gradient(135deg,#e8f5e9,#c8e6c9); color:#2e7d32; border:none; font-family:'Heebo',sans-serif; font-size:.72em; font-weight:600; padding:4px 10px; border-radius:8px; cursor:pointer; margin-top:4px; display:inline-flex; align-items:center; gap:4px; transition:.2s; }
   .pkg-btn:hover { background:linear-gradient(135deg,#c8e6c9,#a5d6a7); transform:translateY(-1px); }
@@ -106,8 +117,17 @@
   .practical-card a:hover { text-decoration:underline; }
   .extension-card { background:linear-gradient(135deg,#e8f5e9,#f1f8e9); border:2px dashed var(--accent); border-radius:var(--radius); padding:25px; }
   .extension-card h3 { color:var(--accent); margin-bottom:15px; }
-  .map-container { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin:20px 0; }
+  .map-container { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin:20px 0; position:relative; }
   .map-container iframe { width:100%; height:400px; border:none; }
+  .map-fullscreen-btn { position:absolute; top:10px; left:10px; z-index:1000; background:#fff; border:2px solid rgba(0,0,0,.2); border-radius:8px; padding:6px 12px; cursor:pointer; font-family:'Heebo',sans-serif; font-size:.85em; font-weight:600; color:var(--text); display:flex; align-items:center; gap:6px; box-shadow:0 2px 6px rgba(0,0,0,.15); transition:.2s; }
+  .map-fullscreen-btn:hover { background:#f0f0f0; }
+  .map-container.fullscreen { position:fixed; inset:0; z-index:9999; border-radius:0; margin:0; }
+  .map-container.fullscreen #tripmap { height:100vh !important; }
+  .map-container.fullscreen .map-fullscreen-btn { top:16px; left:16px; padding:8px 16px; font-size:.95em; }
+  .map-legend { position:absolute; bottom:10px; left:10px; z-index:1000; background:rgba(255,255,255,.92); border-radius:8px; padding:8px 12px; font-size:.75em; box-shadow:0 2px 6px rgba(0,0,0,.15); display:flex; gap:10px; flex-wrap:wrap; }
+  .map-legend-item { display:flex; align-items:center; gap:4px; }
+  .map-legend-dot { width:10px; height:10px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.3); }
+  .map-legend-dot.small { width:8px; height:8px; border-radius:50%; border:none; }
   .checklist { list-style:none; }
   .checklist li { padding:8px 0; display:flex; gap:10px; align-items:center; cursor:pointer; }
   .checklist input[type="checkbox"] { width:20px; height:20px; accent-color:var(--primary); cursor:pointer; }
@@ -134,14 +154,64 @@
   .tl-seg.vn { background:var(--vietnam); }
   .tl-seg span { font-size:.85em; opacity:.75; }
   footer { background:var(--primary-dark); color:#fff; text-align:center; padding:30px; margin-top:50px; font-size:.9em; opacity:.9; }
+  @media(max-width:768px) {
+    .container { padding:8px 0; }
+    .section-title { font-size:1.4em; }
+    .food-grid { grid-template-columns:1fr; }
+    .practical-grid { grid-template-columns:1fr; }
+    .day-info-grid { grid-template-columns:1fr 1fr; }
+    .info-table { font-size:.85em; }
+    .info-table th, .info-table td { padding:10px 10px; }
+  }
   @media(max-width:600px) {
-    .hero h1 { font-size:2em; }
-    .day-header { flex-direction:column; gap:5px; }
-    .nav-btn { padding:12px 14px; font-size:.8em; }
+    .hero { padding:40px 10px 30px; }
+    .hero h1 { font-size:1.7em; }
+    .hero .subtitle { font-size:1.1em; }
+    .hero .dates { font-size:.9em; }
+    .hero .flags { font-size:2em; letter-spacing:6px; }
+    .route-bar { gap:4px; }
     .route-stop { font-size:.7em; padding:4px 8px; }
+    .route-arrow { font-size:.65em; }
+    .nav-btn { padding:12px 14px; font-size:.8em; }
+    .container { padding:0; }
+    .section { margin-bottom:20px; }
+    .section-title { font-size:1.3em; gap:8px; }
+    .day-header { flex-direction:column; gap:5px; padding:14px 12px; }
+    .day-header h3 { font-size:1.05em; }
+    .day-body { padding:12px 8px; }
+    .day-info-grid { grid-template-columns:1fr; gap:8px; }
+    .info-chip { padding:8px 12px; font-size:.85em; }
+    .day-tab { padding:8px 12px; font-size:.8em; }
     .timeline-mini { flex-direction:column; }
     .tl-seg { flex-direction:row; gap:6px; justify-content:flex-start; padding:8px 14px; }
-    .day-tab { padding:8px 12px; font-size:.8em; }
+    .food-grid { grid-template-columns:1fr; gap:14px; }
+    .food-card { padding:12px 8px; }
+    .food-card h4 { font-size:1em; }
+    .practical-grid { grid-template-columns:1fr; gap:14px; }
+    .practical-card { padding:12px 8px; }
+    .info-table { font-size:.75em; }
+    .info-table th, .info-table td { padding:8px 6px; }
+    .map-container iframe, #tripmap { height:280px !important; }
+    .tip { padding:12px 14px; font-size:.85em; }
+    .extension-card { padding:12px 8px; }
+    .hotels-table-wrap { display:none !important; }
+    .hotel-cards { display:block; }
+    .day-card { border-radius:0; margin-bottom:16px; }
+    .map-container { border-radius:0; margin:12px 0; }
+    .day-card:hover { transform:none; }
+    .pkg-modal { padding:20px; width:94%; }
+    .dest-expand-toggle { padding:12px 16px; font-size:.88em; }
+    .dest-extended-desc { padding:12px 14px; font-size:.88em; }
+    .dest-info-tag { font-size:.78em; padding:4px 10px; }
+    footer { padding:20px 16px; font-size:.82em; }
+  }
+  @media(max-width:400px) {
+    .hero h1 { font-size:1.4em; }
+    .hero .subtitle { font-size:.95em; }
+    .nav-btn { padding:10px 10px; font-size:.75em; }
+    .day-info-grid { grid-template-columns:1fr; }
+    .info-table { font-size:.7em; }
+    .info-table th, .info-table td { padding:6px 4px; }
   }
   @media print {
     .nav,.map-container,.hero::before { display:none; }
@@ -152,7 +222,7 @@
 </style>
 </head>
 <body>
-<div id="app" style="padding:60px;text-align:center;color:var(--text-light);font-size:1.2em">טוען נתונים...</div>
+<div id="app" style="padding:5px;text-align:center;color:var(--text-light);font-size:1.2em">טוען נתונים...</div>
 
 <script>
 const DATA_FILE = 'trip_data.json';
@@ -298,7 +368,7 @@ function render(D) {
   // Overview
   html += '<div class="section" id="overview"><div class="section-title"><span>🗺️</span> מפת המסלול</div>';
   html += '<div class="timeline-mini">' + D.timeline.map(function(t){ var cls = t.country==='kh'?'kh':t.country==='vn'?'vn':'th'; return '<div class="tl-seg '+cls+'" style="flex:'+t.flex+'">'+t.flag+' '+t.name+'<span>'+t.dates+'</span></div>'; }).join('') + '</div>';
-  html += '<div class="map-container"><div id="tripmap" style="width:100%;height:400px;"></div></div>';
+  html += '<div class="map-container" id="mapContainer"><button class="map-fullscreen-btn" onclick="toggleMapFullscreen()">⛶ מסך מלא</button><div id="tripmap" style="width:100%;height:400px;"></div><div class="map-legend"><div class="map-legend-item"><div class="map-legend-dot" style="background:var(--primary)"></div> עיר</div><div class="map-legend-item"><div class="map-legend-dot small" style="background:var(--secondary)"></div> אטרקציה</div><div class="map-legend-item"><span style="font-size:11px">🏨</span> מלון</div><div class="map-legend-item"><span style="font-size:11px">✈️</span> שדה תעופה</div></div></div>';
 
   html += '<div style="overflow-x:auto;margin-top:20px"><table class="info-table"><thead><tr><th>תאריכים</th><th>יעד</th><th>לילות</th><th>דגשים</th></tr></thead><tbody>';
   html += D.overview_table.map(function(r){ return '<tr><td>'+r.dates+'</td><td>'+r.dest+'</td><td>'+r.nights+'</td><td>'+r.highlights+'</td></tr>'; }).join('');
@@ -323,19 +393,45 @@ function render(D) {
 
   // Flights
   html += '<div class="section" id="flights"><div class="section-title"><span>✈️</span> טיסות פנימיות להזמנה</div>';
-  html += '<table class="info-table"><thead><tr><th>תאריך</th><th>מסלול</th><th>חברה</th><th>שעות</th><th>משך</th><th>~$/אדם</th><th>חיפוש</th></tr></thead><tbody>';
+  html += '<div class="table-wrap"><table class="info-table"><thead><tr><th>תאריך</th><th>מסלול</th><th>חברה</th><th>שעות</th><th>משך</th><th>~$/אדם</th><th>חיפוש</th></tr></thead><tbody>';
   html += D.flights.internal.map(function(f){ return '<tr><td>'+f.date+'</td><td>'+f.route+'</td><td>'+f.airline+'</td><td>'+(f.time||'—')+'</td><td>'+f.duration+'</td><td>'+f.price+'</td><td><a href="'+f.search+'" target="_blank">🔍</a></td></tr>'; }).join('');
-  html += '</tbody></table>';
+  html += '</tbody></table></div>';
   html += '<div style="background:#e8f5e9;border-radius:12px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div><strong>💵 סה"כ טיסות פנימיות (6 נפשות):</strong></div><div style="font-size:1.3em;font-weight:800;color:#2e7d32">'+D.flights.total_estimate+'</div></div>';
   html += '<div class="tip" style="margin-top:15px">'+D.flights.tip+'</div></div>';
 
   // Hotels
   if (D.hotels && D.hotels.length) {
     html += '<div class="section" id="hotels"><div class="section-title"><span>🏨</span> מלונות להזמנה</div>';
-    html += '<table class="info-table"><thead><tr><th>#</th><th>עיר</th><th>אזור מומלץ</th><th>צ\'ק-אין</th><th>צ\'ק-אאוט</th><th>לילות</th><th>חדרים</th><th>הערות</th><th>חיפוש</th></tr></thead><tbody>';
+    // Desktop table
+    html += '<div class="table-wrap hotels-table-wrap"><table class="info-table"><thead><tr><th>#</th><th>עיר</th><th>אזור מומלץ</th><th>צ\'ק-אין</th><th>צ\'ק-אאוט</th><th>לילות</th><th>חדרים</th><th>הערות</th><th>חיפוש</th></tr></thead><tbody>';
     html += D.hotels.map(function(h){ var nameHtml = h.name ? (h.link ? '<a href="'+h.link+'" target="_blank" style="color:var(--primary);font-weight:600;text-decoration:none">'+h.name+'</a>' : '<strong>'+h.name+'</strong>') : ''; var cityHtml = h.country_flag+' '+h.city+'<br><span style="font-size:.8em;color:var(--text-light)">'+h.city_he+'</span>' + (nameHtml ? '<br>'+nameHtml : ''); var statusBadge = h.status === 'confirmed' ? ' <span style="background:#e8f5e9;color:#2e7d32;font-size:.7em;padding:2px 6px;border-radius:4px;font-weight:600">✅ מאושר</span>' : ''; var pkgBtn = ''; if (h.package_includes && h.package_includes.length) { pkgBtn = '<br><button class="pkg-btn" onclick="showPkg('+h.num+')">🎁 פרטי חבילה ('+h.package_includes.length+')</button>'; } var notesHtml = h.notes + (h.price_detail ? '<br><span style="color:#2e7d32;font-weight:600">'+h.price_detail+'</span>' : '') + pkgBtn; return '<tr><td>'+h.num+'</td><td>'+cityHtml+statusBadge+'</td><td>'+h.area+'</td><td>'+h.checkin+'</td><td>'+h.checkout+'</td><td><strong>'+h.nights+'</strong></td><td>'+h.rooms+'</td><td style="font-size:.85em">'+notesHtml+'</td><td><a href="'+(h.link||h.search)+'" target="_blank">🔍</a></td></tr>'; }).join('');
     var totalNights = D.hotels.reduce(function(s,h){return s+h.nights;},0);
-    html += '</tbody></table>';
+    html += '</tbody></table></div>';
+    // Mobile cards
+    html += '<div class="hotel-cards">';
+    html += D.hotels.map(function(h){
+      var nameHtml = h.name || h.city;
+      var linkHtml = h.link ? '<a href="'+h.link+'" target="_blank" style="color:#fff;text-decoration:underline">'+nameHtml+'</a>' : nameHtml;
+      var statusBadge = h.status === 'confirmed' ? ' <span style="background:rgba(255,255,255,.25);font-size:.7em;padding:2px 8px;border-radius:4px;margin-right:6px">✅ מאושר</span>' : '';
+      var pkgBtn = '';
+      if (h.package_includes && h.package_includes.length) { pkgBtn = '<div style="padding:8px 16px 14px"><button class="pkg-btn" onclick="showPkg('+h.num+')">🎁 פרטי חבילה ('+h.package_includes.length+')</button></div>'; }
+      var card = '<div class="hotel-card">';
+      card += '<div class="hotel-card-header"><div><h4>'+h.country_flag+' '+linkHtml+'</h4><div style="font-size:.8em;opacity:.85;margin-top:2px">'+h.city_he+statusBadge+'</div></div><div class="hotel-num">'+h.num+'</div></div>';
+      card += '<div class="hotel-card-body">';
+      card += '<div class="hotel-card-row"><span class="hc-label">אזור</span><span class="hc-value">'+h.area+'</span></div>';
+      card += '<div class="hotel-card-row"><span class="hc-label">צ\'ק-אין</span><span class="hc-value">'+h.checkin+'</span></div>';
+      card += '<div class="hotel-card-row"><span class="hc-label">צ\'ק-אאוט</span><span class="hc-value">'+h.checkout+'</span></div>';
+      card += '<div class="hotel-card-row"><span class="hc-label">לילות</span><span class="hc-value"><strong>'+h.nights+'</strong></span></div>';
+      card += '<div class="hotel-card-row"><span class="hc-label">חדרים</span><span class="hc-value">'+h.rooms+'</span></div>';
+      if (h.notes) card += '<div class="hotel-card-row"><span class="hc-label">הערות</span><span class="hc-value" style="font-weight:400;font-size:.88em">'+h.notes+'</span></div>';
+      if (h.price_detail) card += '<div class="hotel-card-row"><span class="hc-label">מחיר</span><span class="hc-value" style="color:#2e7d32">'+h.price_detail+'</span></div>';
+      card += '<div class="hotel-card-row"><span class="hc-label">חיפוש</span><span class="hc-value"><a href="'+(h.link||h.search)+'" target="_blank" style="color:var(--primary)">🔍 חפש מלון</a></span></div>';
+      card += '</div>';
+      card += pkgBtn;
+      card += '</div>';
+      return card;
+    }).join('');
+    html += '</div>';
     html += '<div style="background:#e3f2fd;border-radius:12px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div><strong>🏨 סה"כ: '+D.hotels.length+' מלונות | '+totalNights+' לילות | 2 חדרים בכל מלון</strong></div></div>';
     html += '<div class="tip" style="margin-top:15px">💡 <strong>טיפ:</strong> הזמינו 2 חדרים צמודים (connecting rooms) או Family Room גדול. Booking.com ו-Agoda מצוינים לדרום מזרח אסיה. בדקו מדיניות ביטול גמישה!</div>';
     // Package includes modal
@@ -349,13 +445,13 @@ function render(D) {
   // Budget
   var B = D.budget;
   html += '<div class="section" id="budget"><div class="section-title"><span>💰</span> תקציב משוער</div>';
-  html += '<table class="info-table"><thead><tr><th>קטגוריה</th><th>🇰🇭 Cambodia</th><th>🇻🇳 Vietnam</th><th>🇹🇭 Thailand</th></tr></thead><tbody>';
+  html += '<div class="table-wrap"><table class="info-table"><thead><tr><th>קטגוריה</th><th>🇰🇭 Cambodia</th><th>🇻🇳 Vietnam</th><th>🇹🇭 Thailand</th></tr></thead><tbody>';
   html += B.table.map(function(r){ var b=r.is_total; return '<tr'+(b?' class="budget-total"':'')+'><td>'+(b?'<strong>':'')+r.category+(b?'</strong>':'')+'</td><td>'+(b?'<strong>':'')+r.cambodia+(b?'</strong>':'')+'</td><td>'+(b?'<strong>':'')+r.vietnam+(b?'</strong>':'')+'</td><td>'+(b?'<strong>':'')+r.thailand+(b?'</strong>':'')+'</td></tr>'; }).join('');
-  html += '</tbody></table>';
+  html += '</tbody></table></div>';
   var S = B.summary;
   html += '<div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:16px;padding:25px;margin-top:20px;text-align:center">' +
     '<div style="font-size:1.2em;font-weight:700;color:#2e7d32">💵 סיכום עלויות משוער (ללא טיסה ראשית)</div>' +
-    '<div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:15px 0">' +
+    '<div style="display:flex;justify-content:center;gap:15px 30px;flex-wrap:wrap;margin:15px 0">' +
       '<div><div style="font-size:.85em;color:#555">לינה</div><div style="font-weight:800;font-size:1.2em">'+S.accommodation+'</div></div>' +
       '<div><div style="font-size:.85em;color:#555">אוכל</div><div style="font-weight:800;font-size:1.2em">'+S.food+'</div></div>' +
       '<div><div style="font-size:.85em;color:#555">אטרקציות</div><div style="font-weight:800;font-size:1.2em">'+S.attractions+'</div></div>' +
@@ -391,13 +487,89 @@ function render(D) {
 
   document.getElementById('app').innerHTML = html;
 
+  // Activity coordinates lookup
+  var activityCoords = {
+    'Suvarnabhumi+Airport+Bangkok':[13.69,100.75],
+    'Angkor+Wat,+Siem+Reap':[13.4125,103.867],
+    'Bayon+Temple,+Angkor+Thom':[13.4411,103.8589],
+    'Pub+Street,+Siem+Reap':[13.3531,103.855],
+    'Ta+Prohm,+Angkor':[13.4351,103.8889],
+    'Banteay+Srei,+Siem+Reap':[13.5987,103.9628],
+    'Phare+The+Cambodian+Circus,+Siem+':[13.3727,103.8448],
+    'Tonle+Sap+Lake,+Cambodia':[13.17,103.82],
+    'Terrace+of+the+Elephants,+Angkor+':[13.4476,103.8588],
+    'Phnom+Bakheng,+Angkor':[13.4243,103.8558],
+    'Artisans+Angkor,+Siem+Reap':[13.3645,103.8562],
+    'Old+Market+Siem+Reap':[13.3534,103.8563],
+    'Royal+Palace+Phnom+Penh':[11.5639,104.9315],
+    'Central+Market+Phnom+Penh':[11.5704,104.9217],
+    'Sisowath+Quay,+Phnom+Penh':[11.5691,104.9324],
+    'Russian+Market+Phnom+Penh':[11.5461,104.9286],
+    'Cu+Chi+Tunnels,+Ho+Chi+Minh':[11.1417,106.4624],
+    'Ben+Thanh+Market+Ho+Chi+Minh':[10.7725,106.698],
+    'Saigon+Central+Post+Office':[10.7798,106.699],
+    'Mekong+Delta,+Vietnam':[10.2,106.35],
+    'Ben+Thanh+Street+Food+Market':[10.7717,106.6985],
+    'Ben+Thanh+Market,+Ho+Chi+Minh':[10.7725,106.698],
+    'Banh+Mi+Huynh+Hoa,+Ho+Chi+Minh':[10.7715,106.6927],
+    'Da+Nang+International+Airport':[16.0558,108.2022],
+    'My+Khe+Beach,+Da+Nang':[16.0544,108.2472],
+    'Hoi+An+Ancient+Town':[15.8801,108.338],
+    'An+Bang+Beach,+Hoi+An':[15.9011,108.3511],
+    'cooking+class+hoi+an':[15.8795,108.335],
+    'Golden+Bridge+Ba+Na+Hills':[15.9976,107.9942],
+    'Basket+Boat+Cam+Thanh+Hoi+An':[15.8631,108.3395],
+    'tailor+shop+hoi+an':[15.8785,108.337],
+    'Cua+Dai+Beach,+Hoi+An':[15.8841,108.3701],
+    'Cham+Islands,+Vietnam':[15.9433,108.5028],
+    'An+Bang+Beach+sunset':[15.9011,108.3511],
+    'Noi+Bai+International+Airport+Han':[21.2187,105.807],
+    'Old+Quarter,+Hanoi':[21.035,105.852],
+    'Temple+of+Literature+Hanoi':[21.0286,105.8355],
+    'Hoan+Kiem+Lake,+Hanoi':[21.0288,105.8525],
+    'Thang+Long+Water+Puppet+Theatre+H':[21.0318,105.8531],
+    'Ha+Long+Bay,+Vietnam':[20.9101,107.1839],
+    'Lan+Ha+Bay,+Vietnam':[20.79,107.05],
+    'Bun+Cha+Huong+Lien+Hanoi':[21.0133,105.8489],
+    'Grand+Palace,+Bangkok':[13.75,100.4913],
+    'Wat+Pho,+Bangkok':[13.7465,100.4926],
+    'Wat+Arun,+Bangkok':[13.7437,100.4888],
+    'ICONSIAM+Bangkok':[13.7267,100.5103],
+    'King+Power+Mahanakhon+Bangkok':[13.7234,100.5295],
+    'Silom+Road,+Bangkok':[13.7281,100.5349],
+    'Suvarnabhumi+Airport+Bangkok':[13.69,100.75]
+  };
+  // Hotel coordinates
+  var hotelCoords = {
+    1: [13.3580, 103.8550],  // Angkor Privilege Resort & Spa, Siem Reap
+    2: [11.5620, 104.9350],  // Shangri-La Phnom Penh
+    3: [10.7780, 106.7000],  // Garden View Court, Ho Chi Minh City
+    4: [15.8870, 108.3680],  // Wyndham Hoi An Royal Beachfront
+    5: [21.0310, 105.8510],  // May de Ville Crown, Hanoi
+    6: [20.9200, 107.0800],  // Stellar of the Seas, Ha Long Bay
+    7: [13.7450, 100.5350]   // Bangkok (TBD)
+  };
+  // Airport coordinates
+  var airportPois = [
+    {name:'Suvarnabhumi (BKK)', name_he:'סוברנבומי, בנקוק', lat:13.69, lng:100.75},
+    {name:'Siem Reap (REP)', name_he:'סיים ריפ', lat:13.4107, lng:103.8128},
+    {name:'Phnom Penh (PNH)', name_he:'פנום פן', lat:11.5466, lng:104.8441},
+    {name:'Tan Son Nhat (SGN)', name_he:'טאן סון נהאט, הו צ\'י מין', lat:10.8189, lng:106.6519},
+    {name:'Da Nang (DAD)', name_he:'דה נאנג', lat:16.0558, lng:108.2022},
+    {name:'Noi Bai (HAN)', name_he:'נוי באי, האנוי', lat:21.2187, lng:105.807}
+  ];
+  // Country colors for activity markers
+  var destColors = {thailand:'#241D4F',cambodia:'#032EA1',vietnam:'#DA251D',transit:'#888'};
+
   // Build Leaflet map
   if (D.map_pois && D.map_pois.length && document.getElementById('tripmap')) {
-    var map = L.map('tripmap',{scrollWheelZoom:false}).setView([15,105],5);
+    var map = L.map('tripmap',{scrollWheelZoom:true}).setView([15,105],5);
+    window._tripMap = map;
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
       attribution:'&copy; OpenStreetMap',maxZoom:18
     }).addTo(map);
     var coords = [];
+    // City markers (main POIs)
     D.map_pois.forEach(function(p){
       coords.push([p.lat,p.lng]);
       var icon = L.divIcon({
@@ -411,6 +583,82 @@ function render(D) {
     // Draw route line
     var line = L.polyline(coords,{color:'#1B5E7B',weight:3,opacity:0.7,dashArray:'8,8'}).addTo(map);
     map.fitBounds(line.getBounds().pad(0.1));
+
+    // Activity markers - added to a separate layer group
+    var activityLayer = L.layerGroup();
+    function collectActivities(dest) {
+      var acts = [];
+      var color = destColors[dest.header_class] || '#E67E22';
+      (dest.activities || []).forEach(function(a){ if(a.links && a.links.map) acts.push({a:a,color:color}); });
+      var panes = dest.day_panes || {};
+      for (var k in panes) {
+        (panes[k].activities || []).forEach(function(a){ if(a.links && a.links.map) acts.push({a:a,color:color}); });
+      }
+      return acts;
+    }
+    var addedUrls = {};
+    D.destinations.forEach(function(dest){
+      var acts = collectActivities(dest);
+      acts.forEach(function(item){
+        var a = item.a, url = a.links.map;
+        if (addedUrls[url]) return;
+        addedUrls[url] = true;
+        var q = url.split('?q=')[1];
+        if (!q) return;
+        q = q.split('&')[0];
+        var c = activityCoords[q];
+        if (!c) return;
+        var icon = L.divIcon({
+          className:'',
+          html:'<div style="background:'+item.color+';width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);opacity:.85;"></div>',
+          iconSize:[12,12],iconAnchor:[6,6]
+        });
+        var name_he = a.title;
+        L.marker(c,{icon:icon})
+          .bindPopup('<div style="font-family:Heebo,sans-serif;direction:rtl;text-align:right"><strong>'+a.icon+' '+name_he+'</strong>'+(a.title_en?'<br><span style="font-size:.85em;color:#888">'+a.title_en+'</span>':'')+'<br><span style="font-size:.85em">'+a.desc.substring(0,80)+'...</span><br><a href="'+url+'" target="_blank" style="color:var(--primary);font-size:.85em">📍 פתח במפה</a></div>')
+          .addTo(activityLayer);
+      });
+    });
+
+    // Hotel markers
+    D.hotels.forEach(function(h){
+      var c = hotelCoords[h.num];
+      if (!c) return;
+      var icon = L.divIcon({
+        className:'',
+        html:'<div style="background:#2e7d32;color:#fff;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);font-family:Heebo,sans-serif;">🏨</div>',
+        iconSize:[22,22],iconAnchor:[11,11]
+      });
+      var label = h.name || h.city;
+      var statusHtml = h.status === 'confirmed' ? '<br><span style="color:#2e7d32;font-weight:600">✅ מאושר</span>' : '';
+      L.marker(c,{icon:icon})
+        .bindPopup('<div style="font-family:Heebo,sans-serif;direction:rtl;text-align:right"><strong>🏨 '+label+'</strong><br><span style="font-size:.85em;color:#888">'+h.city_he+' | '+h.nights+' לילות | '+h.checkin+' → '+h.checkout+'</span>'+statusHtml+(h.link?'<br><a href="'+h.link+'" target="_blank" style="color:var(--primary);font-size:.85em">🔗 צפה במלון</a>':'')+'</div>')
+        .addTo(activityLayer);
+    });
+
+    // Airport markers
+    airportPois.forEach(function(ap){
+      var icon = L.divIcon({
+        className:'',
+        html:'<div style="background:#f57c00;color:#fff;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);">✈️</div>',
+        iconSize:[22,22],iconAnchor:[11,11]
+      });
+      L.marker([ap.lat,ap.lng],{icon:icon})
+        .bindPopup('<div style="font-family:Heebo,sans-serif;direction:rtl;text-align:right"><strong>✈️ '+ap.name+'</strong><br><span style="font-size:.85em;color:#888">'+ap.name_he+'</span></div>')
+        .addTo(activityLayer);
+    });
+
+    // Show/hide activity markers based on zoom level
+    var ACTIVITY_ZOOM_THRESHOLD = 8;
+    function updateActivityVisibility() {
+      if (map.getZoom() >= ACTIVITY_ZOOM_THRESHOLD) {
+        if (!map.hasLayer(activityLayer)) map.addLayer(activityLayer);
+      } else {
+        if (map.hasLayer(activityLayer)) map.removeLayer(activityLayer);
+      }
+    }
+    updateActivityVisibility();
+    map.on('zoomend', updateActivityVisibility);
   }
 
   // Restore checklist
@@ -450,6 +698,15 @@ function showPkg(num){
   document.getElementById('pkgOverlay').classList.add('show');
 }
 function closePkg(){ document.getElementById('pkgOverlay').classList.remove('show'); }
+function toggleMapFullscreen(){
+  var c = document.getElementById('mapContainer');
+  var btn = c.querySelector('.map-fullscreen-btn');
+  c.classList.toggle('fullscreen');
+  var isFs = c.classList.contains('fullscreen');
+  btn.innerHTML = isFs ? '✕ סגור מסך מלא' : '⛶ מסך מלא';
+  document.body.style.overflow = isFs ? 'hidden' : '';
+  if (window._tripMap) setTimeout(function(){ window._tripMap.invalidateSize(); },200);
+}
 function navTo(id){
   var el = document.getElementById(id);
   if(!el) return;
