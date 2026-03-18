@@ -67,6 +67,8 @@
   .activity-links { margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; }
   .activity-links a { font-size:.8em; color:var(--primary); text-decoration:none; background:#e8f4f8; padding:3px 10px; border-radius:12px; transition:.2s; display:inline-flex; align-items:center; gap:4px; }
   .activity-links a:hover { background:#d0e8f0; }
+  .detail-link { font-size:.82em; color:#fff!important; background:var(--primary)!important; padding:4px 12px!important; border-radius:12px; text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600; transition:.2s; }
+  .detail-link:hover { background:var(--primary-dark)!important; transform:translateY(-1px); }
   .tip { background:#fff8f0; border-right:4px solid var(--secondary); padding:15px 20px; border-radius:0 10px 10px 0; margin-top:15px; font-size:.9em; }
   .food-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
   .food-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; transition:.2s; }
@@ -82,6 +84,18 @@
   .info-table a { color:var(--primary); text-decoration:none; font-weight:600; }
   .info-table a:hover { text-decoration:underline; }
   .budget-total { background:#e8f5e9 !important; font-weight:700; }
+  .pkg-btn { background:linear-gradient(135deg,#e8f5e9,#c8e6c9); color:#2e7d32; border:none; font-family:'Heebo',sans-serif; font-size:.72em; font-weight:600; padding:4px 10px; border-radius:8px; cursor:pointer; margin-top:4px; display:inline-flex; align-items:center; gap:4px; transition:.2s; }
+  .pkg-btn:hover { background:linear-gradient(135deg,#c8e6c9,#a5d6a7); transform:translateY(-1px); }
+  .pkg-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:999; justify-content:center; align-items:center; }
+  .pkg-overlay.show { display:flex; }
+  .pkg-modal { background:#fff; border-radius:16px; max-width:450px; width:90%; padding:25px; box-shadow:0 20px 60px rgba(0,0,0,.3); animation:pkgIn .25s ease; }
+  @keyframes pkgIn { from { transform:scale(.9); opacity:0; } to { transform:scale(1); opacity:1; } }
+  .pkg-modal h4 { color:var(--primary); margin-bottom:15px; font-size:1.1em; display:flex; align-items:center; gap:8px; }
+  .pkg-modal ul { list-style:none; margin:0; padding:0; }
+  .pkg-modal li { padding:8px 0; border-bottom:1px solid #f0f0f0; font-size:.92em; display:flex; gap:8px; align-items:flex-start; }
+  .pkg-modal li:last-child { border-bottom:none; }
+  .pkg-modal .close-btn { background:var(--primary); color:#fff; border:none; font-family:'Heebo',sans-serif; padding:8px 20px; border-radius:10px; cursor:pointer; font-size:.9em; font-weight:600; margin-top:15px; width:100%; transition:.2s; }
+  .pkg-modal .close-btn:hover { background:var(--primary-dark); }
   .practical-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
   .practical-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:25px; }
   .practical-card h3 { color:var(--primary); margin-bottom:15px; font-size:1.15em; }
@@ -98,6 +112,21 @@
   .checklist li { padding:8px 0; display:flex; gap:10px; align-items:center; cursor:pointer; }
   .checklist input[type="checkbox"] { width:20px; height:20px; accent-color:var(--primary); cursor:pointer; }
   .checklist li.checked .check-text { text-decoration:line-through; color:var(--text-light); }
+  .dest-expand { background:#f0f7fa; border-radius:12px; margin-bottom:18px; overflow:hidden; }
+  .dest-expand-toggle { width:100%; border:none; background:none; font-family:'Heebo',sans-serif; padding:14px 20px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:.95em; font-weight:600; color:var(--primary); }
+  .dest-expand-toggle:hover { background:#e0eef5; }
+  .dest-expand-toggle .arrow { transition:transform .3s; font-size:.8em; }
+  .dest-expand-toggle.open .arrow { transform:rotate(180deg); }
+  .dest-expand-body { display:none; padding:0 20px 18px; }
+  .dest-expand-body.show { display:block; }
+  .dest-extended-desc { font-size:.95em; color:var(--text); line-height:1.8; margin-bottom:15px; background:#fff; padding:14px 18px; border-radius:10px; border-right:3px solid var(--primary); }
+  .dest-info-section { margin-bottom:14px; }
+  .dest-info-section h5 { font-size:.9em; font-weight:700; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+  .dest-info-items { display:flex; flex-wrap:wrap; gap:8px; }
+  .dest-info-tag { font-size:.82em; background:#fff; padding:5px 12px; border-radius:20px; border:1px solid #e0e0e0; display:inline-flex; align-items:center; gap:5px; }
+  .activity-tag { font-size:.7em; padding:2px 8px; border-radius:10px; font-weight:600; margin-right:8px; vertical-align:middle; }
+  .activity-tag.must { background:#e8f5e9; color:#2e7d32; }
+  .activity-tag.optional { background:#fff3e0; color:#e65100; }
   .timeline-mini { display:flex; gap:0; margin:25px 0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); font-size:.75em; }
   .tl-seg { padding:10px 6px; color:#fff; text-align:center; display:flex; flex-direction:column; justify-content:center; min-height:60px; font-weight:500; line-height:1.3; }
   .tl-seg.th { background:var(--thailand); }
@@ -144,17 +173,61 @@ function buildLinks(links) {
 
 function buildActivities(activities) {
   return '<ul class="activities">' + activities.map(function(a) {
+    var tagHtml = '';
+    if (a.tag === 'must') tagHtml = '<span class="activity-tag must">חובה</span>';
+    else if (a.tag === 'optional') tagHtml = '<span class="activity-tag optional">רשות</span>';
+    var detailLink = '';
+    if (a.slug && a.detail) detailLink = '<a href="activity.html#'+a.slug+'" class="detail-link">ℹ️ פרטים נוספים</a>';
     return '<li class="activity"><span class="activity-icon">'+a.icon+'</span><div class="activity-content">' +
-      '<div class="activity-title">'+a.title+(a.title_en ? ' <span class="activity-en">'+a.title_en+'</span>' : '')+'</div>' +
+      '<div class="activity-title">'+tagHtml+a.title+(a.title_en ? ' <span class="activity-en">'+a.title_en+'</span>' : '')+'</div>' +
       '<div class="activity-desc">'+a.desc+'</div>' +
+      '<div class="activity-links">' + detailLink + '</div>' +
       buildLinks(a.links) +
     '</div></li>';
   }).join('') + '</ul>';
 }
 
+function buildExpandSection(dest) {
+  if (!dest.extended_desc && !dest.timing && !dest.transport) return '';
+  var uid = 'exp_' + dest.id;
+  var h = '<div class="dest-expand">';
+  h += '<button class="dest-expand-toggle" onclick="toggleExpand(this)">ℹ️ מידע מורחב — תיאור, תחבורה ותזמון <span class="arrow">▼</span></button>';
+  h += '<div class="dest-expand-body" id="'+uid+'">';
+  if (dest.extended_desc) h += '<div class="dest-extended-desc">'+dest.extended_desc+'</div>';
+  if (dest.timing) {
+    h += '<div class="dest-info-section"><h5>⏰ תזמון מומלץ</h5><div class="dest-info-items">';
+    if (dest.timing.best_arrival) h += '<span class="dest-info-tag">🛬 הגעה: '+dest.timing.best_arrival+'</span>';
+    if (dest.timing.best_departure) h += '<span class="dest-info-tag">🛫 יציאה: '+dest.timing.best_departure+'</span>';
+    if (dest.timing.recommended_hours) h += '<span class="dest-info-tag">📅 זמן מומלץ: '+dest.timing.recommended_hours+'</span>';
+    h += '</div></div>';
+  }
+  if (dest.transport) {
+    h += '<div class="dest-info-section"><h5>🚗 תחבורה</h5>';
+    if (dest.transport.to && dest.transport.to.length) {
+      h += '<div style="margin-bottom:8px"><strong style="font-size:.85em;color:var(--text-light)">הגעה ליעד:</strong><div class="dest-info-items" style="margin-top:4px">';
+      dest.transport.to.forEach(function(t){ h += '<span class="dest-info-tag">➡️ '+t+'</span>'; });
+      h += '</div></div>';
+    }
+    if (dest.transport.from && dest.transport.from.length) {
+      h += '<div style="margin-bottom:8px"><strong style="font-size:.85em;color:var(--text-light)">מהיעד הלאה:</strong><div class="dest-info-items" style="margin-top:4px">';
+      dest.transport.from.forEach(function(t){ h += '<span class="dest-info-tag">⬅️ '+t+'</span>'; });
+      h += '</div></div>';
+    }
+    if (dest.transport.local && dest.transport.local.length) {
+      h += '<div><strong style="font-size:.85em;color:var(--text-light)">תחבורה מקומית:</strong><div class="dest-info-items" style="margin-top:4px">';
+      dest.transport.local.forEach(function(t){ h += '<span class="dest-info-tag">🔄 '+t+'</span>'; });
+      h += '</div></div>';
+    }
+    h += '</div>';
+  }
+  h += '</div></div>';
+  return h;
+}
+
 function buildDestination(dest) {
   var body = '';
-  body += '<div class="day-info-grid">' + dest.info_chips.map(function(c){ return '<div class="info-chip"><span class="label">'+c.label+':</span> '+c.value+'</div>'; }).join('') + '</div>';
+  body += '<div class="day-info-grid">' + dest.info_chips.map(function(c){ var val = c.link ? '<a href="'+c.link+'" target="_blank" style="color:inherit;text-decoration:underline">'+c.value+'</a>' : c.value; return '<div class="info-chip"><span class="label">'+c.label+':</span> '+val+'</div>'; }).join('') + '</div>';
+  body += buildExpandSection(dest);
 
   if (dest.day_tabs && dest.day_panes) {
     body += '<div class="day-tabs" data-group="'+dest.id+'">';
@@ -173,6 +246,12 @@ function buildDestination(dest) {
       if (pane.pane_tip) body += '<div class="tip">'+pane.pane_tip+'</div>';
       body += '</div>';
     });
+  } else if (dest.day_panes && dest.day_panes['default']) {
+    var dp = dest.day_panes['default'];
+    var color = dest.header_class==='cambodia'?'var(--cambodia)':dest.header_class==='vietnam'?'var(--vietnam)':'var(--thailand)';
+    body += '<h4 style="color:'+color+';margin-bottom:12px">'+dp.heading+'</h4>';
+    body += buildActivities(dp.activities);
+    if (dp.pane_tip) body += '<div class="tip">'+dp.pane_tip+'</div>';
   } else if (dest.activities) {
     body += buildActivities(dest.activities);
   }
@@ -211,6 +290,7 @@ function render(D) {
     '<button class="nav-btn" onclick="navTo(\'budget\')">💰 תקציב</button>' +
     '<button class="nav-btn" onclick="navTo(\'practical\')">🎒 מידע מעשי</button>' +
     '<button class="nav-btn" onclick="navTo(\'checklist\')">✅ צ\'קליסט</button>' +
+    '<a href="calendar.html" class="nav-btn" style="text-decoration:none;color:inherit">📅 לוח שנה</a>' +
   '</div></nav>';
 
   html += '<div class="container">';
@@ -253,11 +333,16 @@ function render(D) {
   if (D.hotels && D.hotels.length) {
     html += '<div class="section" id="hotels"><div class="section-title"><span>🏨</span> מלונות להזמנה</div>';
     html += '<table class="info-table"><thead><tr><th>#</th><th>עיר</th><th>אזור מומלץ</th><th>צ\'ק-אין</th><th>צ\'ק-אאוט</th><th>לילות</th><th>חדרים</th><th>הערות</th><th>חיפוש</th></tr></thead><tbody>';
-    html += D.hotels.map(function(h){ return '<tr><td>'+h.num+'</td><td>'+h.country_flag+' '+h.city+'<br><span style="font-size:.8em;color:var(--text-light)">'+h.city_he+'</span></td><td>'+h.area+'</td><td>'+h.checkin+'</td><td>'+h.checkout+'</td><td><strong>'+h.nights+'</strong></td><td>'+h.rooms+'</td><td style="font-size:.85em">'+h.notes+'</td><td><a href="'+h.search+'" target="_blank">🔍</a></td></tr>'; }).join('');
+    html += D.hotels.map(function(h){ var nameHtml = h.name ? (h.link ? '<a href="'+h.link+'" target="_blank" style="color:var(--primary);font-weight:600;text-decoration:none">'+h.name+'</a>' : '<strong>'+h.name+'</strong>') : ''; var cityHtml = h.country_flag+' '+h.city+'<br><span style="font-size:.8em;color:var(--text-light)">'+h.city_he+'</span>' + (nameHtml ? '<br>'+nameHtml : ''); var statusBadge = h.status === 'confirmed' ? ' <span style="background:#e8f5e9;color:#2e7d32;font-size:.7em;padding:2px 6px;border-radius:4px;font-weight:600">✅ מאושר</span>' : ''; var pkgBtn = ''; if (h.package_includes && h.package_includes.length) { pkgBtn = '<br><button class="pkg-btn" onclick="showPkg('+h.num+')">🎁 פרטי חבילה ('+h.package_includes.length+')</button>'; } var notesHtml = h.notes + (h.price_detail ? '<br><span style="color:#2e7d32;font-weight:600">'+h.price_detail+'</span>' : '') + pkgBtn; return '<tr><td>'+h.num+'</td><td>'+cityHtml+statusBadge+'</td><td>'+h.area+'</td><td>'+h.checkin+'</td><td>'+h.checkout+'</td><td><strong>'+h.nights+'</strong></td><td>'+h.rooms+'</td><td style="font-size:.85em">'+notesHtml+'</td><td><a href="'+(h.link||h.search)+'" target="_blank">🔍</a></td></tr>'; }).join('');
     var totalNights = D.hotels.reduce(function(s,h){return s+h.nights;},0);
     html += '</tbody></table>';
     html += '<div style="background:#e3f2fd;border-radius:12px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div><strong>🏨 סה"כ: '+D.hotels.length+' מלונות | '+totalNights+' לילות | 2 חדרים בכל מלון</strong></div></div>';
     html += '<div class="tip" style="margin-top:15px">💡 <strong>טיפ:</strong> הזמינו 2 חדרים צמודים (connecting rooms) או Family Room גדול. Booking.com ו-Agoda מצוינים לדרום מזרח אסיה. בדקו מדיניות ביטול גמישה!</div>';
+    // Package includes modal
+    html += '<div class="pkg-overlay" id="pkgOverlay" onclick="if(event.target===this)closePkg()"><div class="pkg-modal" id="pkgModal"></div></div>';
+    // Store packages data globally
+    window._hotelPkgs = {};
+    D.hotels.forEach(function(h){ if(h.package_includes && h.package_includes.length){ window._hotelPkgs[h.num] = { name: h.name||h.city, price: h.price_detail||h.price||'', items: h.package_includes }; } });
     html += '</div>';
   }
 
@@ -350,6 +435,21 @@ function tgl(li){
   li.classList.toggle('checked', cb.checked);
   try { var items = document.querySelectorAll('#cl input'); var s=[]; for(var i=0;i<items.length;i++) s.push(items[i].checked); localStorage.setItem('tc4',JSON.stringify(s)); } catch(e){}
 }
+function toggleExpand(btn){
+  btn.classList.toggle('open');
+  var body = btn.nextElementSibling;
+  body.classList.toggle('show');
+}
+function showPkg(num){
+  var p = window._hotelPkgs[num]; if(!p) return;
+  var h = '<h4>🎁 חבילה מיוחדת — '+p.name+'</h4>';
+  if(p.price) h += '<div style="background:#e8f5e9;padding:8px 12px;border-radius:8px;margin-bottom:12px;font-weight:600;color:#2e7d32">💰 '+p.price+'</div>';
+  h += '<ul>'+p.items.map(function(i){ return '<li><span>✅</span><span>'+i+'</span></li>'; }).join('')+'</ul>';
+  h += '<button class="close-btn" onclick="closePkg()">סגור</button>';
+  document.getElementById('pkgModal').innerHTML = h;
+  document.getElementById('pkgOverlay').classList.add('show');
+}
+function closePkg(){ document.getElementById('pkgOverlay').classList.remove('show'); }
 function navTo(id){
   var el = document.getElementById(id);
   if(!el) return;

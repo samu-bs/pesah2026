@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>לוח שנה - טיול משפחתי 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+  :root {
+    --primary: #1B5E7B; --primary-dark: #134a61; --secondary: #E67E22; --accent: #27AE60;
+    --vietnam: #DA251D; --cambodia: #032EA1; --thailand: #241D4F;
+    --bg: #f5f7fa; --card: #fff; --text: #2c3e50; --text-light: #7f8c8d;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08); --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Heebo',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+
+  /* Back bar */
+  .back-bar { background:#fff; padding:12px 20px; box-shadow:0 2px 8px rgba(0,0,0,.08); position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; }
+  .back-bar a { text-decoration:none; color:var(--primary); font-weight:600; font-size:.95em; display:inline-flex; align-items:center; gap:6px; }
+  .back-bar a:hover { color:var(--primary-dark); }
+
+  /* Header */
+  .cal-header { background:linear-gradient(135deg,var(--primary),#2980b9); color:#fff; padding:40px 20px 30px; text-align:center; }
+  .cal-header h1 { font-size:1.8em; font-weight:800; margin-bottom:5px; }
+  .cal-header .sub { opacity:.85; font-size:1em; font-weight:300; }
+
+  /* Legend */
+  .legend { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; padding:16px 20px; background:#fff; border-bottom:1px solid #eee; }
+  .legend-item { display:flex; align-items:center; gap:5px; font-size:.8em; font-weight:500; color:var(--text-light); }
+  .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .legend-dot.ci { background:var(--accent); }
+  .legend-dot.co { background:#e74c3c; }
+  .legend-dot.fl { background:var(--secondary); }
+  .legend-dot.sl { background:#7c4dff; }
+  .legend-dot.cr { background:#00838f; }
+
+  /* Calendar grid */
+  .cal-container { max-width:1100px; margin:0 auto; padding:25px 15px 60px; }
+
+  .month-label { font-size:1.2em; font-weight:700; color:var(--primary); margin:25px 0 12px; padding-right:5px; }
+  .month-label:first-child { margin-top:0; }
+
+  .week-header { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:6px; }
+  .week-header .day-name { text-align:center; font-size:.78em; font-weight:600; color:var(--text-light); padding:6px 0; }
+
+  .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:20px; }
+
+  .day-cell { background:var(--card); border-radius:12px; min-height:130px; padding:8px 10px; position:relative; box-shadow:0 2px 8px rgba(0,0,0,.05); transition:.2s; border:2px solid transparent; display:flex; flex-direction:column; }
+  .day-cell:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.1); }
+  .day-cell.empty { background:transparent; box-shadow:none; min-height:0; border:none; }
+  .day-cell.empty:hover { transform:none; }
+
+  /* Country colors */
+  .day-cell.cambodia { border-top:3px solid var(--cambodia); }
+  .day-cell.vietnam { border-top:3px solid var(--vietnam); }
+  .day-cell.thailand { border-top:3px solid var(--thailand); }
+  .day-cell.transit { border-top:3px solid #888; }
+
+  .day-num { font-size:1.1em; font-weight:700; color:var(--text); display:flex; align-items:center; gap:5px; }
+  .day-num .flag { font-size:.9em; }
+  .day-num .day-count { font-size:.65em; font-weight:500; color:var(--text-light); background:#f0f4f8; border-radius:8px; padding:1px 6px; margin-right:auto; }
+  .day-city { font-size:.75em; font-weight:600; color:var(--primary); margin-top:2px; }
+
+  .day-events { margin-top:auto; display:flex; flex-direction:column; gap:3px; padding-top:6px; }
+
+  .pill { font-size:.66em; font-weight:600; padding:3px 7px; border-radius:6px; display:flex; align-items:center; gap:4px; line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pill.ci { background:#e8f5e9; color:#2e7d32; }
+  .pill.co { background:#fce4ec; color:#c62828; }
+  .pill.fl { background:#fff3e0; color:#e65100; }
+  .pill.act { background:#e3f2fd; color:#1565c0; }
+  .pill.sleep-hotel { background:#ede7f6; color:#4a148c; }
+  .pill.sleep-cruise { background:#e0f7fa; color:#00695c; font-weight:700; }
+  .pill.sleep-flight { background:#eceff1; color:#546e7f; }
+  .pill.flight-badge { background:#e65100; color:#fff; font-weight:700; border-radius:8px; padding:2px 8px; font-size:.62em; }
+
+  #loading { text-align:center; padding:80px 20px; color:var(--text-light); font-size:1.1em; }
+
+  @media(max-width:700px) {
+    .cal-grid, .week-header { gap:3px; }
+    .day-cell { min-height:90px; padding:5px 6px; border-radius:8px; }
+    .day-num { font-size:.9em; }
+    .day-num .day-count { display:none; }
+    .day-city { font-size:.65em; }
+    .pill { font-size:.58em; padding:2px 4px; }
+    .cal-header h1 { font-size:1.4em; }
+  }
+
+  @media(max-width:450px) {
+    .day-cell { min-height:72px; padding:4px 5px; }
+    .pill .ptxt { display:none; }
+    .pill { justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-bar">
+  <a href="index.html">→ חזרה לתוכנית הטיול</a>
+</div>
+<div id="loading">טוען לוח שנה...</div>
+<div id="app" style="display:none"></div>
+
+<script>
+var COUNTRY_CSS = {kh:'cambodia', vn:'vietnam', th:'thailand', transit:'transit'};
+var HEB_DAYS = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+var HEB_MONTHS = {3:'מרץ 2026', 4:'אפריל 2026'};
+
+function renderCalendar(cal) {
+  var days = cal.days;
+  // Build a lookup: "M-D" -> day entry
+  var lookup = {};
+  days.forEach(function(d) {
+    var parts = d.date.split('/');
+    lookup[parseInt(parts[1]) + '-' + parseInt(parts[0])] = d;
+  });
+
+  var html = '';
+
+  // Header
+  html += '<div class="cal-header">';
+  html += '<h1>📅 לוח שנה - הטיול המשפחתי</h1>';
+  html += '<div class="sub">' + cal.trip.dates + ' • ' + cal.trip.people + '</div>';
+  html += '</div>';
+
+  // Legend
+  html += '<div class="legend">';
+  html += '<div class="legend-item"><div class="legend-dot ci"></div>כניסה למלון</div>';
+  html += '<div class="legend-item"><div class="legend-dot co"></div>יציאה ממלון</div>';
+  html += '<div class="legend-item"><div class="legend-dot fl"></div>טיסה</div>';
+  html += '<div class="legend-item"><div class="legend-dot sl"></div>לינה במלון</div>';
+  html += '<div class="legend-item"><div class="legend-dot cr"></div>לינה על ספינה</div>';
+  html += '</div>';
+
+  html += '<div class="cal-container">';
+
+  // Render March and April
+  [3, 4].forEach(function(month) {
+    html += '<div class="month-label">📆 ' + HEB_MONTHS[month] + '</div>';
+
+    // Week header
+    html += '<div class="week-header">';
+    HEB_DAYS.forEach(function(dn) {
+      html += '<div class="day-name">' + dn + '</div>';
+    });
+    html += '</div>';
+
+    // Grid range
+    var startDay, endDay;
+    if (month === 3) { startDay = 22; endDay = 31; }
+    else { startDay = 1; endDay = 18; }
+
+    // Find Sunday before/at startDay
+    var startDate = new Date(2026, month - 1, startDay);
+    var gridStart = startDay - startDate.getDay();
+
+    var daysInMonth = month === 3 ? 31 : 30;
+    var maxWeeks = month === 3 ? 2 : 3;
+
+    html += '<div class="cal-grid">';
+
+    for (var w = 0; w < maxWeeks; w++) {
+      for (var dow = 0; dow < 7; dow++) {
+        var cDay = gridStart + w * 7 + dow;
+        if (cDay < 1 || cDay > daysInMonth) {
+          html += '<div class="day-cell empty"></div>';
+          continue;
+        }
+
+        var key = month + '-' + cDay;
+        var info = lookup[key];
+
+        if (!info) {
+          // Not part of trip
+          html += '<div class="day-cell">';
+          html += '<div class="day-num" style="color:#ccc">' + cDay + '</div>';
+          html += '</div>';
+          continue;
+        }
+
+        var country = info.destination.country;
+        var cls = COUNTRY_CSS[country] || '';
+        html += '<div class="day-cell ' + cls + '">';
+
+        // Day number + flag + trip day
+        html += '<div class="day-num">';
+        html += '<span class="flag">' + info.destination.flag + '</span> ' + cDay;
+        html += '<span class="day-count">יום ' + info.trip_day + '</span>';
+        html += '</div>';
+        html += '<div class="day-city">' + info.destination.name + '</div>';
+
+        html += '<div class="day-events">';
+
+        // Flight badge
+        if (info.has_flight) {
+          html += '<div class="pill flight-badge">✈️ <span class="ptxt">יום טיסה</span></div>';
+        }
+
+        // Check-out
+        if (info.checkout) {
+          html += '<div class="pill co">🧳 <span class="ptxt">CO ' + info.checkout.city_he + '</span></div>';
+        }
+
+        // Flights
+        info.flights.forEach(function(fl) {
+          html += '<div class="pill fl">✈️ <span class="ptxt">' + fl.route + ' ' + fl.time.split('-')[0] + '</span></div>';
+        });
+
+        // Check-in
+        if (info.checkin) {
+          html += '<div class="pill ci">🏨 <span class="ptxt">CI ' + info.checkin.city_he + '</span></div>';
+        }
+
+        // Sleeping location
+        if (info.sleep) {
+          var sleepType = info.sleep.type || '';
+          var sleepCls = 'sleep-hotel';
+          var sleepIcon = '🛏️';
+          if (sleepType.indexOf('שייט') !== -1 || sleepType.indexOf('🚢') !== -1) {
+            sleepCls = 'sleep-cruise';
+            sleepIcon = '🚢';
+          } else if (sleepType.indexOf('טיסה') !== -1) {
+            sleepCls = 'sleep-flight';
+            sleepIcon = '✈️';
+          }
+          html += '<div class="pill ' + sleepCls + '">' + sleepIcon + ' <span class="ptxt">' + info.sleep.city_he + '</span></div>';
+        }
+
+        html += '</div>'; // day-events
+        html += '</div>'; // day-cell
+      }
+    }
+
+    html += '</div>'; // cal-grid
+  });
+
+  html += '</div>'; // cal-container
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('app').innerHTML = html;
+}
+
+fetch('calendar_data.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) { renderCalendar(data); })
+  .catch(function(e) {
+    document.getElementById('loading').innerHTML = '<div style="color:#c0392b;padding:60px;">שגיאה: ' + e.message + '</div>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,921 @@
+{
+  "trip": {
+    "title": "מדריך טיול משפחתי",
+    "dates": "24 במרץ - 13 באפריל 2026",
+    "people": "2 הורים + בת 16, בן 14, בן 13, בת 8",
+    "start": "24/3/2026",
+    "end": "13/4/2026"
+  },
+  "days": [
+    {
+      "date": "24/3",
+      "date_iso": "2026-03-24",
+      "day_of_week": "שלישי",
+      "day_of_week_num": 2,
+      "trip_day": 1,
+      "destination": {
+        "name": "Transit → Siem Reap",
+        "flag": "✈️",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap",
+        "type": "מלון 🏨",
+        "area": "ליד Pub Street / Old Market"
+      },
+      "flights": [
+        {
+          "route": "TLV → Bangkok",
+          "time": "נחיתה 13:50",
+          "airline": "טיסה ראשית"
+        },
+        {
+          "route": "Bangkok → Siem Reap",
+          "time": "18:00-19:15",
+          "airline": "Bangkok Airways"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap"
+      },
+      "checkout": null,
+      "activities": []
+    },
+    {
+      "date": "25/3",
+      "date_iso": "2026-03-25",
+      "day_of_week": "רביעי",
+      "day_of_week_num": 3,
+      "trip_day": 2,
+      "destination": {
+        "name": "Siem Reap",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap",
+        "type": "מלון 🏨",
+        "area": "ליד Pub Street / Old Market"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🌅",
+          "title": "04:30 - זריחה ב-Angkor Wat",
+          "tag": "must",
+          "slug": "siemreap_sr1_0"
+        },
+        {
+          "icon": "🗿",
+          "title": "Bayon Temple - באיון",
+          "tag": "must",
+          "slug": "siemreap_sr1_1"
+        },
+        {
+          "icon": "🏊",
+          "title": "צהריים - מנוחה בבריכת המלון",
+          "tag": "optional",
+          "slug": "siemreap_sr1_2"
+        }
+      ]
+    },
+    {
+      "date": "26/3",
+      "date_iso": "2026-03-26",
+      "day_of_week": "חמישי",
+      "day_of_week_num": 4,
+      "trip_day": 3,
+      "destination": {
+        "name": "Siem Reap",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap",
+        "type": "מלון 🏨",
+        "area": "ליד Pub Street / Old Market"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🌳",
+          "title": "בוקר - Ta Prohm",
+          "tag": "must",
+          "slug": "siemreap_sr2_0"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Banteay Srei - באנטיי סריי",
+          "tag": "must",
+          "slug": "siemreap_sr2_1"
+        },
+        {
+          "icon": "🎪",
+          "title": "20:00 - Phare, The Cambodian Circus",
+          "tag": "must",
+          "slug": "siemreap_sr2_3"
+        }
+      ]
+    },
+    {
+      "date": "27/3",
+      "date_iso": "2026-03-27",
+      "day_of_week": "שישי",
+      "day_of_week_num": 5,
+      "trip_day": 4,
+      "destination": {
+        "name": "Siem Reap",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap",
+        "type": "מלון 🏨",
+        "area": "ליד Pub Street / Old Market"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🚤",
+          "title": "בוקר - Tonle Sap Lake - טונלה סאפ",
+          "tag": "must",
+          "slug": "siemreap_sr3_0"
+        },
+        {
+          "icon": "🏛️",
+          "title": "אחה\"צ - Terrace of the Elephants",
+          "tag": "optional",
+          "slug": "siemreap_sr3_1"
+        },
+        {
+          "icon": "🌅",
+          "title": "שקיעה מ-Phnom Bakheng",
+          "tag": "optional",
+          "slug": "siemreap_sr3_2"
+        }
+      ]
+    },
+    {
+      "date": "28/3",
+      "date_iso": "2026-03-28",
+      "day_of_week": "שבת",
+      "day_of_week_num": 6,
+      "trip_day": 5,
+      "destination": {
+        "name": "Siem Reap",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "פנום פן",
+        "city": "Phnom Penh",
+        "type": "מלון 🏨",
+        "area": "Riverside / Sisowath Quay"
+      },
+      "flights": [
+        {
+          "route": "Siem Reap → Phnom Penh",
+          "time": "14:00-14:45",
+          "airline": "Cambodia Angkor Air / Lanmei"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "פנום פן",
+        "city": "Phnom Penh"
+      },
+      "checkout": {
+        "city_he": "סיים ריפ",
+        "city": "Siem Reap"
+      },
+      "activities": [
+        {
+          "icon": "✈️",
+          "title": "אחה\"צ - טיסה → Phnom Penh",
+          "tag": "must",
+          "slug": "siemreap_sr4_2"
+        },
+        {
+          "icon": "🏊",
+          "title": "בוקר - בריכה + Artisans Angkor",
+          "tag": "optional",
+          "slug": "siemreap_sr4_0"
+        },
+        {
+          "icon": "🛍️",
+          "title": "Old Market (Psar Chas)",
+          "tag": "optional",
+          "slug": "siemreap_sr4_1"
+        }
+      ]
+    },
+    {
+      "date": "29/3",
+      "date_iso": "2026-03-29",
+      "day_of_week": "ראשון",
+      "day_of_week_num": 0,
+      "trip_day": 6,
+      "destination": {
+        "name": "Phnom Penh",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "פנום פן",
+        "city": "Phnom Penh",
+        "type": "מלון 🏨",
+        "area": "Riverside / Sisowath Quay"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🏛️",
+          "title": "בוקר - Royal Palace + Silver Pagoda",
+          "tag": "must",
+          "slug": "phnompenh_pp1_0"
+        },
+        {
+          "icon": "🌅",
+          "title": "ערב - Sisowath Quay",
+          "tag": "must",
+          "slug": "phnompenh_pp1_2"
+        },
+        {
+          "icon": "🍜",
+          "title": "צהריים - Central Market (Phsar Thmei)",
+          "tag": "optional",
+          "slug": "phnompenh_pp1_1"
+        }
+      ]
+    },
+    {
+      "date": "30/3",
+      "date_iso": "2026-03-30",
+      "day_of_week": "שני",
+      "day_of_week_num": 1,
+      "trip_day": 7,
+      "destination": {
+        "name": "Phnom Penh",
+        "flag": "🇰🇭",
+        "country": "kh"
+      },
+      "sleep": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City",
+        "type": "מלון 🏨",
+        "area": "District 1 (מרכז)"
+      },
+      "flights": [
+        {
+          "route": "Phnom Penh → HCMC",
+          "time": "18:00-19:00",
+          "airline": "Vietnam Airlines"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City"
+      },
+      "checkout": {
+        "city_he": "פנום פן",
+        "city": "Phnom Penh"
+      },
+      "activities": [
+        {
+          "icon": "✈️",
+          "title": "ערב - טיסה ל-Ho Chi Minh City",
+          "tag": "must",
+          "slug": "phnompenh_pp2_2"
+        },
+        {
+          "icon": "🛍️",
+          "title": "בוקר - Russian Market",
+          "tag": "optional",
+          "slug": "phnompenh_pp2_0"
+        },
+        {
+          "icon": "🏖️",
+          "title": "צהריים - מנוחה חופשית",
+          "tag": "optional",
+          "slug": "phnompenh_pp2_1"
+        }
+      ]
+    },
+    {
+      "date": "31/3",
+      "date_iso": "2026-03-31",
+      "day_of_week": "שלישי",
+      "day_of_week_num": 2,
+      "trip_day": 8,
+      "destination": {
+        "name": "HCMC",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City",
+        "type": "מלון 🏨",
+        "area": "District 1 (מרכז)"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🕳️",
+          "title": "Cu Chi Tunnels - מנהרות קו צ'י",
+          "tag": "must",
+          "slug": "hcmc_hc1_0"
+        },
+        {
+          "icon": "🛍️",
+          "title": "Ben Thanh Market + Street Food Tour",
+          "tag": "must",
+          "slug": "hcmc_hc1_1"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Saigon Central Post Office + Notre Dame ",
+          "tag": "optional",
+          "slug": "hcmc_hc1_2"
+        }
+      ]
+    },
+    {
+      "date": "1/4",
+      "date_iso": "2026-04-01",
+      "day_of_week": "רביעי",
+      "day_of_week_num": 3,
+      "trip_day": 9,
+      "destination": {
+        "name": "HCMC",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City",
+        "type": "מלון 🏨",
+        "area": "District 1 (מרכז)"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🛶",
+          "title": "Mekong Delta Day Trip",
+          "tag": "must",
+          "slug": "hcmc_hc2_0"
+        },
+        {
+          "icon": "🍜",
+          "title": "ערב - סיור אוכל רחוב ב-District 1",
+          "tag": "must",
+          "slug": "hcmc_hc2_1"
+        }
+      ]
+    },
+    {
+      "date": "2/4",
+      "date_iso": "2026-04-02",
+      "day_of_week": "חמישי",
+      "day_of_week_num": 4,
+      "trip_day": 10,
+      "destination": {
+        "name": "HCMC",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City",
+        "type": "מלון 🏨",
+        "area": "District 1 (מרכז)"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🛍️",
+          "title": "Ben Thanh Market",
+          "tag": "optional",
+          "slug": "hcmc_hc3_0"
+        },
+        {
+          "icon": "🏖️",
+          "title": "צהריים - סיבוב אחרון + הכנות",
+          "tag": "optional",
+          "slug": "hcmc_hc3_1"
+        },
+        {
+          "icon": "🌆",
+          "title": "ערב - אוכל רחוב אחרון ב-Saigon",
+          "tag": "optional",
+          "slug": "hcmc_hc3_2"
+        }
+      ]
+    },
+    {
+      "date": "3/4",
+      "date_iso": "2026-04-03",
+      "day_of_week": "שישי",
+      "day_of_week_num": 5,
+      "trip_day": 11,
+      "destination": {
+        "name": "Hoi An",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הוי אן",
+        "city": "Hoi An",
+        "type": "מלון 🏨",
+        "area": "ליד An Bang Beach"
+      },
+      "flights": [
+        {
+          "route": "HCMC → Da Nang",
+          "time": "10:00-11:20",
+          "airline": "VietJet / VN Air"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "הוי אן",
+        "city": "Hoi An"
+      },
+      "checkout": {
+        "city_he": "הו צ'י מין",
+        "city": "Ho Chi Minh City"
+      },
+      "activities": [
+        {
+          "icon": "✈️",
+          "title": "בוקר - טיסה HCMC → Da Nang",
+          "tag": "must",
+          "slug": "hoian_ha1_flight"
+        },
+        {
+          "icon": "🏖️",
+          "title": "צהריים - My Khe Beach (Da Nang)",
+          "tag": "must",
+          "slug": "hoian_ha1_0"
+        },
+        {
+          "icon": "🏮",
+          "title": "ערב - Hoi An Ancient Town",
+          "tag": "must",
+          "slug": "hoian_ha1_1"
+        }
+      ]
+    },
+    {
+      "date": "4/4",
+      "date_iso": "2026-04-04",
+      "day_of_week": "שבת",
+      "day_of_week_num": 6,
+      "trip_day": 12,
+      "destination": {
+        "name": "Hoi An",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הוי אן",
+        "city": "Hoi An",
+        "type": "מלון 🏨",
+        "area": "ליד An Bang Beach"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🏖️",
+          "title": "בוקר - An Bang Beach",
+          "tag": "must",
+          "slug": "hoian_ha2_0"
+        },
+        {
+          "icon": "👨‍🍳",
+          "title": "אחה\"צ - Vietnamese Cooking Class",
+          "tag": "must",
+          "slug": "hoian_ha2_1"
+        }
+      ]
+    },
+    {
+      "date": "5/4",
+      "date_iso": "2026-04-05",
+      "day_of_week": "ראשון",
+      "day_of_week_num": 0,
+      "trip_day": 13,
+      "destination": {
+        "name": "Hoi An",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הוי אן",
+        "city": "Hoi An",
+        "type": "מלון 🏨",
+        "area": "ליד An Bang Beach"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🌉",
+          "title": "Ba Na Hills + Golden Bridge",
+          "tag": "must",
+          "slug": "hoian_ha3_0"
+        }
+      ]
+    },
+    {
+      "date": "6/4",
+      "date_iso": "2026-04-06",
+      "day_of_week": "שני",
+      "day_of_week_num": 1,
+      "trip_day": 14,
+      "destination": {
+        "name": "Hoi An",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הוי אן",
+        "city": "Hoi An",
+        "type": "מלון 🏨",
+        "area": "ליד An Bang Beach"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🛶",
+          "title": "אחה\"צ - Basket Boats",
+          "tag": "must",
+          "slug": "hoian_ha4_1"
+        },
+        {
+          "icon": "🏖️",
+          "title": "בוקר - An Bang Beach יום שני בחוף!",
+          "tag": "optional",
+          "slug": "hoian_ha4_0"
+        },
+        {
+          "icon": "👔",
+          "title": "ערב - Tailor-Made Clothing",
+          "tag": "optional",
+          "slug": "hoian_ha4_2"
+        }
+      ]
+    },
+    {
+      "date": "7/4",
+      "date_iso": "2026-04-07",
+      "day_of_week": "שלישי",
+      "day_of_week_num": 2,
+      "trip_day": 15,
+      "destination": {
+        "name": "Hoi An",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "הוי אן",
+        "city": "Hoi An",
+        "type": "מלון 🏨",
+        "area": "ליד An Bang Beach"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🏖️",
+          "title": "בוקר - Cua Dai Beach",
+          "tag": "must",
+          "slug": "cuadai_beach_default_0"
+        },
+        {
+          "icon": "🤿",
+          "title": "אופציה: Cham Islands Day Trip",
+          "tag": "optional",
+          "slug": "cuadai_beach_default_1"
+        },
+        {
+          "icon": "🌅",
+          "title": "ערב - שקיעה על החוף + ארוחה אחרונה ב-Hoi",
+          "tag": "optional",
+          "slug": "cuadai_beach_default_2"
+        }
+      ]
+    },
+    {
+      "date": "8/4",
+      "date_iso": "2026-04-08",
+      "day_of_week": "רביעי",
+      "day_of_week_num": 3,
+      "trip_day": 16,
+      "destination": {
+        "name": "Hanoi",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "האנוי",
+        "city": "Hanoi",
+        "type": "מלון 🏨",
+        "area": "Old Quarter"
+      },
+      "flights": [
+        {
+          "route": "Da Nang → Hanoi",
+          "time": "12:00-13:20",
+          "airline": "VietJet / VN Air"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "האנוי",
+        "city": "Hanoi"
+      },
+      "checkout": {
+        "city_he": "הוי אן",
+        "city": "Hoi An"
+      },
+      "activities": [
+        {
+          "icon": "✈️",
+          "title": "בוקר - טיסה Da Nang → Hanoi",
+          "tag": "must",
+          "slug": "hanoi_hn1_flight"
+        },
+        {
+          "icon": "🏘️",
+          "title": "אחה\"צ - Hanoi Old Quarter",
+          "tag": "must",
+          "slug": "hanoi_hn1_0"
+        },
+        {
+          "icon": "🌅",
+          "title": "Hoan Kiem Lake",
+          "tag": "must",
+          "slug": "hanoi_hn1_2"
+        }
+      ]
+    },
+    {
+      "date": "9/4",
+      "date_iso": "2026-04-09",
+      "day_of_week": "חמישי",
+      "day_of_week_num": 4,
+      "trip_day": 17,
+      "destination": {
+        "name": "Hanoi",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "מפרץ הא לונג",
+        "city": "Ha Long Bay",
+        "type": "ספינת שייט 🚢",
+        "area": "Overnight Cruise"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": {
+        "city_he": "מפרץ הא לונג",
+        "city": "Ha Long Bay"
+      },
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🚐",
+          "title": "07:00 - Transfer to Ha Long Bay",
+          "tag": "must",
+          "slug": "hanoi_hn2_0"
+        },
+        {
+          "icon": "🌊",
+          "title": "Ha Long Bay / Lan Ha Bay - שייט 2 ימים",
+          "tag": "must",
+          "slug": "hanoi_hn2_1"
+        },
+        {
+          "icon": "🍳",
+          "title": "על הספינה: Cooking Class + Tai Chi בזריח",
+          "tag": "optional",
+          "slug": "hanoi_hn2_2"
+        }
+      ]
+    },
+    {
+      "date": "10/4",
+      "date_iso": "2026-04-10",
+      "day_of_week": "שישי",
+      "day_of_week_num": 5,
+      "trip_day": 18,
+      "destination": {
+        "name": "Hanoi",
+        "flag": "🇻🇳",
+        "country": "vn"
+      },
+      "sleep": {
+        "city_he": "האנוי",
+        "city": "Hanoi",
+        "type": "מלון 🏨",
+        "area": "Old Quarter"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": {
+        "city_he": "מפרץ הא לונג",
+        "city": "Ha Long Bay"
+      },
+      "activities": [
+        {
+          "icon": "🚐",
+          "title": "בוקר - חזרה מ-Ha Long Bay ל-Hanoi",
+          "tag": "must",
+          "slug": "hanoi_hn3_0"
+        },
+        {
+          "icon": "🍜",
+          "title": "אוכל רחוב אחרון - Bun Cha + Egg Coffee",
+          "tag": "must",
+          "slug": "hanoi_hn3_1"
+        }
+      ]
+    },
+    {
+      "date": "11/4",
+      "date_iso": "2026-04-11",
+      "day_of_week": "שבת",
+      "day_of_week_num": 6,
+      "trip_day": 19,
+      "destination": {
+        "name": "Bangkok",
+        "flag": "🇹🇭",
+        "country": "th"
+      },
+      "sleep": {
+        "city_he": "בנקוק",
+        "city": "Bangkok",
+        "type": "מלון 🏨",
+        "area": "Sukhumvit / Silom"
+      },
+      "flights": [
+        {
+          "route": "Hanoi → Bangkok",
+          "time": "09:00-12:30",
+          "airline": "AirAsia / VietJet"
+        }
+      ],
+      "has_flight": true,
+      "checkin": {
+        "city_he": "בנקוק",
+        "city": "Bangkok"
+      },
+      "checkout": {
+        "city_he": "האנוי",
+        "city": "Hanoi"
+      },
+      "activities": [
+        {
+          "icon": "✈️",
+          "title": "בוקר - טיסה Hanoi → Bangkok",
+          "tag": "must",
+          "slug": "bangkok_bk2_0"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Grand Palace + Wat Phra Kaew",
+          "tag": "must",
+          "slug": "bangkok_bk2_1"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Wat Pho",
+          "tag": "must",
+          "slug": "bangkok_bk2_2"
+        }
+      ]
+    },
+    {
+      "date": "12/4",
+      "date_iso": "2026-04-12",
+      "day_of_week": "ראשון",
+      "day_of_week_num": 0,
+      "trip_day": 20,
+      "destination": {
+        "name": "Bangkok",
+        "flag": "🇹🇭",
+        "country": "th"
+      },
+      "sleep": {
+        "city_he": "בנקוק",
+        "city": "Bangkok",
+        "type": "מלון 🏨",
+        "area": "Sukhumvit / Silom"
+      },
+      "flights": [],
+      "has_flight": false,
+      "checkin": null,
+      "checkout": null,
+      "activities": [
+        {
+          "icon": "🎉",
+          "title": "כל היום - Songkran Festival!",
+          "tag": "must",
+          "slug": "bangkok_bk3_0"
+        },
+        {
+          "icon": "🍽️",
+          "title": "ערב - ארוחת סיום טיול",
+          "tag": "optional",
+          "slug": "bangkok_bk3_1"
+        }
+      ]
+    },
+    {
+      "date": "13/4",
+      "date_iso": "2026-04-13",
+      "day_of_week": "שני",
+      "day_of_week_num": 1,
+      "trip_day": 21,
+      "destination": {
+        "name": "חזרה הביתה",
+        "flag": "🇹🇭",
+        "country": "transit"
+      },
+      "sleep": {
+        "city_he": "טיסה הביתה",
+        "city": "Flight home",
+        "type": "טיסה ✈️",
+        "area": ""
+      },
+      "flights": [
+        {
+          "route": "Bangkok (BKK) → TLV",
+          "time": "טיסת חזרה",
+          "airline": ""
+        }
+      ],
+      "has_flight": true,
+      "checkin": null,
+      "checkout": {
+        "city_he": "בנקוק",
+        "city": "Bangkok"
+      },
+      "activities": [
+        {
+          "icon": "🧳",
+          "title": "בוקר - צ'ק-אאוט + נסיעה לשדה התעופה",
+          "tag": "must",
+          "slug": "bangkok_bk4_0"
+        },
+        {
+          "icon": "✈️",
+          "title": "טיסת חזרה BKK → TLV",
+          "tag": "must",
+          "slug": "bangkok_bk4_1"
+        }
+      ]
+    }
+  ]
+}

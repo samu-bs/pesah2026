@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>פרטי פעילות</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+  :root {
+    --primary: #1B5E7B; --primary-dark: #134a61; --secondary: #E67E22; --accent: #27AE60;
+    --vietnam: #DA251D; --cambodia: #032EA1; --thailand: #241D4F;
+    --bg: #f5f7fa; --card: #fff; --text: #2c3e50; --text-light: #7f8c8d;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08); --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Heebo',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+  .back-bar { background:#fff; padding:12px 20px; box-shadow:0 2px 8px rgba(0,0,0,.08); position:sticky; top:0; z-index:100; }
+  .back-bar a { text-decoration:none; color:var(--primary); font-weight:600; font-size:.95em; display:inline-flex; align-items:center; gap:6px; }
+  .back-bar a:hover { color:var(--primary-dark); }
+  .hero-detail { padding:50px 20px 40px; color:#fff; text-align:center; position:relative; }
+  .hero-detail.cambodia { background:linear-gradient(135deg,var(--cambodia),#0548e0); }
+  .hero-detail.vietnam { background:linear-gradient(135deg,var(--vietnam),#ff4136); }
+  .hero-detail.thailand { background:linear-gradient(135deg,var(--thailand),#3a2d7a); }
+  .hero-detail.transit { background:linear-gradient(135deg,#555,#888); }
+  .hero-icon { font-size:3em; margin-bottom:10px; }
+  .hero-detail h1 { font-size:1.8em; font-weight:800; margin-bottom:5px; }
+  .hero-detail .subtitle { font-size:1.1em; opacity:.85; font-weight:300; }
+  .hero-detail .tag-badge { display:inline-block; padding:4px 14px; border-radius:20px; font-size:.8em; font-weight:600; margin-top:12px; }
+  .tag-badge.must { background:rgba(46,125,50,.9); color:#fff; }
+  .tag-badge.optional { background:rgba(230,126,34,.9); color:#fff; }
+  .container { max-width:800px; margin:0 auto; padding:25px 20px 60px; }
+  .card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:25px; margin-bottom:20px; }
+  .card h2 { font-size:1.15em; font-weight:700; color:var(--primary); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .card p { font-size:.95em; color:var(--text); line-height:1.8; }
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+  .info-box { background:#f0f7fa; border-radius:12px; padding:14px 16px; text-align:center; }
+  .info-box .label { font-size:.8em; color:var(--text-light); font-weight:500; }
+  .info-box .value { font-size:1em; font-weight:700; color:var(--primary); margin-top:3px; }
+  .tips-list { list-style:none; }
+  .tips-list li { padding:10px 0; border-bottom:1px solid #f0f0f0; display:flex; gap:10px; align-items:flex-start; font-size:.93em; }
+  .tips-list li:last-child { border-bottom:none; }
+  .tips-list .tip-icon { font-size:1.1em; flex-shrink:0; }
+  .warning-box { background:#fff3e0; border-right:4px solid var(--secondary); border-radius:0 12px 12px 0; padding:14px 18px; font-size:.9em; color:#e65100; display:flex; gap:10px; align-items:flex-start; }
+  .kids-box { background:#e8f5e9; border-right:4px solid var(--accent); border-radius:0 12px 12px 0; padding:14px 18px; font-size:.9em; color:#2e7d32; display:flex; gap:10px; align-items:flex-start; }
+  .links-grid { display:flex; flex-wrap:wrap; gap:10px; }
+  .links-grid a { display:inline-flex; align-items:center; gap:6px; padding:10px 18px; background:#e8f4f8; border-radius:25px; text-decoration:none; color:var(--primary); font-weight:600; font-size:.9em; transition:.2s; }
+  .links-grid a:hover { background:#d0e8f0; transform:translateY(-2px); }
+  .nav-arrows { display:flex; justify-content:space-between; gap:15px; margin-top:30px; }
+  .nav-arrow { flex:1; padding:15px 18px; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); text-decoration:none; color:var(--text); transition:.2s; display:flex; flex-direction:column; }
+  .nav-arrow:hover { transform:translateY(-3px); box-shadow:0 8px 25px rgba(0,0,0,.12); }
+  .nav-arrow .dir { font-size:.8em; color:var(--text-light); font-weight:500; }
+  .nav-arrow .name { font-size:.95em; font-weight:600; color:var(--primary); margin-top:3px; }
+  .nav-arrow.next { text-align:left; }
+  #loading { text-align:center; padding:100px 20px; color:var(--text-light); font-size:1.2em; }
+  #error { text-align:center; padding:100px 20px; color:var(--vietnam); }
+  .hero-img-wrap { margin-bottom:20px; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); position:relative; }
+  .hero-img-wrap img { width:100%; height:280px; object-fit:cover; display:block; transition:opacity .3s; }
+  .hero-img-wrap img.loading { opacity:0; }
+  .hero-img-wrap .img-credit { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,.55)); color:#fff; font-size:.72em; padding:18px 14px 6px; text-align:left; direction:ltr; }
+  .hero-img-wrap .img-credit a { color:#cde; text-decoration:none; }
+  .hero-img-wrap .img-placeholder { width:100%; height:280px; background:linear-gradient(135deg,#e0e7ee,#ccd5de); display:flex; align-items:center; justify-content:center; font-size:3em; color:#aab; animation:pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:.7} 50%{opacity:1} }
+  @media(max-width:600px) {
+    .hero-detail h1 { font-size:1.4em; }
+    .hero-img-wrap img { height:200px; }
+    .info-grid { grid-template-columns:1fr 1fr; }
+    .nav-arrows { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-bar"><a href="index.html">→ חזרה לתוכנית הטיול</a></div>
+<div id="loading">טוען פרטים...</div>
+<div id="content" style="display:none"></div>
+
+<script>
+var DATA_FILE = 'trip_data.json';
+
+function getSlug() {
+  // Support both ?id=slug and #slug and /activity/slug
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('id');
+  if (!slug && window.location.hash) slug = window.location.hash.replace('#','');
+  if (!slug) {
+    var parts = window.location.pathname.split('/');
+    var last = parts[parts.length - 1];
+    if (last && last !== 'activity' && last !== 'activity.html' && last !== '') slug = last;
+  }
+  return slug || '';
+}
+
+function findActivity(data, slug) {
+  var allActivities = [];
+  data.destinations.forEach(function(dest) {
+    var cls = dest.header_class || 'transit';
+    if (dest.activities) {
+      dest.activities.forEach(function(a) {
+        allActivities.push({act: a, dest: dest, cls: cls});
+      });
+    }
+    if (dest.day_panes) {
+      Object.keys(dest.day_panes).forEach(function(paneId) {
+        var pane = dest.day_panes[paneId];
+        if (pane.activities) {
+          pane.activities.forEach(function(a) {
+            allActivities.push({act: a, dest: dest, cls: cls, pane: pane});
+          });
+        }
+      });
+    }
+  });
+
+  var idx = -1;
+  for (var i = 0; i < allActivities.length; i++) {
+    if (allActivities[i].act.slug === slug) { idx = i; break; }
+  }
+  if (idx === -1) return null;
+  return {
+    current: allActivities[idx],
+    prev: idx > 0 ? allActivities[idx-1] : null,
+    next: idx < allActivities.length - 1 ? allActivities[idx+1] : null
+  };
+}
+
+function render(result) {
+  var a = result.current.act;
+  var d = a.detail || {};
+  var dest = result.current.dest;
+  var cls = result.current.cls;
+  var tagLabel = a.tag === 'must' ? 'חובה' : a.tag === 'optional' ? 'רשות' : '';
+  var tagCls = a.tag || '';
+
+  document.title = a.icon + ' ' + a.title + ' | מדריך טיול';
+
+  var html = '';
+  // Hero
+  html += '<div class="hero-detail ' + cls + '">';
+  html += '<div class="hero-icon">' + a.icon + '</div>';
+  html += '<h1>' + a.title + '</h1>';
+  if (a.title_en) html += '<div class="subtitle">' + a.title_en + '</div>';
+  html += '<div class="subtitle" style="margin-top:8px;opacity:.7">' + dest.title + '</div>';
+  if (tagLabel) html += '<div class="tag-badge ' + tagCls + '">' + tagLabel + '</div>';
+  html += '</div>';
+
+  html += '<div class="container">';
+
+  // Hero image placeholder (loaded dynamically from Wikipedia)
+  if (d.wiki_title) {
+    html += '<div class="hero-img-wrap" id="hero-img-wrap">';
+    html += '<div class="img-placeholder">' + a.icon + '</div>';
+    html += '</div>';
+  }
+
+  // Full description
+  if (d.full_desc) {
+    html += '<div class="card"><h2>📖 תיאור</h2><p>' + d.full_desc + '</p></div>';
+  }
+
+  // Info boxes
+  html += '<div class="card"><h2>📋 מידע מהיר</h2><div class="info-grid">';
+  if (d.hours) html += '<div class="info-box"><div class="label">🕐 שעות</div><div class="value">' + d.hours + '</div></div>';
+  if (d.price) html += '<div class="info-box"><div class="label">💰 מחיר</div><div class="value">' + d.price + '</div></div>';
+  if (d.duration) html += '<div class="info-box"><div class="label">⏱️ משך ביקור</div><div class="value">' + d.duration + '</div></div>';
+  html += '</div></div>';
+
+  // How to get there
+  if (d.how_to_get) {
+    html += '<div class="card"><h2>🚗 איך מגיעים</h2><p>' + d.how_to_get + '</p></div>';
+  }
+
+  // Tips
+  if (d.tips && d.tips.length) {
+    html += '<div class="card"><h2>💡 טיפים וכדאי לדעת</h2><ul class="tips-list">';
+    d.tips.forEach(function(tip) {
+      html += '<li><span class="tip-icon">✅</span><span>' + tip + '</span></li>';
+    });
+    html += '</ul></div>';
+  }
+
+  // Kids
+  if (d.good_for_kids) {
+    html += '<div class="card"><div class="kids-box"><span style="font-size:1.3em">👨‍👩‍👧‍👦</span><div><strong>מתאים לילדים?</strong><br>' + d.good_for_kids + '</div></div></div>';
+  }
+
+  // Warnings
+  if (d.warnings) {
+    html += '<div class="card"><div class="warning-box"><span style="font-size:1.3em">⚠️</span><div><strong>שימו לב!</strong><br>' + d.warnings + '</div></div></div>';
+  }
+
+  // Links
+  var links = a.links || {};
+  var hasLinks = links.map || links.info || links.photos || links.tickets || links.site || links.map2;
+  if (hasLinks) {
+    html += '<div class="card"><h2>🔗 קישורים</h2><div class="links-grid">';
+    if (links.map) html += '<a href="' + links.map + '" target="_blank">📍 מפה</a>';
+    if (links.map2) {
+      var v = Array.isArray(links.map2) ? links.map2 : [links.map2, '📍 מפה 2'];
+      html += '<a href="' + v[0] + '" target="_blank">' + v[1] + '</a>';
+    }
+    if (links.info) html += '<a href="' + links.info + '" target="_blank">📖 ויקיפדיה</a>';
+    if (links.photos) html += '<a href="' + links.photos + '" target="_blank">📸 תמונות</a>';
+    if (links.tickets) {
+      var v2 = Array.isArray(links.tickets) ? links.tickets : [links.tickets, '🎫 כרטיסים'];
+      html += '<a href="' + v2[0] + '" target="_blank">' + v2[1] + '</a>';
+    }
+    if (links.site) {
+      var v3 = Array.isArray(links.site) ? links.site : [links.site, '🔗 אתר'];
+      html += '<a href="' + v3[0] + '" target="_blank">' + v3[1] + '</a>';
+    }
+    if (links.search) {
+      var v4 = Array.isArray(links.search) ? links.search : [links.search, '🔍 חפש'];
+      html += '<a href="' + v4[0] + '" target="_blank">' + v4[1] + '</a>';
+    }
+    html += '</div></div>';
+  }
+
+  // Prev/Next navigation (RTL: prev on right, next on left)
+  html += '<div class="nav-arrows">';
+  if (result.prev) {
+    html += '<a class="nav-arrow prev" href="activity.html#' + result.prev.act.slug + '"><span class="dir">הקודם →</span><span class="name">' + result.prev.act.icon + ' ' + result.prev.act.title + '</span></a>';
+  }
+  if (result.next) {
+    html += '<a class="nav-arrow next" href="activity.html#' + result.next.act.slug + '"><span class="dir">← הבא</span><span class="name">' + result.next.act.icon + ' ' + result.next.act.title + '</span></a>';
+  }
+  html += '</div>';
+
+  html += '</div>'; // container
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  document.getElementById('content').innerHTML = html;
+
+  // Fetch Wikipedia image dynamically
+  if (d.wiki_title) {
+    var wrap = document.getElementById('hero-img-wrap');
+    if (wrap) {
+      var apiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(d.wiki_title);
+      fetch(apiUrl)
+        .then(function(r) { return r.json(); })
+        .then(function(j) {
+          var src = (j.thumbnail && j.thumbnail.source) ? j.thumbnail.source.replace(/\/\d+px-/, '/800px-') : '';
+          if (src) {
+            var img = new Image();
+            img.alt = a.title;
+            img.className = 'loading';
+            img.onload = function() { img.classList.remove('loading'); };
+            img.onerror = function() { wrap.innerHTML = '<div class="img-placeholder">' + a.icon + '</div>'; };
+            img.src = src;
+            var credit = document.createElement('div');
+            credit.className = 'img-credit';
+            credit.innerHTML = 'Photo: <a href="https://en.wikipedia.org/wiki/' + encodeURIComponent(d.wiki_title) + '" target="_blank">Wikipedia</a>';
+            wrap.innerHTML = '';
+            wrap.appendChild(img);
+            wrap.appendChild(credit);
+          }
+        })
+        .catch(function() {}); // silently fail, keep placeholder
+    }
+  }
+}
+
+// Load data once, then render based on hash
+var _tripData = null;
+
+function loadAndRender() {
+  var slug = getSlug();
+  if (!slug) {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('loading').innerHTML = '<div id="error">לא צוין מזהה פעילות. <a href="index.html">חזרה לתוכנית</a></div>';
+    return;
+  }
+
+  function doRender(data) {
+    var result = findActivity(data, slug);
+    if (!result) {
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('content').style.display = 'none';
+      document.getElementById('loading').innerHTML = '<div id="error">פעילות לא נמצאה: ' + slug + '<br><a href="index.html">חזרה לתוכנית</a></div>';
+      return;
+    }
+    render(result);
+    window.scrollTo(0, 0);
+  }
+
+  if (_tripData) {
+    doRender(_tripData);
+  } else {
+    fetch(DATA_FILE)
+      .then(function(r) { return r.json(); })
+      .then(function(data) { _tripData = data; doRender(data); })
+      .catch(function(e) {
+        document.getElementById('loading').innerHTML = '<div id="error">שגיאה בטעינת נתונים<br>' + e.message + '</div>';
+      });
+  }
+}
+
+window.addEventListener('hashchange', loadAndRender);
+loadAndRender();
+</script>
+</body>
+</html>
