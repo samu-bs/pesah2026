@@ -2,17 +2,17 @@
   "trip_info": {
     "title": "מדריך טיול משפחתי",
     "subtitle": "Cambodia • Vietnam • Thailand",
-    "dates": "24 במרץ - 13 באפריל 2026",
-    "duration_days": 21,
+    "dates": "25 במרץ - 13 באפריל 2026",
+    "duration_days": 20,
     "people": 6,
     "people_desc": "2 הורים + בת 16, בן 14, בן 13, בת 8",
     "budget_range": "300-500$/יום",
     "main_flight": {
       "departure": "TLV → Bangkok (BKK)",
-      "departure_date": "23/3/2026",
-      "departure_time": "21:30",
-      "arrival_date": "24/3/2026",
-      "arrival_time": "13:50"
+      "departure_date": "25/3/2026",
+      "departure_time": "08:00",
+      "arrival_date": "26/3/2026",
+      "arrival_time": "01:15"
     },
     "return_flight": {
       "route": "Bangkok (BKK) → TLV",
@@ -21,7 +21,7 @@
     "route": [
       {
         "flag": "✈️",
-        "name": "Bangkok 13:50"
+        "name": "Bangkok 01:15 (26/3)"
       },
       {
         "flag": "🇰🇭",
@@ -128,8 +128,8 @@
       "country": "kh",
       "flag": "🇰🇭",
       "name": "Siem Reap",
-      "dates": "24-28/3",
-      "flex": 5
+      "dates": "26-28/3",
+      "flex": 3
     },
     {
       "country": "kh",
@@ -169,16 +169,16 @@
   ],
   "overview_table": [
     {
-      "dates": "24/3 ערב",
-      "dest": "✈️ Bangkok → Siem Reap",
-      "nights": "טרנזיט",
-      "highlights": "נחיתה 13:50, טיסת חיבור ערב"
+      "dates": "25/3",
+      "dest": "✈️ טיסה TLV → Bangkok",
+      "nights": "טיסה",
+      "highlights": "המראה 08:00"
     },
     {
-      "dates": "24-28/3",
+      "dates": "26-28/3",
       "dest": "🇰🇭 Siem Reap - សៀមរាប",
-      "nights": "4",
-      "highlights": "Angkor Wat, Bayon, Tonle Sap"
+      "nights": "2",
+      "highlights": "Angkor Wat, Bayon, Ta Prohm, Tonle Sap"
     },
     {
       "dates": "29-30/3",
@@ -220,108 +220,54 @@
   "destinations": [
     {
       "id": "transit",
-      "title": "✈️ יום 1: טרנזיט Bangkok → Siem Reap",
-      "dates_label": "24 במרץ (שלישי) | נחיתה 13:50 → טיסת ערב לקמבודיה",
+      "title": "✈️ יום 1: טיסה TLV → Bangkok",
+      "dates_label": "25 במרץ (רביעי) | המראה 08:00 → נחיתה BKK 01:15 (26/3)",
       "header_class": "transit",
-      "day_range": "ימים 1",
+      "day_range": "יום 1",
       "info_chips": [
         {
+          "label": "✈️ המראה",
+          "value": "TLV 08:00 (25/3)"
+        },
+        {
           "label": "🛬 נחיתה",
-          "value": "Bangkok (BKK) 13:50"
+          "value": "BKK 01:15 (26/3)"
+        },
+        {
+          "label": "🛋️ לאונג'",
+          "value": "Miracle / Coral Lounge"
         },
         {
           "label": "✈️ המשך",
-          "value": "טיסה ~19:30 ל-Siem Reap"
-        },
-        {
-          "label": "⏱️ חיבור",
-          "value": "כ-3.5 שעות"
+          "value": "BKK → SR 07:45-08:45"
         }
       ],
       "day_tabs": null,
       "activities": [
         {
-          "icon": "🛂",
-          "title": "13:50 - נחיתה ב-Suvarnabhumi Airport",
-          "title_en": "BKK - Suvarnabhumi",
-          "desc": "ביקורת דרכונים, איסוף מזוודות. צפו בכשעה. בסביבות 17:00 אתם חופשיים.",
+          "icon": "🛋️",
+          "title": "בוקר - לאונג' בשדה התעופה BKK",
+          "title_en": "Airport Lounge - Suvarnabhumi",
+          "desc": "נחיתה ב-01:15. העברו ללאונג' (Miracle Lounge או Coral Lounge) למנוחה, מקלחת וארוחת בוקר. מתאים למשפחה עם ילדים.",
           "links": {
-            "map": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok",
-            "info": "https://en.wikipedia.org/wiki/Suvarnabhumi_Airport"
+            "map": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok"
           },
           "tag": "must",
-          "slug": "transit_0",
-          "detail": {
-            "full_desc": "נחיתה בנמל התעופה סוברנבומי, אחד מנמלי התעופה המודרניים בעולם. עברת דרך בדיקות הגבול, בדיקות חיזוי והמרה על בעלי דרכון חוץ. הניסיון מובנה וארגוני אך יכול להיות מלחץ עם משפחה.",
-            "how_to_get": "טיסה מנמל התעופה בן גוריון בתל אביב לנמל התעופה סוברנבומי בבנגקוק.",
-            "hours": "N/A",
-            "price": "חינם",
-            "duration": "1-2 שעות לביקורת גבולות",
-            "tips": [
-              "עמדו בתור עבור בעלי דרכון חוץ",
-              "הכינו כתובת המלון וכל מסמכי הנדרשים",
-              "קנו כרטיס SIM בנמל התעופה"
-            ],
-            "good_for_kids": "ילדים עוברים דרך התהליך די מהר",
-            "warnings": "תורים ארוכים במיוחד בשעות בוקר",
-            "wiki_title": "Suvarnabhumi_Airport"
-          }
-        },
-        {
-          "icon": "🍜",
-          "title": "17:00-18:00 - ארוחה מהירה בשדה התעופה",
-          "title_en": "",
-          "desc": "ב-Suvarnabhumi יש מסעדות מצוינות. נצלו את הזמן הקצר לנשנש ולהתרענן.",
-          "links": {},
-          "tag": "optional",
-          "slug": "transit_1",
-          "detail": {
-            "full_desc": "אפשרויות אוכל רבות בתוך נמל התעופה, מיד לאחר הנחיתה. המקום Magic Food Point מציע אוכל תאילנדי זול ואותנטי.",
-            "how_to_get": "בתוך נמל התעופה סוברנבומי, בשכבה הרביעית",
-            "hours": "24/7",
-            "price": "5-15$ לארוחה",
-            "duration": "שעה",
-            "tips": [
-              "Magic Food Point משימה בשכבה 4",
-              "אפשר לקנות חטיפים ומשקאות לטיסה",
-              "הנחונו את התיקים בקודם"
-            ],
-            "good_for_kids": "יש מגוון גדול של אפשרויות אוכל",
-            "warnings": null
-          }
+          "slug": "transit_bkk_lounge"
         },
         {
           "icon": "✈️",
-          "title": "~19:30 - טיסה ל-Siem Reap",
-          "title_en": "Bangkok Airways, ~1h15m",
-          "desc": "נחיתה ~20:45. Grab או טאקסי למלון (~7$). תאילנד וקמבודיה באותו אזור זמן.",
+          "title": "07:45 - טיסה BKK → Siem Reap (08:45)",
+          "title_en": "Bangkok Airways",
+          "desc": "טיסה בוקר לסיים ריפ. כשעה. הגעה ~08:45. Grab או טאקסי למלון (~7$). צ'ק-אין מוקדם.",
           "links": {
             "search": [
-              "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+24+2026+evening",
+              "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+26+2026",
               "🔍 חפש טיסה"
-            ],
-            "site": [
-              "https://www.bangkokair.com",
-              "✈️ Bangkok Airways"
             ]
           },
           "tag": "must",
-          "slug": "transit_2",
-          "detail": {
-            "full_desc": "טיסה בינלאומית קצרה מבנגקוק לסיאם ריאפ, טיסה פנים. אם כרטיס המשך שלכם אינו משולב, עליכם להוציא את התיקים.",
-            "how_to_get": "מהטרמינל המקומי של נמל התעופה סוברנבומי",
-            "hours": "בדקו את שעת הטיסה שלכם",
-            "price": "80-120$ לאדם",
-            "duration": "1:15 בטיסה",
-            "tips": [
-              "אם כרטיס נפרד - הגיעו בשעה מוקדמת",
-              "הגיעו 2 שעות לפני הטיסה",
-              "נמל התעופה בסיאם ריאפ קטן יחסית"
-            ],
-            "good_for_kids": "טיסה קצרה, ילדים בדרך כלל עושים בה טוב",
-            "warnings": "חיבור הדוק בין טיסות עלול להיות בעיה",
-            "wiki_title": "Bangkok_Airways"
-          }
+          "slug": "transit_bkk_sr_flight"
         }
       ],
       "tip": "💡 <strong>חשוב:</strong> הטיסה ל-Siem Reap היא <strong>כרטיס נפרד</strong> - אתם צריכים לאסוף מזוודות, לצאת ולעשות צ'ק-אין מחדש. 3.5 שעות ביניים זה צפוף למשפחה עם ילדים - שקלו גם לינת לילה אחד בבנקוק או טיסה מוקדם למחרת. ויזת קמבודיה - Visa on Arrival בנחיתה.",
@@ -345,8 +291,8 @@
     },
     {
       "id": "siemreap",
-      "title": "🇰🇭 ימים 2-5: Siem Reap - សៀមរាប, קמבודיה",
-      "dates_label": "25-28 במרץ | 4 לילות | Angkor Wat והסביבה",
+      "title": "🇰🇭 ימים 2-4: Siem Reap - សៀមរាប, קמבודיה",
+      "dates_label": "26-28 במרץ | 2 לילות | Angkor Wat והסביבה",
       "header_class": "cambodia",
       "info_chips": [
         {
@@ -373,25 +319,82 @@
       ],
       "day_tabs": [
         {
+          "id": "sr0",
+          "label": "יום 2 (26/3)",
+          "sublabel": "הגעה + מנוחה + Old Market"
+        },
+        {
           "id": "sr1",
-          "label": "יום 2 · 25/3"
+          "label": "יום 3 (27/3)",
+          "sublabel": "מקדשים + קרקס"
         },
         {
           "id": "sr2",
-          "label": "יום 3 · 26/3"
-        },
-        {
-          "id": "sr3",
-          "label": "יום 4 · 27/3"
-        },
-        {
-          "id": "sr4",
-          "label": "יום 5 · 28/3"
+          "label": "יום 4 (28/3)",
+          "sublabel": "Tonle Sap + PP"
         }
       ],
       "day_panes": {
+        "sr0": {
+          "heading": "✈️ יום 2 (26/3) — הגעה בוקר + Old Market + Pub Street ערב",
+          "activities": [
+            {
+              "icon": "🛋️",
+              "title": "01:15-06:00 - לאונג' בשדה התעופה BKK",
+              "title_en": "Airport Lounge - Suvarnabhumi",
+              "desc": "נחיתה ב-01:15. העברו ללאונג' (Miracle Lounge או Coral Lounge) למנוחה, מקלחת וארוחת בוקר.",
+              "links": {
+                "map": "https://maps.google.com/?q=Miracle+Lounge+Suvarnabhumi+Airport"
+              },
+              "tag": "must",
+              "slug": "transit_bkk_lounge"
+            },
+            {
+              "icon": "✈️",
+              "title": "07:45 - טיסה BKK → Siem Reap (08:45)",
+              "title_en": "Bangkok Airways, ~1h",
+              "desc": "טיסה בוקר לסיים ריפ. כשעה. הגעה ~08:45. Grab או טאקסי למלון (~7$). צ'ק-אין מוקדם.",
+              "links": {},
+              "tag": "must",
+              "slug": "transit_bkk_sr_flight"
+            },
+            {
+              "icon": "🏊",
+              "title": "בוקר - צ'ק-אין + מנוחה בבריכת המלון",
+              "title_en": "",
+              "desc": "הגעה למלון ~10:00. צ'ק-אין מוקדם (בקשו מראש). מנוחה בבריכה אחרי לילה על המטוס. שתו הרבה מים!",
+              "links": {},
+              "tag": "must",
+              "slug": "siemreap_arrival_rest"
+            },
+            {
+              "icon": "🛍️",
+              "title": "אחה\"צ - Old Market (Psar Chas) + סיבוב ראשון",
+              "title_en": "ផ្សារចាស់",
+              "desc": "אחרי מנוחה, צאו לסיבוב ראשון באזור. Old Market - שוק מקומי עם מזכרות, תבלינים, ואוכל. התמקחו על הכל!",
+              "links": {
+                "map": "https://maps.google.com/?q=Old+Market+Siem+Reap",
+                "photos": "https://www.google.com/search?q=Old+Market+Psar+Chas+Siem+Reap&tbm=isch"
+              },
+              "tag": "optional",
+              "slug": "siemreap_sr4_1"
+            },
+            {
+              "icon": "🍛",
+              "title": "ערב - Pub Street + Night Market",
+              "title_en": "ផ្សាររាត្រី",
+              "desc": "אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$.",
+              "links": {
+                "map": "https://maps.google.com/?q=Pub+Street,+Siem+Reap",
+                "photos": "https://www.google.com/search?q=Pub+Street+Siem+Reap+night&tbm=isch"
+              },
+              "tag": "optional",
+              "slug": "siemreap_sr1_3"
+            }
+          ]
+        },
         "sr1": {
-          "heading": "🌅 יום 2 (25/3) — Angkor Wat זריחה + Angkor Thom",
+          "heading": "🌅 יום 3 (27/3) — Angkor Wat + Bayon + Ta Prohm + Phare Circus",
           "activities": [
             {
               "icon": "🌅",
@@ -455,63 +458,6 @@
               }
             },
             {
-              "icon": "🏊",
-              "title": "צהריים - מנוחה בבריכת המלון",
-              "title_en": "",
-              "desc": "החום עולה ל-38°! חזרו למלון, בריכה, מנוחה. צאו שוב רק אחרי 15:30.",
-              "links": {},
-              "tag": "optional",
-              "slug": "siemreap_sr1_2",
-              "detail": {
-                "full_desc": "חוזרים למלון להמתנה בוקע בחום הצהריים. הטמפרטורה מגיעה ל-35 מעלות צלזיוס.",
-                "how_to_get": "חזרה למלון בטוק-טוק",
-                "hours": "צהריים",
-                "price": "חינם במלון",
-                "duration": "2-3 שעות",
-                "tips": [
-                  "הצננה בחום הקיצוני היא חיוני",
-                  "שתו המון מים וקחו אלקטרוליטים",
-                  "זמן מושלם לשינוי או למנוחה קלה"
-                ],
-                "good_for_kids": "ילדים צריכים הפוגה זו כדי להתחדש",
-                "warnings": null,
-                "wiki_title": "Angkor_Thom"
-              }
-            },
-            {
-              "icon": "🍛",
-              "title": "ערב - Pub Street + Night Market",
-              "title_en": "ផ្សាររាត្រី",
-              "desc": "אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$.",
-              "links": {
-                "map": "https://maps.google.com/?q=Pub+Street,+Siem+Reap",
-                "info": "https://en.wikipedia.org/wiki/Pub_Street",
-                "photos": "https://www.google.com/search?q=Pub+Street+Siem+Reap+night&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr1_3",
-              "detail": {
-                "full_desc": "חוצה של סיאם ריאפ בלילה, עם מוסיקה חי, אוכל רחוב, ובאנשים רבים הולכים. יש כאן מסעדות וקישוטים זולים.",
-                "how_to_get": "הליכה מרוב מלונות בעיר סיאם ריאפ",
-                "hours": "17:00 עד שעות מאוחרות בלילה",
-                "price": "ארוחות 3-8$ לאדם",
-                "duration": "2-3 שעות",
-                "tips": [
-                  "נסו את קארי אמוק קמבודי",
-                  "שייקים טריים - בן דולר אחד בלבד",
-                  "בשוק הלילה יש סחורה זולה"
-                ],
-                "good_for_kids": "אווירה נהדרת ומעניינת לילדים",
-                "warnings": "זהירו על ממשק",
-                "wiki_title": "Siem_Reap"
-              }
-            }
-          ]
-        },
-        "sr2": {
-          "heading": "🌳 יום 3 (26/3) — Ta Prohm + Banteay Srei",
-          "activities": [
-            {
               "icon": "🌳",
               "title": "בוקר - Ta Prohm",
               "title_en": "ប្រាសាទតាព្រហ្ម - Tomb Raider Temple",
@@ -540,55 +486,27 @@
               }
             },
             {
-              "icon": "🏛️",
-              "title": "Banteay Srei - באנטיי סריי",
-              "title_en": "Citadel of Women",
-              "desc": "מקדש קטן עם הגילופים הכי עדינים ומפורטים. 30 דק' נסיעה צפונה. שווה את הנסיעה!",
-              "links": {
-                "map": "https://maps.google.com/?q=Banteay+Srei,+Siem+Reap",
-                "info": "https://en.wikipedia.org/wiki/Banteay_Srei",
-                "photos": "https://www.google.com/search?q=Banteay+Srei+carvings&tbm=isch"
-              },
-              "tag": "must",
-              "slug": "siemreap_sr2_1",
-              "detail": {
-                "full_desc": "בנטיי סריי, \"עיר נשים\" - מקדש מעדין בעשת ורודה עם ונציה של צבע ורוד.",
-                "how_to_get": "30 דקות נסיעה בטוק-טוק צפונה מהמקדשים הראשיים",
-                "hours": "07:30-17:00",
-                "price": "כרטיס אנגקור",
-                "duration": "1 שעה",
-                "tips": [
-                  "הפסלים דקיקים מאוד - הביאו משקפיים",
-                  "הציבור כאן הרבה יותר דל",
-                  "זה מקום שקט ומעדין"
-                ],
-                "good_for_kids": "מעניין אך יותר קטן",
-                "warnings": "30 דקות נסיעה בכל כיוון",
-                "wiki_title": "Banteay_Srei"
-              }
-            },
-            {
               "icon": "🏊",
-              "title": "אחה\"צ - מנוחה + עיסוי קמבודי",
+              "title": "צהריים - מנוחה בבריכת המלון",
               "title_en": "",
-              "desc": "עיסוי מעולה וזול (~12-15$/שעה). שווקים קטנים ליד המלון.",
+              "desc": "החום עולה ל-38°! חזרו למלון, בריכה, מנוחה. צאו שוב רק אחרי 15:30.",
               "links": {},
               "tag": "optional",
-              "slug": "siemreap_sr2_2",
+              "slug": "siemreap_sr1_2",
               "detail": {
-                "full_desc": "עיסוי קמבודי מסורתי בטכניקה ישנה המשתמשת בלחץ, מתיחות וטכניקות אחרות.",
-                "how_to_get": "רבים בקרוב לכל מלון בסיאם ריאפ",
-                "hours": "כל היום",
-                "price": "10-15$ לשעה",
-                "duration": "1-2 שעות",
+                "full_desc": "חוזרים למלון להמתנה בוקע בחום הצהריים. הטמפרטורה מגיעה ל-35 מעלות צלזיוס.",
+                "how_to_get": "חזרה למלון בטוק-טוק",
+                "hours": "צהריים",
+                "price": "חינם במלון",
+                "duration": "2-3 שעות",
                 "tips": [
-                  "בודיה ספא היא אפשרות יוקרתית",
-                  "עיסוי רחוב הוא בסדר גם כן",
-                  "זה הזמן המושלם להירגע"
+                  "הצננה בחום הקיצוני היא חיוני",
+                  "שתו המון מים וקחו אלקטרוליטים",
+                  "זמן מושלם לשינוי או למנוחה קלה"
                 ],
-                "good_for_kids": "עיסוי רגלים עבור בני נוער",
+                "good_for_kids": "ילדים צריכים הפוגה זו כדי להתחדש",
                 "warnings": null,
-                "wiki_title": "Preah_Khan"
+                "wiki_title": "Angkor_Thom"
               }
             },
             {
@@ -625,8 +543,8 @@
             }
           ]
         },
-        "sr3": {
-          "heading": "🚤 יום 4 (27/3) — Tonle Sap Lake כפרים צפים",
+        "sr2": {
+          "heading": "🚤 יום 4 (28/3) — Tonle Sap + מעבר ל-Phnom Penh",
           "activities": [
             {
               "icon": "🚤",
@@ -658,122 +576,6 @@
                 "good_for_kids": "מרתק לילדים לראות איך עומדת משפחה על המים",
                 "warnings": "אין צל על הסירה - קחו כובעים וקרם הגנה",
                 "wiki_title": "Tonlé_Sap"
-              }
-            },
-            {
-              "icon": "🏛️",
-              "title": "אחה\"צ - Terrace of the Elephants",
-              "title_en": "Terrace of the Leper King",
-              "desc": "מרפסות מלכותיות ענקיות במתחם Angkor Thom. גילופי פילים ולוחמים. פחות עמוס מהמקדשים הגדולים.",
-              "links": {
-                "map": "https://maps.google.com/?q=Terrace+of+the+Elephants,+Angkor+Thom",
-                "info": "https://en.wikipedia.org/wiki/Terrace_of_the_Elephants",
-                "photos": "https://www.google.com/search?q=Terrace+of+Elephants+Angkor&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr3_1",
-              "detail": {
-                "full_desc": "טרס הפילים - טרס בן 300 מטר עם פסלי פילים קטנים בעץ מעוקל.",
-                "how_to_get": "בתוך קומפלקס אנגקור תום",
-                "hours": "07:30-17:30",
-                "price": "כרטיס אנגקור",
-                "duration": "30-45 דקות",
-                "tips": [
-                  "הלכו את כל האורך של הטרס",
-                  "קרוב לטרס הפילים גם טרס מלך הצורעים",
-                  "זה מקום עם היסטוריה"
-                ],
-                "good_for_kids": "ילדים אוהבים את פסלי הפילים",
-                "warnings": "חום קיצוני וללא צל",
-                "wiki_title": "Terrace_of_the_Leper_King"
-              }
-            },
-            {
-              "icon": "🌅",
-              "title": "שקיעה מ-Phnom Bakheng",
-              "title_en": "Bakheng Hill",
-              "desc": "עלו על הגבעה לצפייה בשקיעה מעל Angkor Wat. מוגבל ב-300 איש - הגיעו ב-16:30!",
-              "links": {
-                "map": "https://maps.google.com/?q=Phnom+Bakheng,+Angkor",
-                "info": "https://en.wikipedia.org/wiki/Phnom_Bakheng",
-                "photos": "https://www.google.com/search?q=Phnom+Bakheng+sunset+Angkor+Wat&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr3_2",
-              "detail": {
-                "full_desc": "פנום בכנג היא הר במקדש בחוף - אתר שקט וניצול קרו על גבי הגבעה.",
-                "how_to_get": "הליכה או טוק-טוק, ואחרי כן הליכה תלולה בן 15 דקות",
-                "hours": "עד 17:30",
-                "price": "כרטיס אנגקור",
-                "duration": "1-1.5 שעות",
-                "tips": [
-                  "הגיעו בשעה 16:00 לקבלת מקום טוב",
-                  "כמות המבקרים מוגבלת - בואו מוקדם",
-                  "הנוף עם השמש יורדת הוא בדיוני"
-                ],
-                "good_for_kids": "הטיפול עד הפסגה הוא תרגיל טוב",
-                "warnings": "טיפול תלול - היזהר בילדים קטנים",
-                "wiki_title": "Phnom_Bakheng"
-              }
-            }
-          ]
-        },
-        "sr4": {
-          "heading": "🏊 יום 5 (28/3) — מנוחה + מעבר ל-Phnom Penh",
-          "activities": [
-            {
-              "icon": "🏊",
-              "title": "בוקר - בריכה + Artisans Angkor",
-              "title_en": "Workshop Visit",
-              "desc": "סדנת אמנות קמבודית - רואים אומנים מגלפים, סדנת משי, ציורים. חינם! אחרי זה בריכה ומנוחה.",
-              "links": {
-                "map": "https://maps.google.com/?q=Artisans+Angkor,+Siem+Reap",
-                "info": "https://www.artisansdangkor.com",
-                "photos": "https://www.google.com/search?q=Artisans+Angkor+workshop&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr4_0",
-              "detail": {
-                "full_desc": "בוקר רגוע בבריכה של המלון, ואחרי כן סיור דרך אנגקור, מחנה של אמנים מסורתיים.",
-                "how_to_get": "Artisans Angkor בעיר סיאם ריאפ",
-                "hours": "07:30-18:30",
-                "price": "סיור בדרך כלל חינם",
-                "duration": "1-2 שעות",
-                "tips": [
-                  "סיור בדרך כלל מובנה היטב וחינם",
-                  "חנות הדיוק שלהם מעולה לתזכורות",
-                  "הקבצים של האמנים הם מעניין"
-                ],
-                "good_for_kids": "מעניין לראות אמנים בעבודה",
-                "warnings": null,
-                "wiki_title": "Artisans_Angkor"
-              }
-            },
-            {
-              "icon": "🛍️",
-              "title": "Old Market (Psar Chas)",
-              "title_en": "ផ្សារចាស់",
-              "desc": "קניות אחרונות בסיים ריפ. מזכרות, תבלינים, בגדים. מתמקחים על הכל!",
-              "links": {
-                "map": "https://maps.google.com/?q=Old+Market+Siem+Reap",
-                "photos": "https://www.google.com/search?q=Old+Market+Psar+Chas+Siem+Reap&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr4_1",
-              "detail": {
-                "full_desc": "בסאר צ'אס - שוק ישן מסורתי בעיר סיאם ריאפ.",
-                "how_to_get": "הליכה, בשכונה מרכזית של סיאם ריאפ",
-                "hours": "06:00-מאוחר בלילה",
-                "price": "משתנה, התנו על המחיר",
-                "duration": "1-2 שעות",
-                "tips": [
-                  "התנו עד 40-50% מהמחיר הראשון",
-                  "תזכורות טריות ושקים זולים",
-                  "זה מקום עם חוויה מקומית"
-                ],
-                "good_for_kids": "כיף לחקור",
-                "warnings": "שימו לב לכיסי גנבים",
-                "wiki_title": "Siem_Reap"
               }
             },
             {
@@ -811,9 +613,9 @@
       "tip": "💡 <strong>טיפ:</strong> שכרו טוק-טוק (Tuk-Tuk) עם נהג ליום שלם (~15-20$) - הוא ייקח אתכם בין המקדשים, יחכה ויחזיר. צאו ב-05:00 בבוקר ומנוחה ארוכה בצהריים!",
       "extended_desc": "בירתה העתיקה של הממלכה ההמר בעבר, סיים ריפ היא שער לאחד ממתחמי הקדשים הגדולים בעולם. את Angkor Wat, עם מגדליו המוקטנים וממדיו המדומים, אתה חייב לראות בזריחה. יחד עם Bayon, Ta Prohm ו-Tonle Sap, זה ממש חסר תקדים - קסום ומיסטי.",
       "timing": {
-        "best_arrival": "ערב (כ-20:45)",
-        "best_departure": "אחרי הצהריים ביום 5",
-        "recommended_hours": "4 ימים מלאים"
+        "best_arrival": "אחה\"צ (26/3)",
+        "best_departure": "אחרי הצהריים ביום 4 (28/3)",
+        "recommended_hours": "2 ימים מלאים"
       },
       "transport": {
         "to": [
@@ -830,11 +632,12 @@
           "אופניים ~2-3$/יום",
           "טוק-טוק וקוד עם נהגים במלון"
         ]
-      }
+      },
+      "day_range": "ימים 2-4"
     },
     {
       "id": "phnompenh",
-      "title": "🇰🇭 ימים 6-7: Phnom Penh - ភ្នំពេញ",
+      "title": "🇰🇭 ימים 5-6: Phnom Penh - ភ្នំពេញ",
       "dates_label": "29-30 במרץ | בירת קמבודיה",
       "header_class": "cambodia",
       "info_chips": [
@@ -855,16 +658,16 @@
       "day_tabs": [
         {
           "id": "pp1",
-          "label": "יום 6 · 29/3"
+          "label": "יום 5 (29/3)"
         },
         {
           "id": "pp2",
-          "label": "יום 7 · 30/3"
+          "label": "יום 6 (30/3)"
         }
       ],
       "day_panes": {
         "pp1": {
-          "heading": "🏛️ יום 6 (29/3) — Royal Palace + טיילת המקונג",
+          "heading": "🏛️ יום 5 (29/3) — Royal Palace + טיילת המקונג",
           "activities": [
             {
               "icon": "🏛️",
@@ -952,7 +755,7 @@
           ]
         },
         "pp2": {
-          "heading": "🛍️ יום 7 (30/3) — שווקים + מעבר ל-Vietnam",
+          "heading": "🛍️ יום 6 (30/3) — שווקים + מעבר ל-Vietnam",
           "activities": [
             {
               "icon": "🛍️",
@@ -1052,11 +855,12 @@
           "Grab אפליקציה",
           "הליכה ברחוב סיסוואת"
         ]
-      }
+      },
+      "day_range": "ימים 5-6"
     },
     {
       "id": "hcmc",
-      "title": "🇻🇳 ימים 8-10: Ho Chi Minh City (Saigon)",
+      "title": "🇻🇳 ימים 7-9: Ho Chi Minh City (Saigon)",
       "dates_label": "31/3 - 2/4 | Mekong Delta + עיר תוססת",
       "header_class": "vietnam",
       "info_chips": [
@@ -1081,20 +885,20 @@
       "day_tabs": [
         {
           "id": "hc1",
-          "label": "יום 8 · 31/3"
+          "label": "יום 7 · 31/3"
         },
         {
           "id": "hc2",
-          "label": "יום 9 · 1/4"
+          "label": "יום 8 · 1/4"
         },
         {
           "id": "hc3",
-          "label": "יום 10 · 2/4"
+          "label": "יום 9 · 2/4"
         }
       ],
       "day_panes": {
         "hc1": {
-          "heading": "🕳️ יום 8 (31/3) — Cu Chi Tunnels + סיור עירוני",
+          "heading": "🕳️ יום 7 (31/3) — Cu Chi Tunnels + סיור עירוני",
           "activities": [
             {
               "icon": "🕳️",
@@ -1183,7 +987,7 @@
           ]
         },
         "hc2": {
-          "heading": "🛶 יום 9 (1/4) — Mekong Delta יום שלם",
+          "heading": "🛶 יום 8 (1/4) — Mekong Delta יום שלם",
           "activities": [
             {
               "icon": "🛶",
@@ -1242,7 +1046,7 @@
           ]
         },
         "hc3": {
-          "heading": "🛍️ יום 10 (2/4) — שווקים + יום אחרון ב-Saigon",
+          "heading": "🛍️ יום 9 (2/4) — שווקים + יום אחרון ב-Saigon",
           "activities": [
             {
               "icon": "🛍️",
@@ -1347,7 +1151,7 @@
     },
     {
       "id": "hoian",
-      "title": "🇻🇳 ימים 11-14: Hoi An / Da Nang",
+      "title": "🇻🇳 ימים 10-14: Hoi An / Da Nang",
       "dates_label": "3-6 באפריל | חוף + Ancient Town + בישול",
       "header_class": "vietnam",
       "info_chips": [
@@ -1372,24 +1176,24 @@
       "day_tabs": [
         {
           "id": "ha1",
-          "label": "יום 11 · 3/4"
+          "label": "יום 10 · 3/4"
         },
         {
           "id": "ha2",
-          "label": "יום 12 · 4/4"
+          "label": "יום 11 · 4/4"
         },
         {
           "id": "ha3",
-          "label": "יום 13 · 5/4"
+          "label": "יום 12 · 5/4"
         },
         {
           "id": "ha4",
-          "label": "יום 14 · 6/4"
+          "label": "יום 13 · 6/4"
         }
       ],
       "day_panes": {
         "ha1": {
-          "heading": "✈️ יום 11 (3/4) — טיסה ל-Da Nang + חוף My Khe + Ancient Town ערב",
+          "heading": "✈️ יום 10 (3/4) — טיסה ל-Da Nang + חוף My Khe + Ancient Town ערב",
           "activities": [
             {
               "icon": "✈️",
@@ -1485,7 +1289,7 @@
           ]
         },
         "ha2": {
-          "heading": "🏖️ יום 12 (4/4) — חוף + סדנת בישול",
+          "heading": "🏖️ יום 11 (4/4) — חוף + סדנת בישול",
           "activities": [
             {
               "icon": "🏖️",
@@ -1544,7 +1348,7 @@
           ]
         },
         "ha3": {
-          "heading": "🌉 יום 13 (5/4) — Ba Na Hills + Golden Bridge",
+          "heading": "🌉 יום 12 (5/4) — Ba Na Hills + Golden Bridge",
           "activities": [
             {
               "icon": "🌉",
@@ -1582,7 +1386,7 @@
           ]
         },
         "ha4": {
-          "heading": "🏖️ יום 14 (6/4) — חוף An Bang + Basket Boats + חייט",
+          "heading": "🏖️ יום 13 (6/4) — חוף An Bang + Basket Boats + חייט",
           "activities": [
             {
               "icon": "🏖️",
@@ -1692,7 +1496,7 @@
     },
     {
       "id": "cuadai_beach",
-      "title": "🏖️ יום 15: Cua Dai Beach - יום חוף מלא",
+      "title": "🏖️ יום 14: Cua Dai Beach - יום חוף מלא",
       "dates_label": "7 באפריל | יום בטן-גב על החוף",
       "header_class": "vietnam",
       "info_chips": [
@@ -1712,7 +1516,7 @@
       "day_tabs": null,
       "day_panes": {
         "default": {
-          "heading": "🏖️ יום 15 (7/4) — יום חוף מלא + Cham Islands אופציונלי",
+          "heading": "🏖️ יום 14 (7/4) — יום חוף מלא + Cham Islands אופציונלי",
           "activities": [
             {
               "icon": "🏖️",
@@ -1815,7 +1619,7 @@
     },
     {
       "id": "hanoi",
-      "title": "🇻🇳 ימים 16-18: Hanoi + Ha Long Bay",
+      "title": "🇻🇳 ימים 15-17: Hanoi + Ha Long Bay",
       "dates_label": "8-10 באפריל | שייט במפרץ + Old Quarter",
       "header_class": "vietnam",
       "info_chips": [
@@ -1841,20 +1645,20 @@
       "day_tabs": [
         {
           "id": "hn1",
-          "label": "יום 16 · 8/4"
+          "label": "יום 15 · 8/4"
         },
         {
           "id": "hn2",
-          "label": "יום 17 · 9/4"
+          "label": "יום 16 · 9/4"
         },
         {
           "id": "hn3",
-          "label": "יום 18 · 10/4"
+          "label": "יום 17 · 10/4"
         }
       ],
       "day_panes": {
         "hn1": {
-          "heading": "✈️ יום 16 (8/4) — טיסה ל-Hanoi + Old Quarter + Water Puppets",
+          "heading": "✈️ יום 15 (8/4) — טיסה ל-Hanoi + Old Quarter + Water Puppets",
           "activities": [
             {
               "icon": "✈️",
@@ -1999,7 +1803,7 @@
           ]
         },
         "hn2": {
-          "heading": "🌊 יום 17-18 (9-10/4) — Ha Long Bay Overnight Cruise",
+          "heading": "🌊 ימים 16-17 (9-10/4) — Ha Long Bay Overnight Cruise",
           "activities": [
             {
               "icon": "🚐",
@@ -2084,7 +1888,7 @@
           ]
         },
         "hn3": {
-          "heading": "🍜 יום 18 (10/4) — חזרה מ-Ha Long + אוכל רחוב",
+          "heading": "🍜 יום 17 (10/4) — חזרה מ-Ha Long + אוכל רחוב",
           "activities": [
             {
               "icon": "🚐",
@@ -2168,7 +1972,7 @@
     },
     {
       "id": "bangkok",
-      "title": "🇹🇭 ימים 19-20: Bangkok - กรุงเทพ",
+      "title": "🇹🇭 ימים 18-20: Bangkok - กรุงเทพ",
       "dates_label": "11-12 באפריל | מקדשים, קניות + Songkran! 🎉",
       "header_class": "thailand",
       "info_chips": [
@@ -2188,20 +1992,20 @@
       "day_tabs": [
         {
           "id": "bk2",
-          "label": "יום 19 · 11/4"
+          "label": "יום 18 · 11/4"
         },
         {
           "id": "bk3",
-          "label": "יום 20 · 12/4"
+          "label": "יום 19 · 12/4"
         },
         {
           "id": "bk4",
-          "label": "יום 21 · 13/4"
+          "label": "יום 20 · 13/4"
         }
       ],
       "day_panes": {
         "bk2": {
-          "heading": "🏛️ יום 19 (11/4) — הגעה + Grand Palace + Temples + קניות",
+          "heading": "🏛️ יום 18 (11/4) — הגעה + Grand Palace + Temples + קניות",
           "activities": [
             {
               "icon": "✈️",
@@ -2371,7 +2175,7 @@
           ]
         },
         "bk3": {
-          "heading": "🎉 יום 20 (12/4) — SONGKRAN! מלחמת מים!",
+          "heading": "🎉 יום 19 (12/4) — SONGKRAN! מלחמת מים!",
           "activities": [
             {
               "icon": "🎉",
@@ -2433,7 +2237,7 @@
           "pane_tip": "💡 <strong>Songkran!</strong> 🔫💦 קנו אקדחי מים, שימו טלפונים בשקיות ניילון, לבשו בגדים שלא אכפת אם נרטבים. הילדים ישתגעו!"
         },
         "bk4": {
-          "heading": "✈️ יום 21 (13/4) — טיסת חזרה הביתה",
+          "heading": "✈️ יום 20 (13/4) — טיסת חזרה הביתה",
           "activities": [
             {
               "icon": "🧳",
@@ -2639,9 +2443,9 @@
       "price": "644.52$",
       "area": "ליד Pub Street / Old Market",
       "area_en": "Pub Street / Old Market area",
-      "checkin": "24/3",
+      "checkin": "26/3",
       "checkout": "28/3",
-      "nights": 4,
+      "nights": 2,
       "rooms": 2,
       "free_cancellation": "22/3/2026",
       "notes": "✅ מאושר! Angkor Privilege Resort & Spa. בריכה, קרוב למסעדות ולשוק הלילה. ⚠️ ביטול חינם עד 22/3",
@@ -2776,13 +2580,13 @@
   "flights": {
     "internal": [
       {
-        "date": "24/3",
+        "date": "26/3",
         "route": "Bangkok → Siem Reap",
         "airline": "Bangkok Airways",
-        "time": "18:00-19:15",
-        "duration": "1h15",
+        "time": "07:45-08:45",
+        "duration": "1h",
         "price": "80-120",
-        "search": "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+24+2026"
+        "search": "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+26+2026"
       },
       {
         "date": "28/3",

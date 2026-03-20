@@ -1,20 +1,49 @@
 {
   "trip": {
     "title": "מדריך טיול משפחתי",
-    "dates": "24 במרץ - 13 באפריל 2026",
+    "dates": "25 במרץ - 13 באפריל 2026",
     "people": "2 הורים + בת 16, בן 14, בן 13, בת 8",
-    "start": "24/3/2026",
+    "start": "25/3/2026",
     "end": "13/4/2026"
   },
   "days": [
     {
-      "date": "24/3",
-      "date_iso": "2026-03-24",
-      "day_of_week": "שלישי",
-      "day_of_week_num": 2,
+      "date": "25/3",
+      "date_iso": "2026-03-25",
+      "day_of_week": "רביעי",
+      "day_of_week_num": 3,
       "trip_day": 1,
       "destination": {
-        "name": "Transit → Siem Reap",
+        "name": "טיסה TLV → BKK",
+        "flag": "✈️",
+        "country": "transit"
+      },
+      "sleep": {
+        "city_he": "על המטוס",
+        "city": "In-flight",
+        "type": "טיסה ✈️",
+        "area": ""
+      },
+      "flights": [
+        {
+          "route": "TLV → Bangkok",
+          "time": "המראה 08:00",
+          "airline": "טיסה ראשית"
+        }
+      ],
+      "has_flight": true,
+      "checkin": null,
+      "checkout": null,
+      "activities": []
+    },
+    {
+      "date": "26/3",
+      "date_iso": "2026-03-26",
+      "day_of_week": "חמישי",
+      "day_of_week_num": 4,
+      "trip_day": 2,
+      "destination": {
+        "name": "Transit BKK → Siem Reap",
         "flag": "✈️",
         "country": "kh"
       },
@@ -27,12 +56,12 @@
       "flights": [
         {
           "route": "TLV → Bangkok",
-          "time": "נחיתה 13:50",
+          "time": "נחיתה 01:15",
           "airline": "טיסה ראשית"
         },
         {
           "route": "Bangkok → Siem Reap",
-          "time": "18:00-19:15",
+          "time": "07:45-08:45",
           "airline": "Bangkok Airways"
         }
       ],
@@ -42,14 +71,45 @@
         "city": "Siem Reap"
       },
       "checkout": null,
-      "activities": []
+      "activities": [
+        {
+          "icon": "🛋️",
+          "title": "01:15-06:00 - לאונג' בשדה התעופה BKK",
+          "tag": "must",
+          "slug": "transit_bkk_lounge"
+        },
+        {
+          "icon": "✈️",
+          "title": "07:45 - טיסה BKK → Siem Reap (08:45)",
+          "tag": "must",
+          "slug": "transit_bkk_sr_flight"
+        },
+        {
+          "icon": "🏊",
+          "title": "בוקר - צ'ק-אין + מנוחה בבריכת המלון",
+          "tag": "must",
+          "slug": "siemreap_arrival_rest"
+        },
+        {
+          "icon": "🛍️",
+          "title": "אחה\"צ - Old Market (Psar Chas) + סיבוב ראשון",
+          "tag": "optional",
+          "slug": "siemreap_sr4_1"
+        },
+        {
+          "icon": "🍛",
+          "title": "ערב - Pub Street + Night Market",
+          "tag": "optional",
+          "slug": "siemreap_sr1_3"
+        }
+      ]
     },
     {
-      "date": "25/3",
-      "date_iso": "2026-03-25",
-      "day_of_week": "רביעי",
-      "day_of_week_num": 3,
-      "trip_day": 2,
+      "date": "27/3",
+      "date_iso": "2026-03-27",
+      "day_of_week": "שישי",
+      "day_of_week_num": 5,
+      "trip_day": 3,
       "destination": {
         "name": "Siem Reap",
         "flag": "🇰🇭",
@@ -79,46 +139,16 @@
           "slug": "siemreap_sr1_1"
         },
         {
-          "icon": "🏊",
-          "title": "צהריים - מנוחה בבריכת המלון",
-          "tag": "optional",
-          "slug": "siemreap_sr1_2"
-        }
-      ]
-    },
-    {
-      "date": "26/3",
-      "date_iso": "2026-03-26",
-      "day_of_week": "חמישי",
-      "day_of_week_num": 4,
-      "trip_day": 3,
-      "destination": {
-        "name": "Siem Reap",
-        "flag": "🇰🇭",
-        "country": "kh"
-      },
-      "sleep": {
-        "city_he": "סיים ריפ",
-        "city": "Siem Reap",
-        "type": "מלון 🏨",
-        "area": "ליד Pub Street / Old Market"
-      },
-      "flights": [],
-      "has_flight": false,
-      "checkin": null,
-      "checkout": null,
-      "activities": [
-        {
           "icon": "🌳",
-          "title": "בוקר - Ta Prohm",
+          "title": "Ta Prohm - מקדש העצים",
           "tag": "must",
           "slug": "siemreap_sr2_0"
         },
         {
-          "icon": "🏛️",
-          "title": "Banteay Srei - באנטיי סריי",
-          "tag": "must",
-          "slug": "siemreap_sr2_1"
+          "icon": "🏊",
+          "title": "צהריים - מנוחה בבריכת המלון",
+          "tag": "optional",
+          "slug": "siemreap_sr1_2"
         },
         {
           "icon": "🎪",
@@ -129,55 +159,13 @@
       ]
     },
     {
-      "date": "27/3",
-      "date_iso": "2026-03-27",
-      "day_of_week": "שישי",
-      "day_of_week_num": 5,
-      "trip_day": 4,
-      "destination": {
-        "name": "Siem Reap",
-        "flag": "🇰🇭",
-        "country": "kh"
-      },
-      "sleep": {
-        "city_he": "סיים ריפ",
-        "city": "Siem Reap",
-        "type": "מלון 🏨",
-        "area": "ליד Pub Street / Old Market"
-      },
-      "flights": [],
-      "has_flight": false,
-      "checkin": null,
-      "checkout": null,
-      "activities": [
-        {
-          "icon": "🚤",
-          "title": "בוקר - Tonle Sap Lake - טונלה סאפ",
-          "tag": "must",
-          "slug": "siemreap_sr3_0"
-        },
-        {
-          "icon": "🏛️",
-          "title": "אחה\"צ - Terrace of the Elephants",
-          "tag": "optional",
-          "slug": "siemreap_sr3_1"
-        },
-        {
-          "icon": "🌅",
-          "title": "שקיעה מ-Phnom Bakheng",
-          "tag": "optional",
-          "slug": "siemreap_sr3_2"
-        }
-      ]
-    },
-    {
       "date": "28/3",
       "date_iso": "2026-03-28",
       "day_of_week": "שבת",
       "day_of_week_num": 6,
-      "trip_day": 5,
+      "trip_day": 4,
       "destination": {
-        "name": "Siem Reap",
+        "name": "Siem Reap → Phnom Penh",
         "flag": "🇰🇭",
         "country": "kh"
       },
@@ -205,22 +193,16 @@
       },
       "activities": [
         {
+          "icon": "🚤",
+          "title": "07:00 בוקר - Tonle Sap Lake - טונלה סאפ",
+          "tag": "must",
+          "slug": "siemreap_sr3_0"
+        },
+        {
           "icon": "✈️",
           "title": "אחה\"צ - טיסה → Phnom Penh",
           "tag": "must",
           "slug": "siemreap_sr4_2"
-        },
-        {
-          "icon": "🏊",
-          "title": "בוקר - בריכה + Artisans Angkor",
-          "tag": "optional",
-          "slug": "siemreap_sr4_0"
-        },
-        {
-          "icon": "🛍️",
-          "title": "Old Market (Psar Chas)",
-          "tag": "optional",
-          "slug": "siemreap_sr4_1"
         }
       ]
     },
@@ -229,7 +211,7 @@
       "date_iso": "2026-03-29",
       "day_of_week": "ראשון",
       "day_of_week_num": 0,
-      "trip_day": 6,
+      "trip_day": 5,
       "destination": {
         "name": "Phnom Penh",
         "flag": "🇰🇭",
@@ -271,7 +253,7 @@
       "date_iso": "2026-03-30",
       "day_of_week": "שני",
       "day_of_week_num": 1,
-      "trip_day": 7,
+      "trip_day": 6,
       "destination": {
         "name": "Phnom Penh",
         "flag": "🇰🇭",
@@ -325,7 +307,7 @@
       "date_iso": "2026-03-31",
       "day_of_week": "שלישי",
       "day_of_week_num": 2,
-      "trip_day": 8,
+      "trip_day": 7,
       "destination": {
         "name": "HCMC",
         "flag": "🇻🇳",
@@ -367,7 +349,7 @@
       "date_iso": "2026-04-01",
       "day_of_week": "רביעי",
       "day_of_week_num": 3,
-      "trip_day": 9,
+      "trip_day": 8,
       "destination": {
         "name": "HCMC",
         "flag": "🇻🇳",
@@ -403,7 +385,7 @@
       "date_iso": "2026-04-02",
       "day_of_week": "חמישי",
       "day_of_week_num": 4,
-      "trip_day": 10,
+      "trip_day": 9,
       "destination": {
         "name": "HCMC",
         "flag": "🇻🇳",
@@ -445,7 +427,7 @@
       "date_iso": "2026-04-03",
       "day_of_week": "שישי",
       "day_of_week_num": 5,
-      "trip_day": 11,
+      "trip_day": 10,
       "destination": {
         "name": "Hoi An",
         "flag": "🇻🇳",
@@ -499,7 +481,7 @@
       "date_iso": "2026-04-04",
       "day_of_week": "שבת",
       "day_of_week_num": 6,
-      "trip_day": 12,
+      "trip_day": 11,
       "destination": {
         "name": "Hoi An",
         "flag": "🇻🇳",
@@ -535,7 +517,7 @@
       "date_iso": "2026-04-05",
       "day_of_week": "ראשון",
       "day_of_week_num": 0,
-      "trip_day": 13,
+      "trip_day": 12,
       "destination": {
         "name": "Hoi An",
         "flag": "🇻🇳",
@@ -565,7 +547,7 @@
       "date_iso": "2026-04-06",
       "day_of_week": "שני",
       "day_of_week_num": 1,
-      "trip_day": 14,
+      "trip_day": 13,
       "destination": {
         "name": "Hoi An",
         "flag": "🇻🇳",
@@ -607,7 +589,7 @@
       "date_iso": "2026-04-07",
       "day_of_week": "שלישי",
       "day_of_week_num": 2,
-      "trip_day": 15,
+      "trip_day": 14,
       "destination": {
         "name": "Hoi An",
         "flag": "🇻🇳",
@@ -649,7 +631,7 @@
       "date_iso": "2026-04-08",
       "day_of_week": "רביעי",
       "day_of_week_num": 3,
-      "trip_day": 16,
+      "trip_day": 15,
       "destination": {
         "name": "Hanoi",
         "flag": "🇻🇳",
@@ -703,7 +685,7 @@
       "date_iso": "2026-04-09",
       "day_of_week": "חמישי",
       "day_of_week_num": 4,
-      "trip_day": 17,
+      "trip_day": 16,
       "destination": {
         "name": "Hanoi",
         "flag": "🇻🇳",
@@ -748,7 +730,7 @@
       "date_iso": "2026-04-10",
       "day_of_week": "שישי",
       "day_of_week_num": 5,
-      "trip_day": 18,
+      "trip_day": 17,
       "destination": {
         "name": "Hanoi",
         "flag": "🇻🇳",
@@ -787,7 +769,7 @@
       "date_iso": "2026-04-11",
       "day_of_week": "שבת",
       "day_of_week_num": 6,
-      "trip_day": 19,
+      "trip_day": 18,
       "destination": {
         "name": "Bangkok",
         "flag": "🇹🇭",
@@ -841,7 +823,7 @@
       "date_iso": "2026-04-12",
       "day_of_week": "ראשון",
       "day_of_week_num": 0,
-      "trip_day": 20,
+      "trip_day": 19,
       "destination": {
         "name": "Bangkok",
         "flag": "🇹🇭",
@@ -877,7 +859,7 @@
       "date_iso": "2026-04-13",
       "day_of_week": "שני",
       "day_of_week_num": 1,
-      "trip_day": 21,
+      "trip_day": 20,
       "destination": {
         "name": "חזרה הביתה",
         "flag": "🇹🇭",
