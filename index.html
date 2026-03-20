@@ -720,7 +720,7 @@ function navTo(id){
 }
 
 // Load
-fetch(DATA_FILE)
+fetch(DATA_FILE + '?t=' + Date.now())
   .then(function(r){ return r.json(); })
   .then(render)
   .catch(function(e){

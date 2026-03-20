@@ -287,7 +287,7 @@ function loadAndRender() {
   if (_tripData) {
     doRender(_tripData);
   } else {
-    fetch(DATA_FILE)
+    fetch(DATA_FILE + '?t=' + Date.now())
       .then(function(r) { return r.json(); })
       .then(function(data) { _tripData = data; doRender(data); })
       .catch(function(e) {

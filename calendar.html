@@ -241,7 +241,7 @@ function renderCalendar(cal) {
   document.getElementById('app').innerHTML = html;
 }
 
-fetch('calendar_data.json')
+fetch('calendar_data.json?t=' + Date.now())
   .then(function(r) { return r.json(); })
   .then(function(data) { renderCalendar(data); })
   .catch(function(e) {
