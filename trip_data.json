@@ -10,9 +10,9 @@
     "main_flight": {
       "departure": "TLV → Bangkok (BKK)",
       "departure_date": "25/3/2026",
-      "departure_time": "08:00",
-      "arrival_date": "26/3/2026",
-      "arrival_time": "01:15"
+      "departure_time": "",
+      "arrival_date": "27/3/2026",
+      "arrival_time": "12:00"
     },
     "return_flight": {
       "route": "Bangkok (BKK) → TLV",
@@ -21,7 +21,7 @@
     "route": [
       {
         "flag": "✈️",
-        "name": "Bangkok 01:15 (26/3)"
+        "name": "Bangkok 12:00 (27/3)"
       },
       {
         "flag": "🇰🇭",
@@ -128,15 +128,15 @@
       "country": "kh",
       "flag": "🇰🇭",
       "name": "Siem Reap",
-      "dates": "26-28/3",
-      "flex": 3
+      "dates": "27-29/3",
+      "flex": 2
     },
     {
       "country": "kh",
       "flag": "🇰🇭",
       "name": "Phnom Penh",
       "dates": "29-30/3",
-      "flex": 2
+      "flex": 1
     },
     {
       "country": "vn",
@@ -169,22 +169,22 @@
   ],
   "overview_table": [
     {
-      "dates": "25/3",
-      "dest": "✈️ טיסה TLV → Bangkok",
+      "dates": "25-27/3",
+      "dest": "✈️ טיסה TLV → Bangkok → Siem Reap",
       "nights": "טיסה",
-      "highlights": "המראה 08:00"
+      "highlights": "נחיתה BKK 27/3 12:00, המשך ל-SR 17:15"
     },
     {
-      "dates": "26-28/3",
+      "dates": "27-29/3",
       "dest": "🇰🇭 Siem Reap - សៀមរាប",
       "nights": "2",
-      "highlights": "Angkor Wat, Bayon, Ta Prohm, Tonle Sap"
+      "highlights": "Angkor Wat, Bayon, Ta Prohm, Tonle Sap, Phare Circus"
     },
     {
       "dates": "29-30/3",
       "dest": "🇰🇭 Phnom Penh - ភ្នំពេញ",
-      "nights": "2",
-      "highlights": "Royal Palace, Russian Market"
+      "nights": "1",
+      "highlights": "Royal Palace, Central Market, Sisowath Quay"
     },
     {
       "dates": "31/3-2/4",
@@ -220,49 +220,45 @@
   "destinations": [
     {
       "id": "transit",
-      "title": "✈️ יום 1: טיסה TLV → Bangkok",
-      "dates_label": "25 במרץ (רביעי) | המראה 08:00 → נחיתה BKK 01:15 (26/3)",
+      "title": "✈️ ימים 1-3: טיסה TLV → Bangkok → Siem Reap",
+      "dates_label": "25-27 במרץ | נחיתה BKK 12:00 (27/3) → SR 18:45",
       "header_class": "transit",
       "day_range": "יום 1",
       "info_chips": [
         {
           "label": "✈️ המראה",
-          "value": "TLV 08:00 (25/3)"
+          "value": "TLV (25/3)"
         },
         {
-          "label": "🛬 נחיתה",
-          "value": "BKK 01:15 (26/3)"
-        },
-        {
-          "label": "🛋️ לאונג'",
-          "value": "Miracle / Coral Lounge"
+          "label": "🛬 נחיתה BKK",
+          "value": "27/3 12:00"
         },
         {
           "label": "✈️ המשך",
-          "value": "BKK → SR 07:45-08:45"
+          "value": "BKK → SR 17:15-18:45"
         }
       ],
       "day_tabs": null,
       "activities": [
         {
-          "icon": "🛋️",
-          "title": "בוקר - לאונג' בשדה התעופה BKK",
-          "title_en": "Airport Lounge - Suvarnabhumi",
-          "desc": "נחיתה ב-01:15. העברו ללאונג' (Miracle Lounge או Coral Lounge) למנוחה, מקלחת וארוחת בוקר. מתאים למשפחה עם ילדים.",
+          "icon": "🛬",
+          "title": "12:00 - נחיתה בבנקוק (BKK)",
+          "title_en": "Arrival at Suvarnabhumi Airport",
+          "desc": "נחיתה ב-12:00. אספו מזוודות, צאו לטרמינל. יש ~5 שעות עד הטיסה הבאה - אפשר לאכול בשדה התעופה או להיכנס ללאונג'.",
           "links": {
             "map": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok"
           },
           "tag": "must",
-          "slug": "transit_bkk_lounge"
+          "slug": "transit_bkk_arrival"
         },
         {
           "icon": "✈️",
-          "title": "07:45 - טיסה BKK → Siem Reap (08:45)",
+          "title": "17:15 - טיסה BKK → Siem Reap (18:45)",
           "title_en": "Bangkok Airways",
-          "desc": "טיסה בוקר לסיים ריפ. כשעה. הגעה ~08:45. Grab או טאקסי למלון (~7$). צ'ק-אין מוקדם.",
+          "desc": "טיסה אחה\"צ לסיים ריפ. כ-1.5 שעה. הגעה ~18:45. Grab או טאקסי למלון (~7$). צ'ק-אין ערב.",
           "links": {
             "search": [
-              "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+26+2026",
+              "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+27+2026",
               "🔍 חפש טיסה"
             ]
           },
@@ -270,7 +266,7 @@
           "slug": "transit_bkk_sr_flight"
         }
       ],
-      "tip": "💡 <strong>חשוב:</strong> הטיסה ל-Siem Reap היא <strong>כרטיס נפרד</strong> - אתם צריכים לאסוף מזוודות, לצאת ולעשות צ'ק-אין מחדש. 3.5 שעות ביניים זה צפוף למשפחה עם ילדים - שקלו גם לינת לילה אחד בבנקוק או טיסה מוקדם למחרת. ויזת קמבודיה - Visa on Arrival בנחיתה.",
+      "tip": "💡 <strong>חשוב:</strong> הטיסה ל-Siem Reap היא <strong>כרטיס נפרד</strong> - אתם צריכים לאסוף מזוודות, לצאת ולעשות צ'ק-אין מחדש. ~5 שעות ביניים - מספיק זמן בנוח למשפחה. ויזת קמבודיה - Visa on Arrival בנחיתה.",
       "extended_desc": "מעבר מהיר דרך בנקוק לפני ההמשך לקמבודיה. טעימה ראשונה מתאילנד עם מעט זמן וחיבור צפוף, אך חרדולין טוב להרטט קצת מהטיסה הארוכה.",
       "timing": {
         "best_arrival": "13:50",
@@ -291,8 +287,8 @@
     },
     {
       "id": "siemreap",
-      "title": "🇰🇭 ימים 2-4: Siem Reap - សៀមរាប, קמבודיה",
-      "dates_label": "26-28 במרץ | 2 לילות | Angkor Wat והסביבה",
+      "title": "🇰🇭 ימים 3-5: Siem Reap - សៀមរាប, קמבודיה",
+      "dates_label": "27-29 במרץ | 2 לילות | Angkor Wat והסביבה",
       "header_class": "cambodia",
       "info_chips": [
         {
@@ -320,81 +316,69 @@
       "day_tabs": [
         {
           "id": "sr0",
-          "label": "יום 2 (26/3)",
-          "sublabel": "הגעה + מנוחה + Old Market"
+          "label": "יום 3 (27/3)",
+          "sublabel": "הגעה ערב + Pub Street"
         },
         {
           "id": "sr1",
-          "label": "יום 3 (27/3)",
+          "label": "יום 4 (28/3)",
           "sublabel": "מקדשים + קרקס"
         },
         {
           "id": "sr2",
-          "label": "יום 4 (28/3)",
+          "label": "יום 5 (29/3)",
           "sublabel": "Tonle Sap + PP"
         }
       ],
       "day_panes": {
         "sr0": {
-          "heading": "✈️ יום 2 (26/3) — הגעה בוקר + Old Market + Pub Street ערב",
+          "heading": "✈️ יום 3 (27/3) — הגעה ערב + Pub Street",
           "activities": [
             {
-              "icon": "🛋️",
-              "title": "01:15-06:00 - לאונג' בשדה התעופה BKK",
-              "title_en": "Airport Lounge - Suvarnabhumi",
-              "desc": "נחיתה ב-01:15. העברו ללאונג' (Miracle Lounge או Coral Lounge) למנוחה, מקלחת וארוחת בוקר.",
+              "icon": "🛬",
+              "title": "12:00 - נחיתה בבנקוק (BKK)",
+              "title_en": "Arrival at Suvarnabhumi Airport",
+              "desc": "נחיתה ב-12:00. אספו מזוודות. ~5 שעות המתנה לטיסת ההמשך. אפשר לאכול בשדה או להיכנס ללאונג'.",
               "links": {
-                "map": "https://maps.google.com/?q=Miracle+Lounge+Suvarnabhumi+Airport"
+                "map": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok"
               },
               "tag": "must",
-              "slug": "transit_bkk_lounge"
+              "slug": "transit_bkk_arrival"
             },
             {
               "icon": "✈️",
-              "title": "07:45 - טיסה BKK → Siem Reap (08:45)",
-              "title_en": "Bangkok Airways, ~1h",
-              "desc": "טיסה בוקר לסיים ריפ. כשעה. הגעה ~08:45. Grab או טאקסי למלון (~7$). צ'ק-אין מוקדם.",
+              "title": "17:15 - טיסה BKK → Siem Reap (18:45)",
+              "title_en": "Bangkok Airways, ~1.5h",
+              "desc": "טיסה אחה\"צ לסיים ריפ. הגעה ~18:45. Grab או טאקסי למלון (~7$). צ'ק-אין ערב.",
               "links": {},
               "tag": "must",
               "slug": "transit_bkk_sr_flight"
             },
             {
-              "icon": "🏊",
-              "title": "בוקר - צ'ק-אין + מנוחה בבריכת המלון",
+              "icon": "🏨",
+              "title": "ערב - צ'ק-אין במלון + התרעננות",
               "title_en": "",
-              "desc": "הגעה למלון ~10:00. צ'ק-אין מוקדם (בקשו מראש). מנוחה בבריכה אחרי לילה על המטוס. שתו הרבה מים!",
+              "desc": "הגעה למלון ~19:30. צ'ק-אין, מקלחת והתרעננות מהירה. שתו הרבה מים!",
               "links": {},
               "tag": "must",
-              "slug": "siemreap_arrival_rest"
-            },
-            {
-              "icon": "🛍️",
-              "title": "אחה\"צ - Old Market (Psar Chas) + סיבוב ראשון",
-              "title_en": "ផ្សារចាស់",
-              "desc": "אחרי מנוחה, צאו לסיבוב ראשון באזור. Old Market - שוק מקומי עם מזכרות, תבלינים, ואוכל. התמקחו על הכל!",
-              "links": {
-                "map": "https://maps.google.com/?q=Old+Market+Siem+Reap",
-                "photos": "https://www.google.com/search?q=Old+Market+Psar+Chas+Siem+Reap&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "siemreap_sr4_1"
+              "slug": "siemreap_arrival_checkin"
             },
             {
               "icon": "🍛",
               "title": "ערב - Pub Street + Night Market",
               "title_en": "ផ្សាររាត្រី",
-              "desc": "אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$.",
+              "desc": "אמוק (Amok - קארי דגים), Lok Lak (בקר מוקפץ). אווירה נהדרת, שייקים ב-1$. ארוחת ערב ראשונה בקמבודיה!",
               "links": {
                 "map": "https://maps.google.com/?q=Pub+Street,+Siem+Reap",
                 "photos": "https://www.google.com/search?q=Pub+Street+Siem+Reap+night&tbm=isch"
               },
-              "tag": "optional",
+              "tag": "must",
               "slug": "siemreap_sr1_3"
             }
           ]
         },
         "sr1": {
-          "heading": "🌅 יום 3 (27/3) — Angkor Wat + Bayon + Ta Prohm + Phare Circus",
+          "heading": "🌅 יום 4 (28/3) — Angkor Wat + Bayon + Ta Prohm + Phare Circus",
           "activities": [
             {
               "icon": "🌅",
@@ -544,7 +528,7 @@
           ]
         },
         "sr2": {
-          "heading": "🚤 יום 4 (28/3) — Tonle Sap + מעבר ל-Phnom Penh",
+          "heading": "🚤 יום 5 (29/3) — Tonle Sap + מעבר ל-Phnom Penh",
           "activities": [
             {
               "icon": "🚤",
@@ -613,9 +597,9 @@
       "tip": "💡 <strong>טיפ:</strong> שכרו טוק-טוק (Tuk-Tuk) עם נהג ליום שלם (~15-20$) - הוא ייקח אתכם בין המקדשים, יחכה ויחזיר. צאו ב-05:00 בבוקר ומנוחה ארוכה בצהריים!",
       "extended_desc": "בירתה העתיקה של הממלכה ההמר בעבר, סיים ריפ היא שער לאחד ממתחמי הקדשים הגדולים בעולם. את Angkor Wat, עם מגדליו המוקטנים וממדיו המדומים, אתה חייב לראות בזריחה. יחד עם Bayon, Ta Prohm ו-Tonle Sap, זה ממש חסר תקדים - קסום ומיסטי.",
       "timing": {
-        "best_arrival": "אחה\"צ (26/3)",
-        "best_departure": "אחרי הצהריים ביום 4 (28/3)",
-        "recommended_hours": "2 ימים מלאים"
+        "best_arrival": "ערב (27/3)",
+        "best_departure": "אחרי הצהריים ביום 5 (29/3)",
+        "recommended_hours": "יום מלא אחד + 2 חצאי ימים"
       },
       "transport": {
         "to": [
@@ -633,12 +617,12 @@
           "טוק-טוק וקוד עם נהגים במלון"
         ]
       },
-      "day_range": "ימים 2-4"
+      "day_range": "ימים 3-5"
     },
     {
       "id": "phnompenh",
-      "title": "🇰🇭 ימים 5-6: Phnom Penh - ភ្នំពេញ",
-      "dates_label": "29-30 במרץ | בירת קמבודיה",
+      "title": "🇰🇭 יום 6: Phnom Penh - ភ្នំពេញ",
+      "dates_label": "29-30 במרץ | לילה אחד | בירת קמבודיה",
       "header_class": "cambodia",
       "info_chips": [
         {
@@ -658,72 +642,27 @@
       "day_tabs": [
         {
           "id": "pp1",
-          "label": "יום 5 (29/3)"
+          "label": "יום 5 ערב (29/3)",
+          "sublabel": "הגעה + Sisowath Quay"
         },
         {
           "id": "pp2",
-          "label": "יום 6 (30/3)"
+          "label": "יום 6 (30/3)",
+          "sublabel": "Royal Palace + טיסה HCMC"
         }
       ],
       "day_panes": {
         "pp1": {
-          "heading": "🏛️ יום 5 (29/3) — Royal Palace + טיילת המקונג",
+          "heading": "🌅 יום 5 ערב (29/3) — הגעה מ-Siem Reap + טיילת המקונג",
           "activities": [
             {
-              "icon": "🏛️",
-              "title": "בוקר - Royal Palace + Silver Pagoda",
-              "title_en": "ព្រះបរមរាជាវាំង",
-              "desc": "מתחם מלכותי מרהיב על גדת המקונג. Silver Pagoda מרוצפת ב-5,000 אריחי כסף! פתוח 08:00-17:00.",
-              "links": {
-                "map": "https://maps.google.com/?q=Royal+Palace+Phnom+Penh",
-                "info": "https://en.wikipedia.org/wiki/Royal_Palace,_Phnom_Penh",
-                "photos": "https://www.google.com/search?q=Royal+Palace+Phnom+Penh+Silver+Pagoda&tbm=isch"
-              },
+              "icon": "🏨",
+              "title": "אחה\"צ - צ'ק-אין במלון",
+              "title_en": "Hotel check-in",
+              "desc": "הגעה מסיים ריפ ~15:30. צ'ק-אין במלון Shangri-La, התרעננות מהירה.",
+              "links": {},
               "tag": "must",
-              "slug": "phnompenh_pp1_0",
-              "detail": {
-                "full_desc": "הארמון המלוכה - אתר חגיגי של קמבודיה.",
-                "how_to_get": "טוק-טוק או הליכה מאיזור הנהר",
-                "hours": "08:00-11:00, 14:00-17:00",
-                "price": "10$ לאדם, חינם לילדים מתחת ל-10",
-                "duration": "1.5-2 שעות",
-                "tips": [
-                  "בלבשו בצניעות - כסו כתפיים וברכיים",
-                  "סגור בעת אירועים מלוכליים - בדקו",
-                  "העסיקו מדריך בשנת 10$"
-                ],
-                "good_for_kids": "מרשים אך קצר עם ילדים",
-                "warnings": "סגור בצהריים",
-                "wiki_title": "Royal_Palace,_Phnom_Penh"
-              }
-            },
-            {
-              "icon": "🍜",
-              "title": "צהריים - Central Market (Phsar Thmei)",
-              "title_en": "ផ្សារថ្មី",
-              "desc": "בניין Art Deco מרשים מ-1937. שוק מקורה ענק - אוכל מקומי, תבלינים, מזכרות. מקום מצוין לאוכל צהריים אותנטי.",
-              "links": {
-                "map": "https://maps.google.com/?q=Central+Market+Phnom+Penh",
-                "info": "https://en.wikipedia.org/wiki/Phsar_Thmei",
-                "photos": "https://www.google.com/search?q=Central+Market+Phsar+Thmei+Phnom+Penh&tbm=isch"
-              },
-              "tag": "optional",
-              "slug": "phnompenh_pp1_1",
-              "detail": {
-                "full_desc": "שוק מרכזי - בנייה בסגנון Art Deco עם קיר פנימי עשיר בתבליטים.",
-                "how_to_get": "טוק-טוק בן 10 דקות מהארמון המלוכה",
-                "hours": "07:00-17:00",
-                "price": "אוכל 1-3$",
-                "duration": "1-2 שעות",
-                "tips": [
-                  "הבנייה בעצמה מקסומה - בדקו את התבליטים",
-                  "אוכל מקומי אותנטי בתוך",
-                  "זה טוב יותר בבוקר"
-                ],
-                "good_for_kids": "הרבה אוכל מעניין לנסות",
-                "warnings": "עמיד וחם בתוך",
-                "wiki_title": "Central_Market_(Phnom_Penh)"
-              }
+              "slug": "phnompenh_pp_checkin"
             },
             {
               "icon": "🌅",
@@ -755,57 +694,62 @@
           ]
         },
         "pp2": {
-          "heading": "🛍️ יום 6 (30/3) — שווקים + מעבר ל-Vietnam",
+          "heading": "🏛️ יום 6 (30/3) — Royal Palace + Central Market + מעבר ל-Vietnam",
           "activities": [
             {
-              "icon": "🛍️",
-              "title": "בוקר - Russian Market",
-              "title_en": "Toul Tom Poung Market / Psar Tuol Tom Pong",
-              "desc": "מזכרות, בגדים, אוכל מקומי אותנטי. מתמקחים על הכל! מחירים זולים.",
+              "icon": "🏛️",
+              "title": "בוקר - Royal Palace + Silver Pagoda",
+              "title_en": "ព្រះបរមរាជាវាំង",
+              "desc": "מתחם מלכותי מרהיב על גדת המקונג. Silver Pagoda מרוצפת ב-5,000 אריחי כסף! פתוח 08:00-11:00. הגיעו מוקדם!",
               "links": {
-                "map": "https://maps.google.com/?q=Russian+Market+Phnom+Penh",
-                "info": "https://en.wikipedia.org/wiki/Toul_Tom_Poung_Market",
-                "photos": "https://www.google.com/search?q=Russian+Market+Phnom+Penh&tbm=isch"
+                "map": "https://maps.google.com/?q=Royal+Palace+Phnom+Penh",
+                "info": "https://en.wikipedia.org/wiki/Royal_Palace,_Phnom_Penh",
+                "photos": "https://www.google.com/search?q=Royal+Palace+Phnom+Penh+Silver+Pagoda&tbm=isch"
               },
-              "tag": "optional",
-              "slug": "phnompenh_pp2_0",
+              "tag": "must",
+              "slug": "phnompenh_pp1_0",
               "detail": {
-                "full_desc": "בשוק רוסי (טול טום פאונג) - שוק גדול וידוע בקנייה מקומית.",
-                "how_to_get": "טוק-טוק בן 15 דקות",
-                "hours": "06:00-17:00",
-                "price": "משתנה",
-                "duration": "1-2 שעות",
+                "full_desc": "הארמון המלוכה - אתר חגיגי של קמבודיה.",
+                "how_to_get": "טוק-טוק או הליכה מאיזור הנהר",
+                "hours": "08:00-11:00, 14:00-17:00",
+                "price": "10$ לאדם, חינם לילדים מתחת ל-10",
+                "duration": "1.5-2 שעות",
                 "tips": [
-                  "הנחזקים הטובים ביותר להזמנות קמבודיות",
-                  "סילקים קמבודיים טובים במחיר טוב",
-                  "התנו בקשה"
+                  "בלבשו בצניעות - כסו כתפיים וברכיים",
+                  "סגור בעת אירועים מלוכליים - בדקו",
+                  "הגיעו ב-08:00 כי סוגרים ב-11:00"
                 ],
-                "good_for_kids": "מעניין לחקור",
-                "warnings": "חם מאוד בתוך",
-                "wiki_title": "Russian_Market_(Phnom_Penh)"
+                "good_for_kids": "מרשים אך קצר עם ילדים",
+                "warnings": "סגור בצהריים",
+                "wiki_title": "Royal_Palace,_Phnom_Penh"
               }
             },
             {
-              "icon": "🏖️",
-              "title": "צהריים - מנוחה חופשית",
-              "title_en": "Free time",
-              "desc": "זמן חופשי - מנוחה במלון, בריכה, או סיבוב רגוע ברחובות. הכנה לטיסה.",
-              "links": {},
+              "icon": "🍜",
+              "title": "צהריים - Central Market (Phsar Thmei)",
+              "title_en": "ផ្សារថ្មី",
+              "desc": "בניין Art Deco מרשים מ-1937. שוק מקורה ענק - אוכל מקומי, תבלינים, מזכרות. ארוחת צהריים אותנטית + קניות אחרונות בקמבודיה.",
+              "links": {
+                "map": "https://maps.google.com/?q=Central+Market+Phnom+Penh",
+                "info": "https://en.wikipedia.org/wiki/Phsar_Thmei",
+                "photos": "https://www.google.com/search?q=Central+Market+Phsar+Thmei+Phnom+Penh&tbm=isch"
+              },
               "tag": "optional",
-              "slug": "phnompenh_pp2_1",
+              "slug": "phnompenh_pp1_1",
               "detail": {
-                "full_desc": "זמן חופשי לפני הטיסה - זה זמן לנוח, ללבוש ולטפל בהכנות אחרונות.",
-                "how_to_get": "מלון",
-                "hours": "בצהריים",
-                "price": "חינם",
-                "duration": "גמיש",
+                "full_desc": "שוק מרכזי - בנייה בסגנון Art Deco עם קיר פנימי עשיר בתבליטים.",
+                "how_to_get": "טוק-טוק בן 10 דקות מהארמון המלוכה",
+                "hours": "07:00-17:00",
+                "price": "אוכל 1-3$",
+                "duration": "1-2 שעות",
                 "tips": [
-                  "ערוך קפקא ודוק שכל דקומנטים בטוח",
-                  "אחרון ארוחה קמבודית טובה",
-                  "זמן נוח בבריכה"
+                  "הבנייה בעצמה מקסומה - בדקו את התבליטים",
+                  "אוכל מקומי אותנטי בתוך",
+                  "ארוחה אחרונה בקמבודיה לפני וייטנאם"
                 ],
-                "good_for_kids": "זמן להיות תנוח",
-                "warnings": null
+                "good_for_kids": "הרבה אוכל מעניין לנסות",
+                "warnings": "עמיד וחם בתוך",
+                "wiki_title": "Central_Market_(Phnom_Penh)"
               }
             },
             {
@@ -838,9 +782,9 @@
       "tip": "💡 <strong>טיפ:</strong> Killing Fields (Choeung Ek) ו-Tuol Sleng (S-21 Prison) - מתאימים לבני 16 ו-14 המתעניינים בהיסטוריה, פחות מומלץ לקטנים. שיקול הורי.",
       "extended_desc": "בירה תוססת של קמבודיה על גדות המקונג, בה מתערבבים היסטוריה מלכותית עם רעם עירוני מודרני. הארמון המלוכי הוא גשר לעבר, בעוד שרחובות התעופה ובשוק המרכזי פועמים בחיים. אופק נהיר וטוב עם אווירה משל קאבלת קדום.",
       "timing": {
-        "best_arrival": "אחרי הצהריים",
-        "best_departure": "ערב יום 2",
-        "recommended_hours": "2 ימים מלאים"
+        "best_arrival": "אחרי הצהריים (29/3)",
+        "best_departure": "ערב 30/3",
+        "recommended_hours": "ערב + בוקר אחד"
       },
       "transport": {
         "to": [
@@ -856,7 +800,7 @@
           "הליכה ברחוב סיסוואת"
         ]
       },
-      "day_range": "ימים 5-6"
+      "day_range": "יום 6"
     },
     {
       "id": "hcmc",
@@ -2443,12 +2387,12 @@
       "price": "644.52$",
       "area": "ליד Pub Street / Old Market",
       "area_en": "Pub Street / Old Market area",
-      "checkin": "26/3",
-      "checkout": "28/3",
+      "checkin": "27/3",
+      "checkout": "29/3",
       "nights": 2,
       "rooms": 2,
       "free_cancellation": "22/3/2026",
-      "notes": "✅ מאושר! Angkor Privilege Resort & Spa. בריכה, קרוב למסעדות ולשוק הלילה. ⚠️ ביטול חינם עד 22/3",
+      "notes": "⚠️ צריך לשנות תאריכים! check-in 27/3 במקום 26/3, check-out 29/3 במקום 28/3. ביטול חינם עבר (22/3) - בדקו עם Booking!",
       "link": "https://www.booking.com/hotel/kh/angkor-privilege-resort-amp-spa-siem-reap.html",
       "search": "https://www.booking.com/hotel/kh/angkor-privilege-resort-amp-spa-siem-reap.html"
     },
@@ -2464,13 +2408,13 @@
       "room_type": "Deluxe City King × 2",
       "area": "Chamkar Mon, Tonle Bassac",
       "area_en": "Chamkarmorn District",
-      "checkin": "28/3",
+      "checkin": "29/3",
       "checkout": "30/3",
-      "nights": 2,
+      "nights": 1,
       "rooms": 2,
       "free_cancellation": "26/3/2026",
       "extras": "ארוחת בוקר כלולה, חניה, WiFi מהיר, 10% הנחת Genius",
-      "notes": "✅ מאושר! Shangri-La Phnom Penh ⭐⭐⭐⭐⭐. ארוחת בוקר כלולה. ⚠️ ביטול חינם עד 26/3",
+      "notes": "⚠️ צריך לשנות! לילה אחד בלבד (29/3→30/3) במקום שניים. ביטול חינם עד 26/3 - שנו בהקדם!",
       "link": "https://www.booking.com/hotel/kh/shangri-la-phnom-penh.html",
       "search": "https://www.booking.com/hotel/kh/shangri-la-phnom-penh.html"
     },
@@ -2580,22 +2524,22 @@
   "flights": {
     "internal": [
       {
-        "date": "26/3",
+        "date": "27/3",
         "route": "Bangkok → Siem Reap",
         "airline": "Bangkok Airways",
-        "time": "07:45-08:45",
-        "duration": "1h",
+        "time": "17:15-18:45",
+        "duration": "1.5h",
         "price": "80-120",
-        "search": "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+26+2026"
+        "search": "https://www.google.com/travel/flights?q=Bangkok+to+Siem+Reap+March+27+2026"
       },
       {
-        "date": "28/3",
+        "date": "29/3",
         "route": "Siem Reap → Phnom Penh",
         "airline": "Cambodia Angkor Air / Lanmei",
         "time": "14:00-14:45",
         "duration": "45m",
         "price": "60-100",
-        "search": "https://www.google.com/travel/flights?q=Siem+Reap+to+Phnom+Penh+March+28+2026"
+        "search": "https://www.google.com/travel/flights?q=Siem+Reap+to+Phnom+Penh+March+29+2026"
       },
       {
         "date": "30/3",
